@@ -8,7 +8,6 @@
 <meta name="theme-color" content="#0A0A0B">
 <link rel="icon" href="img/f.png" type="image/png">
 <link rel="preload" href="fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
-<script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HairSalon","name":"La Bottega dei Parrucchieri","founder":{"@type":"Person","name":"Fabio D'Attanasio"},"foundingDate":"2017","address":{"@type":"PostalAddress","streetAddress":"Piazza Giuseppe Garibaldi 13","postalCode":"65127","addressLocality":"Pescara","addressRegion":"PE","addressCountry":"IT"},"telephone":"+39 085 68782","email":"pescara@labottegadeiparrucchieri.it","openingHours":"Mo-Sa 09:00-19:00","sameAs":["https://www.instagram.com/la.bottega.dei.parrucchieri/","https://www.facebook.com/parrucchieridipescara"]}
 </script>
@@ -600,7 +599,7 @@ dialog[open]{animation:sheet .45s var(--ease)}
 <script>
 (()=>{
 const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
-const root=document.documentElement;
+const root=document.documentElement;root.classList.add('js');
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const phone=matchMedia('(max-width: 759px)').matches;
 const clamp=(v,a,b)=>v<a?a:v>b?b:v,sm=t=>t*t*(3-2*t),lerp=(a,b,t)=>a+(b-a)*t;
