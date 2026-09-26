@@ -5,302 +5,333 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>La Bottega dei Parrucchieri · Parrucchiere a Pescara, Piazza Garibaldi</title>
 <meta name="description" content="Salone donna e uomo in Piazza Garibaldi 13 a Pescara, dal 2017. Effetto Bottega, colore, extensions, sposa. Fabio D'Attanasio, Parrucchiere dell'anno 2023. Wella Professionals Official Salon.">
-<meta name="theme-color" content="#F3F3F1">
+<meta name="theme-color" content="#0A0A0B">
 <link rel="icon" href="img/f.png" type="image/png">
-<link rel="preload" href="fonts/Geist.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/hero.webp" as="image" fetchpriority="high">
+<link rel="preload" href="fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HairSalon","name":"La Bottega dei Parrucchieri","founder":{"@type":"Person","name":"Fabio D'Attanasio"},"foundingDate":"2017","address":{"@type":"PostalAddress","streetAddress":"Piazza Giuseppe Garibaldi 13","postalCode":"65127","addressLocality":"Pescara","addressRegion":"PE","addressCountry":"IT"},"telephone":"+39 085 68782","email":"pescara@labottegadeiparrucchieri.it","openingHours":"Mo-Sa 09:00-19:00","sameAs":["https://www.instagram.com/la.bottega.dei.parrucchieri/","https://www.facebook.com/parrucchieridipescara"]}
 </script>
 <style>
-@font-face{font-family:Geist;src:url(fonts/Geist.woff2) format("woff2");font-weight:300 700;font-display:swap}
-@font-face{font-family:"Geist Mono";src:url(fonts/GeistMono.woff2) format("woff2");font-weight:400 500;font-display:swap}
+@font-face{font-family:Archivo;src:url(fonts/Archivo.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
 :root{
-  --gesso:#F3F3F1;--cemento:#E3E2DF;--ink:#141414;--grigio:#6B6A67;--rosso:#C81E2B;--bianco:#FBFBFA;
-  --r:18px;--pad:clamp(16px,5vw,56px);--max:1200px;
-  --ease:cubic-bezier(.2,.7,.1,1);
+  --rosso:#D71F29;--notte:#0A0A0B;--carta:#F2F2F0;--grafite:#4E5160;--linea:#D5D7DE;
+  --pad:clamp(18px,5vw,64px);--max:1280px;--r:22px;--ease:cubic-bezier(.2,.75,.1,1);
   color-scheme:light;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--gesso);color:var(--ink);font:400 16px/1.55 Geist,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--carta);color:var(--notte);font:400 16px/1.55 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;font-stretch:100%;-webkit-font-smoothing:antialiased;overflow-x:clip}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
-button,input,select,textarea{font:inherit;color:inherit}
+button,input,select{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--rosso);outline-offset:3px;border-radius:6px}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-.mono{font-family:"Geist Mono",ui-monospace,monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
-.kick{display:flex;align-items:center;gap:10px;color:var(--grigio);margin:0 0 18px}
-.kick::before{content:"";width:22px;height:1px;background:currentColor}
-h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:.98;margin:0}
-h2{font-size:clamp(2.2rem,9vw,4.6rem)}
-h3{font-size:1.25rem;letter-spacing:-.02em;line-height:1.15}
-.lead{font-size:clamp(1.05rem,3.6vw,1.25rem);line-height:1.5;color:#2c2c2b;max-width:34em}
-.red{color:var(--rosso)}
-section{padding:clamp(72px,14vw,140px) 0}
-.tag{display:inline-block;border:1px solid currentColor;border-radius:99px;padding:3px 9px;color:var(--grigio)}
-.note{color:var(--grigio);font-size:.8rem;margin-top:14px}
-
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 24px;border-radius:99px;border:1px solid var(--ink);background:transparent;font-weight:500;text-decoration:none;cursor:pointer;transition:transform .2s var(--ease),background .2s,color .2s}
-.btn:active{transform:scale(.97)}
-.btn.p{background:var(--rosso);border-color:var(--rosso);color:#fff}
-.btn.i{background:var(--ink);border-color:var(--ink);color:var(--gesso)}
-@media (hover:hover){.btn:hover{background:var(--ink);color:var(--gesso)}.btn.p:hover{background:#a8161f;border-color:#a8161f}}
-
-/* reveal */
-.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--d,0)*70ms)}
+.x{font-stretch:125%;font-weight:800;text-transform:uppercase;letter-spacing:-.025em;line-height:.86;margin:0}
+.lab{font-stretch:75%;font-weight:600;font-size:.74rem;letter-spacing:.07em;text-transform:uppercase}
+h2.x{font-size:clamp(2.5rem,11.5vw,7.2rem)}
+h3{margin:0;font-weight:700;font-size:1.2rem;letter-spacing:-.01em;line-height:1.15}
+p{margin:0 0 14px}
+section{padding:clamp(84px,16vw,160px) 0}
+.muted{color:var(--grafite)}
+.note{color:var(--grafite);font-size:.8rem;margin-top:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:99px;border:0;background:var(--rosso);color:#fff;font-weight:700;font-stretch:110%;text-decoration:none;cursor:pointer;transition:transform .2s var(--ease),background .2s,color .2s}
+.btn:active{transform:scale(.96)}
+.btn.w{background:#fff;color:var(--rosso)}
+@media (hover:hover){.btn:hover{background:var(--notte);color:#fff}}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--d,0)*70ms)}
 .js .rv.in{opacity:1;transform:none}
 
 /* header */
-.top{position:absolute;inset:0 0 auto;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:calc(env(safe-area-inset-top) + 14px) var(--pad) 0}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;background:rgba(243,243,241,.88);padding:6px 14px 6px 8px;border-radius:99px}
-.fm{display:block;background:var(--rosso);-webkit-mask:url(img/f.png) center/contain no-repeat;mask:url(img/f.png) center/contain no-repeat}
-.brand .fm{width:40px;height:25px}
-.brand b{font-weight:500;font-size:.82rem;letter-spacing:-.01em;line-height:1.05}
-.top .btn{min-height:40px;padding:0 16px;font-size:.9rem;background:rgba(243,243,241,.85);border-color:transparent}
+.top{position:absolute;z-index:30;inset:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:calc(env(safe-area-inset-top) + 12px) var(--pad) 0;color:#fff}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.fm{display:block;background:currentColor;-webkit-mask:url(img/f.png) center/contain no-repeat;mask:url(img/f.png) center/contain no-repeat}
+.brand .fm{width:42px;height:26px}
+.brand b{font-stretch:75%;font-weight:700;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;line-height:1.05}
+.top .btn{min-height:42px;padding:0 18px;font-size:.88rem}
 
-/* hero */
-.hero{position:relative;height:100svh;min-height:600px;max-height:1100px;overflow:hidden;padding:0;background:var(--cemento)}
-.hero .ph,.hero canvas{position:absolute;inset:0;width:100%;height:100%}
-.hero .ph{object-fit:cover}
-.hero canvas{opacity:0;transition:opacity .9s}
-.hero canvas.on{opacity:1}
-.hero::after{content:"";position:absolute;inset:auto 0 0;height:62%;background:linear-gradient(to top,var(--gesso) 30%,rgba(243,243,241,.82) 55%,rgba(243,243,241,0));pointer-events:none}
-.hero .in{position:absolute;inset:auto 0 0;z-index:2;padding:0 var(--pad) calc(28px + env(safe-area-inset-bottom));max-width:var(--max);margin:0 auto}
-.hero h1{font-size:clamp(3rem,14.5vw,7.4rem);letter-spacing:-.055em;line-height:.9}
-.hero h1 span{display:block}
-.hero h1 em{font-style:normal;color:var(--rosso)}
-.js .hero h1 span{opacity:0;transform:translateY(.35em);animation:up 1s var(--ease) forwards;animation-delay:calc(.15s + var(--d)*.12s)}
-@keyframes up{to{opacity:1;transform:none}}
-.hero .kick{margin:0 0 14px}
-.hero p{margin:18px 0 22px;max-width:30em;color:#2c2c2b}
-.hero .cta{display:flex;gap:10px;flex-wrap:wrap}
-.hero .gen{position:absolute;z-index:2;right:var(--pad);top:calc(env(safe-area-inset-top) + 68px);background:rgba(243,243,241,.8);padding:3px 8px;border-radius:99px;color:var(--grigio);font-size:.58rem}
+/* stage 3D */
+.stage{position:relative;height:560svh;background:var(--notte);color:#fff;padding:0}
+.pin{position:sticky;top:0;height:100svh;overflow:hidden}
+.stage .pin{background:radial-gradient(110% 60% at 50% 112%,rgba(215,31,41,.55) 0%,rgba(215,31,41,0) 62%),radial-gradient(80% 50% at 50% -12%,#2a2a2e 0%,rgba(42,42,46,0) 62%),var(--notte)}
+.pin canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y}
+.grid{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,.09) 1px,transparent 1px) 0 0/25% 100%,linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px) 0 0/100% 33.333%}
+.step{position:absolute;left:var(--pad);right:var(--pad);opacity:0;will-change:opacity,transform;pointer-events:none}
+.step.on{pointer-events:auto}
+.s0{top:calc(env(safe-area-inset-top) + 84px);bottom:calc(30px + env(safe-area-inset-bottom));display:flex;flex-direction:column}
+.s0 .x{font-size:clamp(3rem,14.6vw,11rem)}
+.s0 .sub{display:flex;justify-content:space-between;gap:12px;margin-top:14px;max-width:62rem}
+.s0 .sub span{max-width:15em}
+.s0 .cta{margin-top:auto;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.hintsc{display:flex;align-items:center;gap:10px}
+.hintsc i{width:1.5px;height:34px;background:rgba(255,255,255,.35);position:relative;overflow:hidden}
+.hintsc i::after{content:"";position:absolute;inset:0;background:#fff;animation:drip 1.8s var(--ease) infinite}
+@keyframes drip{from{transform:translateY(-100%)}to{transform:translateY(100%)}}
+.low{bottom:calc(34px + env(safe-area-inset-bottom))}
+.low .x{font-size:clamp(2.4rem,11vw,6.6rem)}
+.low p{max-width:26em;margin-top:14px;color:rgba(255,255,255,.84)}
+.chipc{display:inline-flex;align-items:center;gap:10px}
+.chipc i{width:14px;height:14px;border-radius:50%;background:var(--sw,#553623);box-shadow:0 0 0 2px rgba(255,255,255,.75)}
+.cutline{position:absolute;left:0;right:0;height:2px;margin-top:-1px;background:#fff;box-shadow:0 0 18px 4px rgba(255,255,255,.8);opacity:0;transform:scaleX(0);pointer-events:none}
+.cutline.go{animation:cut .7s var(--ease)}
+@keyframes cut{0%{opacity:1;transform:scaleX(0);transform-origin:left}40%{opacity:1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}
+.bar{position:absolute;right:calc(var(--pad) - 8px);top:50%;width:2px;height:120px;margin-top:-60px;background:rgba(255,255,255,.2)}
+.bar i{position:absolute;inset:0;background:#fff;transform-origin:top;transform:scaleY(var(--p,0))}
+.nogl .stage{height:auto}
+.nogl .stage .pin{position:relative;height:auto;padding:120px 0 60px}
+.nogl .pin canvas,.nogl .cutline,.nogl .bar,.nogl .hintsc{display:none}
+.nogl .step{position:relative;inset:auto;opacity:1!important;transform:none!important;margin:0 var(--pad) 70px;pointer-events:auto}
+.nogl .s0 .cta{margin-top:30px}
 
 /* credenziali */
-.cred{padding:26px 0 0}
-.cred ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--cemento)}
-.cred li{padding:18px 12px 18px 0;border-bottom:1px solid var(--cemento)}
-.cred li:nth-child(odd){border-right:1px solid var(--cemento)}
-.cred li:nth-child(even){padding-left:14px}
-.cred b{display:block;font-size:1.7rem;font-weight:600;letter-spacing:-.04em;line-height:1}
-.cred span{display:block;margin-top:6px;font-size:.84rem;color:var(--grigio);line-height:1.35}
+.cred{background:var(--notte);color:#fff}
+.cred ul{list-style:none;margin:0 auto;padding:0 var(--pad);max-width:var(--max);display:grid;grid-template-columns:1fr 1fr}
+.cred li{padding:26px 0 24px;border-bottom:1px solid #22242f}
+.cred li:nth-child(odd){padding-right:14px;border-right:1px solid #22242f}
+.cred li:nth-child(even){padding-left:16px}
 .cred li:last-child{grid-column:1/-1;border-right:0;padding-left:0}
+.cred b{display:block;font-stretch:125%;font-weight:800;font-size:2rem;letter-spacing:-.03em;line-height:1}
+.cred span{display:block;margin-top:8px;color:#a4a8bd;font-size:.86rem;line-height:1.35}
 
 /* fabio */
-.fab{display:grid;gap:40px}
-.fab .pic{position:relative;margin:0 auto;width:min(100%,460px)}
-.fab .pic .fm{position:absolute;width:118%;aspect-ratio:700/430;left:-26%;top:-16%;opacity:.95;z-index:0}
-.fab .pic img{position:relative;z-index:1;border-radius:var(--r);aspect-ratio:1;object-fit:cover;width:100%}
-.fab .pic figcaption{position:relative;z-index:1;margin-top:10px;color:var(--grigio)}
-.fab h2{margin-bottom:26px}
-.fab h2 em{font-style:normal;color:var(--rosso)}
-.fab .txt p{margin:0 0 16px;font-size:1.05rem;max-width:36em}
-.fab .txt p.kick{font-size:.72rem}
-.fab .txt .first{font-size:1.2rem;line-height:1.45}
-.time{list-style:none;padding:0;margin:30px 0 0;border-top:1px solid var(--ink)}
-.time li{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--cemento);align-items:baseline}
-.time li b{font-weight:500}
-.quote{margin:30px 0 0;padding:0 0 0 18px;border-left:2px solid var(--rosso);font-size:1.1rem}
-.quote cite{display:block;margin-top:8px;font-style:normal;color:var(--grigio)}
+.fab-h{font-size:clamp(2.9rem,15.5vw,10rem)}
+.fab-h span{display:block}
+.fab-h .b{color:var(--rosso)}
+.fab{display:grid;gap:44px;margin-top:40px}
+.por{position:relative;width:min(88%,440px);margin:0 auto;aspect-ratio:1}
+.por::before{content:"";position:absolute;inset:-6%;border-radius:50%;background:conic-gradient(from 200deg,var(--rosso),#ff7a80,#fff,var(--rosso) 55%,#0a0a0b 75%,var(--rosso));animation:spin 14s linear infinite}
+.por img{position:relative;width:100%;height:100%;object-fit:cover;border-radius:50%}
+.por .fm{position:absolute;right:-6%;bottom:0;width:36%;aspect-ratio:700/430;color:#fff;z-index:2;filter:drop-shadow(0 4px 12px rgba(0,0,0,.35))}
+@keyframes spin{to{transform:rotate(1turn)}}
+.bio p{font-size:1.06rem;max-width:36em}
+.bio .first{font-size:1.28rem;line-height:1.42;font-weight:500}
+.tl{list-style:none;padding:0;margin:34px 0 0;border-top:2px solid var(--notte)}
+.tl li{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:15px 0;border-bottom:1px solid var(--linea);align-items:baseline}
+.tl b{font-stretch:125%;font-weight:800}
+.quote{margin:34px 0 0;font-size:1.25rem;line-height:1.35;font-weight:500;max-width:28em}
+.quote cite{display:block;margin-top:10px;font-style:normal;color:var(--grafite)}
 
-/* effetto bottega */
-.eff{background:var(--ink);color:var(--gesso)}
-.eff .kick{color:#a3a29e}
-.eff .lead{color:#d6d5d1;margin-top:18px}
-.eb-grid{display:grid;gap:28px;margin-top:34px}
-.eb{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:3/4;background:#2a2a29;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:crosshair;max-width:560px;width:100%;margin:0 auto}
-.eb img,.eb canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.eb .lab{position:absolute;left:12px;top:12px;z-index:2;background:rgba(20,20,20,.7);color:#fff;padding:5px 10px;border-radius:99px}
-.eb .lab.r{left:auto;right:12px;background:var(--rosso);opacity:0;transition:opacity .4s}
-.eb.done .lab.r{opacity:1}
-.eb .hint{position:absolute;inset:auto 12px 12px;z-index:2;text-align:center;background:rgba(20,20,20,.72);color:#fff;border-radius:12px;padding:10px;font-size:.9rem;transition:opacity .4s}
-.eb.touched .hint{opacity:0}
-.meter{display:flex;align-items:center;gap:12px;margin:0 0 18px}
-.meter i{flex:1;height:3px;background:#3a3a39;border-radius:3px;overflow:hidden}
-.meter i::after{content:"";display:block;height:100%;width:calc(var(--p,0)*1%);background:linear-gradient(90deg,#c98a4b,#f3d29a);transition:width .25s}
-.eb-side .row{display:flex;gap:10px;flex-wrap:wrap}
-.eb-side .btn{border-color:#5a5a58;color:var(--gesso)}
-.eb-side .btn.p{border-color:var(--rosso)}
-.eb-done{margin-top:22px;padding:18px;border:1px solid #3a3a39;border-radius:var(--r);display:none}
-.eb-done.on{display:block;animation:pop .6s var(--ease) both}
-@keyframes pop{from{opacity:0;transform:translateY(12px)}}
-.eb-done p{margin:0 0 14px}
-.eff .note{color:#9d9c98}
+/* effetto bottega: tendina guidata dallo scroll */
+.wipe{position:relative;height:260svh;background:var(--notte);color:#fff;padding:0}
+.wipe .pin{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:calc(env(safe-area-inset-top) + 64px) var(--pad) calc(22px + env(safe-area-inset-bottom))}
+.wipe .x{font-size:clamp(2.2rem,10.5vw,6rem)}
+.wipe .kk{color:#FF6B72;margin-bottom:10px}
+.ba{position:relative;flex:1;min-height:0;max-height:640px;width:100%;max-width:520px;margin:0 auto;border-radius:var(--r);overflow:hidden;background:#15161f}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .dopo{clip-path:inset(0 0 0 calc(var(--w,100)*1%))}
+.ba .blade{position:absolute;top:0;bottom:0;left:calc(var(--w,100)*1%);width:3px;margin-left:-1.5px;background:linear-gradient(#fff,#ffb3b7,#fff);box-shadow:0 0 20px rgba(255,255,255,.6)}
+.ba .t{position:absolute;top:12px;padding:5px 11px;border-radius:99px;background:rgba(7,8,15,.7)}
+.ba .t.l{left:12px}.ba .t.r{right:12px;background:var(--rosso)}
+.wipe .foot{display:flex;justify-content:space-between;align-items:center;gap:14px;max-width:520px;width:100%;margin:0 auto}
+.wipe .foot p{margin:0;color:#a4a8bd;font-size:.84rem}
+.nogl .wipe{height:auto}.nogl .wipe .pin{position:relative;height:auto}.nogl .ba{flex:none;aspect-ratio:3/4;--w:50}
 
 /* servizi */
-.svc{list-style:none;margin:36px 0 0;padding:0;border-top:1px solid var(--ink)}
-.svc li{border-bottom:1px solid var(--cemento)}
-.svc button{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:20px 0;cursor:pointer}
+.svc{list-style:none;margin:40px 0 0;padding:0;border-top:2px solid var(--notte)}
+.svc li{border-bottom:1px solid var(--linea)}
+.svc button{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:40px 1fr auto;gap:2px 10px;padding:22px 0;cursor:pointer;align-items:baseline}
 .svc button:focus-visible{outline:2px solid var(--rosso);outline-offset:2px}
-.svc h3{font-size:clamp(1.2rem,4.6vw,1.6rem)}
-.svc .pr{align-self:center;white-space:nowrap;color:var(--grigio)}
-.svc p{grid-column:1/-1;margin:0;color:var(--grigio);font-size:.95rem;max-width:40em}
-.svc .star h3::after{content:"il più richiesto";margin-left:10px;vertical-align:middle;font:500 .62rem/1 "Geist Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--rosso);padding:4px 8px;border-radius:99px;white-space:nowrap}
+.svc .n{color:var(--rosso)}
+.svc h3{font-stretch:120%;font-weight:800;text-transform:uppercase;font-size:clamp(1.1rem,5vw,2rem);letter-spacing:-.02em;transition:color .2s}
+.svc .pr{color:var(--grafite)}
+.svc p{grid-column:2/-1;margin:6px 0 0;color:var(--grafite);font-size:.95rem;max-width:40em}
 @media (hover:hover){.svc button:hover h3{color:var(--rosso)}}
 
-/* scroller */
-.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--pad) 10px;margin:34px calc(var(--pad)*-1) 0;scrollbar-width:none;overscroll-behavior-x:contain;scroll-padding:0 var(--pad)}
-.rail::-webkit-scrollbar{display:none}
-.rail>*{scroll-snap-align:start;flex:0 0 auto}
-.work{width:min(72vw,300px);margin:0}
-.work img{border-radius:var(--r);aspect-ratio:3/4;object-fit:cover;width:100%;background:var(--cemento)}
-.work figcaption{margin-top:10px;display:flex;justify-content:space-between;gap:8px}
-.work b{font-weight:500}
+/* galleria orizzontale guidata dallo scroll */
+.track{position:relative;height:340svh;padding:0}
+.track .pin{display:flex;flex-direction:column;justify-content:center;padding:calc(env(safe-area-inset-top) + 60px) 0 calc(20px + env(safe-area-inset-bottom))}
+.track .head{padding:0 var(--pad);margin-bottom:22px}
+.row{display:flex;gap:14px;padding:0 var(--pad);will-change:transform;width:max-content}
+.card{margin:0;width:min(72vw,400px);flex:0 0 auto}
+.card img{width:100%;aspect-ratio:3/4;max-height:56svh;object-fit:cover;border-radius:var(--r);background:var(--linea)}
+.card figcaption{display:flex;justify-content:space-between;margin-top:10px}
+.card b{font-stretch:120%;font-weight:800;text-transform:uppercase}
+.track .note{padding:0 var(--pad)}
+.nogl .track{height:auto}.nogl .track .pin{position:relative;height:auto}.nogl .row{overflow-x:auto;width:auto;scroll-snap-type:x mandatory}.nogl .card{scroll-snap-align:start}
 
 /* team */
-.team{background:var(--cemento)}
-.team .lead{margin-top:16px}
-.mate{width:min(64vw,250px);background:var(--bianco);border-radius:var(--r);padding:18px;display:flex;flex-direction:column}
-.mate img{width:96px;height:96px;border-radius:50%;object-fit:cover;background:var(--cemento)}
-.mate h3{margin-top:16px}
-.mate p{margin:6px 0 16px;color:var(--grigio);font-size:.9rem;flex:1}
-.mate .btn{min-height:42px;font-size:.88rem;padding:0 14px}
+.team{background:var(--rosso);color:#fff}
+.team .muted{color:#fff}
+.crew{display:grid;grid-template-columns:1fr 1fr;gap:28px 14px;margin-top:44px}
+.mate{all:unset;box-sizing:border-box;cursor:pointer;display:block;text-align:left}
+.mate img{width:100%;aspect-ratio:1;border-radius:50%;object-fit:cover;background:#b3151e;transition:transform .5s var(--ease)}
+.mate h3{margin-top:14px;font-stretch:120%;font-weight:800;text-transform:uppercase;font-size:1.15rem}
+.mate span{display:block;color:#fff;font-size:.86rem;margin-top:4px}
+.mate em{display:inline-block;margin-top:10px;font-style:normal;font-weight:700;border-bottom:1.5px solid #fff}
+.mate:focus-visible{outline:2px solid #fff;outline-offset:6px;border-radius:12px}
+@media (hover:hover){.mate:hover img{transform:scale(1.04) rotate(-2deg)}}
 
 /* salone */
-.room{width:min(80vw,380px);margin:0}
-.room img{border-radius:var(--r);aspect-ratio:3/4;object-fit:cover;width:100%;background:var(--cemento)}
-.room figcaption{margin-top:10px}
+.rooms{display:grid;gap:14px;margin-top:40px}
+.rooms figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r)}
+.rooms img{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--linea);transform:scale(1.12) translateY(var(--py,0));will-change:transform}
+.rooms figcaption{position:absolute;left:12px;bottom:12px;background:#fff;padding:6px 12px;border-radius:99px}
 
 /* recensioni */
-.rate{display:flex;gap:28px;margin:30px 0 8px;flex-wrap:wrap}
-.rate b{font-size:clamp(3rem,13vw,5rem);font-weight:600;letter-spacing:-.05em;line-height:1}
-.rate span{display:block;color:var(--grigio)}
-.revs{display:grid;gap:12px;margin-top:28px}
-.rev{background:var(--bianco);border-radius:var(--r);padding:22px;margin:0}
-.rev blockquote{margin:0 0 16px;font-size:1.12rem;line-height:1.4;letter-spacing:-.01em}
-.rev figcaption{color:var(--grigio);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.rev-n{display:flex;gap:30px;flex-wrap:wrap;margin:34px 0 10px}
+.rev-n b{display:block;font-stretch:125%;font-weight:800;font-size:clamp(3.4rem,15vw,6rem);line-height:1;letter-spacing:-.04em;color:var(--rosso)}
+.revs{display:grid;gap:12px;margin-top:30px}
+.rev{margin:0;background:#fff;border-radius:var(--r);padding:24px}
+.rev blockquote{margin:0 0 18px;font-size:1.18rem;line-height:1.38;font-weight:500}
+.rev figcaption{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;color:var(--grafite)}
 
 /* sposa */
-.sp{background:var(--bianco)}
-.sposa{display:grid;gap:30px;align-items:center}
-.sposa img{border-radius:var(--r);aspect-ratio:3/4;object-fit:cover;width:100%;max-width:460px}
-.steps{list-style:none;padding:0;margin:24px 0;counter-reset:s}
-.steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;padding:12px 0;border-bottom:1px solid var(--cemento)}
-.steps li::before{content:"0" counter(s);font:500 .75rem/1.9 "Geist Mono",monospace;color:var(--rosso)}
+.sposa{background:var(--notte);color:#fff}
+.sp{display:grid;gap:34px;align-items:center}
+.sp img{border-radius:var(--r);aspect-ratio:3/4;object-fit:cover;width:100%;max-width:470px}
+.sp .kk{color:#FF6B72}
+.steps{list-style:none;padding:0;margin:26px 0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:42px 1fr;padding:14px 0;border-bottom:1px solid #22242f}
+.steps li::before{content:"0" counter(s);font-stretch:125%;font-weight:800;color:#FF6B72}
+.sposa .note{color:#a4a8bd}
 
 /* per te */
-.forte{display:grid;gap:12px;margin-top:34px}
-.card{background:var(--bianco);border-radius:var(--r);padding:22px}
-.card h3{margin:12px 0 8px}
-.card p{margin:0;color:var(--grigio)}
-.card .intro{margin-bottom:16px}
+.forte{display:grid;gap:12px;margin-top:40px}
+.box{background:#fff;border-radius:var(--r);padding:24px}
+.box .lab{color:var(--rosso)}
+.box h3{margin:12px 0 8px;font-stretch:115%;font-weight:800;font-size:1.3rem}
+.box p{color:var(--grafite)}
+.box .intro{margin-bottom:16px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px;padding:0;border:0;min-width:0}
-.chips legend{padding:0;margin-bottom:8px;font-weight:500}
+.chips legend{padding:0;margin-bottom:8px;font-weight:600}
 .chip{position:relative}
 .chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.chip span{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:99px;border:1px solid #cfceca;background:var(--gesso);font-size:.9rem;transition:background .15s,color .15s,border-color .15s}
-.chip input:checked+span{background:var(--ink);color:var(--gesso);border-color:var(--ink)}
+.chip span{display:inline-flex;align-items:center;min-height:42px;padding:0 15px;border-radius:99px;background:var(--carta);font-size:.9rem;transition:background .15s,color .15s}
+.chip input:checked+span{background:var(--rosso);color:#fff}
 .chip input:focus-visible+span{outline:2px solid var(--rosso);outline-offset:2px}
 
 /* marchi */
 .nt{padding-top:0}
-.brands{display:flex;flex-wrap:wrap;gap:10px 28px;margin:26px 0 0;padding:0;list-style:none;font-size:clamp(1.4rem,6vw,2.4rem);font-weight:600;letter-spacing:-.04em}
-.line{margin-top:34px;padding:22px;border:1px solid var(--ink);border-radius:var(--r)}
-.line p{margin:8px 0 0;color:#2c2c2b}
+.brands{display:flex;flex-wrap:wrap;gap:6px 22px;margin:24px 0 0;padding:0;list-style:none}
+.brands li{font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:clamp(1.6rem,8vw,3.4rem);letter-spacing:-.03em;line-height:1.05}
+.brands li:nth-child(even){color:var(--rosso)}
+.line{margin-top:34px;padding:24px;border-radius:var(--r);background:var(--notte);color:#c9ccda}
+.line .lab{color:#FF6B72}
+.line p{margin:8px 0 0}
+.line b{color:#fff}
 
 /* orari */
-.ore{background:var(--cemento)}
-.hours{list-style:none;padding:0;margin:26px 0 0;border-top:1px solid var(--ink)}
-.hours li{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #cfceca}
-.hours li.today{font-weight:600}
-.hours li.today span:first-child::after{content:"oggi";margin-left:8px;font:500 .62rem/1 "Geist Mono",monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--rosso)}
-.live{display:inline-flex;align-items:center;gap:8px;margin-top:18px}
-.live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--grigio)}
-.live.open::before{background:#1f8a4c;box-shadow:0 0 0 4px rgba(31,138,76,.15)}
+.ore{background:#fff}
+.hours{list-style:none;padding:0;margin:28px 0 0;border-top:2px solid var(--notte)}
+.hours li{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--linea)}
+.hours li.today{color:var(--rosso);font-weight:700}
+.live{display:inline-flex;align-items:center;gap:8px;margin-top:20px}
+.live::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--grafite)}
+.live.open::before{background:#18a35a;box-shadow:0 0 0 4px rgba(24,163,90,.18)}
 .contact{display:grid;gap:10px;margin-top:30px}
-.contact a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 20px;background:var(--bianco);border-radius:var(--r);text-decoration:none;min-width:0}
-.contact a span:last-child{color:var(--grigio);overflow-wrap:anywhere;text-align:right}
+.contact a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 22px;background:var(--carta);border-radius:var(--r);text-decoration:none;min-width:0}
+.contact a span:last-child{color:var(--grafite);overflow-wrap:anywhere;text-align:right}
 
-footer{background:var(--ink);color:#bdbcb8;padding:60px 0 calc(110px + env(safe-area-inset-bottom));font-size:.9rem}
-footer .fm{width:90px;height:56px;background:var(--gesso)}
-footer p{max-width:44em}
-footer .addr{margin-top:22px}
-footer details{margin-top:22px;border-top:1px solid #333;padding-top:16px}
-footer summary{cursor:pointer;color:var(--gesso)}
+footer{background:var(--notte);color:#a4a8bd;padding:64px 0 calc(116px + env(safe-area-inset-bottom));font-size:.9rem}
+footer .big{color:#fff;font-size:clamp(2.6rem,13vw,8rem)}
+footer .fm{width:84px;height:52px;color:var(--rosso);margin-bottom:20px}
+footer p{max-width:46em;margin-top:18px}
+footer details{margin-top:22px;border-top:1px solid #22242f;padding-top:16px}
+footer summary{cursor:pointer;color:#fff}
 footer ul{padding-left:18px}
-footer a{color:var(--gesso)}
+footer a{color:#fff}
 
 /* dock */
-.dock{position:fixed;z-index:20;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:6px;padding:6px;background:rgba(20,20,20,.94);border-radius:99px;transform:translateY(140%);transition:transform .45s var(--ease)}
+.dock{position:fixed;z-index:40;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:6px;padding:6px;background:rgba(7,8,15,.94);border-radius:99px;transform:translateY(150%);transition:transform .45s var(--ease)}
 .dock.on{transform:none}
-.dock a,.dock button{min-height:48px;border-radius:99px;display:flex;align-items:center;justify-content:center;color:var(--gesso);text-decoration:none;font-weight:500;font-size:.92rem;border:0;background:transparent;cursor:pointer}
-.dock .p{background:var(--rosso);color:#fff}
+.dock a,.dock button{min-height:48px;border-radius:99px;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-weight:700;font-size:.92rem;border:0;background:transparent;cursor:pointer}
+.dock .p{background:var(--rosso)}
 
 /* sheet */
-dialog{border:0;padding:0;margin:auto auto 0;width:100%;max-width:560px;max-height:92svh;border-radius:24px 24px 0 0;background:var(--gesso);color:var(--ink)}
-dialog::backdrop{background:rgba(20,20,20,.5)}
+dialog{border:0;padding:0;margin:auto auto 0;width:100%;max-width:560px;max-height:92svh;border-radius:26px 26px 0 0;background:var(--carta);color:var(--notte)}
+dialog::backdrop{background:rgba(7,8,15,.55)}
 dialog[open]{animation:sheet .45s var(--ease)}
 @keyframes sheet{from{transform:translateY(40px);opacity:0}}
 .sh{padding:22px var(--pad) calc(24px + env(safe-area-inset-bottom));overflow:auto;max-height:92svh}
 .sh header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.sh h2{font-size:1.9rem}
-.x{width:44px;height:44px;border-radius:50%;border:1px solid #cfceca;background:transparent;cursor:pointer;font-size:1.3rem;line-height:1}
+.sh h2{font-size:2.2rem}
+.xbtn{width:44px;height:44px;border-radius:50%;border:0;background:#fff;cursor:pointer;font-size:1.3rem;line-height:1}
 .f{display:block;margin-bottom:14px;min-width:0}
-.f>span{display:block;font-weight:500;margin-bottom:6px}
-.f input,.f select{width:100%;min-height:50px;padding:0 14px;border-radius:12px;border:1px solid #cfceca;background:var(--bianco);font-size:16px}
+.f>span{display:block;font-weight:600;margin-bottom:6px}
+.f input,.f select{width:100%;min-height:52px;padding:0 14px;border-radius:14px;border:1.5px solid var(--linea);background:#fff;font-size:16px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .chk{display:flex;gap:10px;align-items:flex-start;margin:4px 0 16px;font-size:.92rem}
 .chk input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--rosso);flex:0 0 auto}
-.dep{display:none;padding:14px;border-radius:12px;background:#fbeeee;color:#6e1017;font-size:.9rem;margin:0 0 14px}
+.dep{display:none;padding:14px;border-radius:14px;background:#fde8e9;color:#8a0f16;font-size:.9rem;margin:0 0 14px}
 .dep.on{display:block}
-.full{width:100%}
-.center{text-align:center}
-.ok{text-align:center;padding:26px 0 8px}
-.ok .fm{width:120px;height:74px;margin:0 auto 18px;animation:pop .6s var(--ease) both}
-.ok p{color:var(--grigio)}
-#toast{position:fixed;z-index:30;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translate(-50%,20px);opacity:0;background:var(--ink);color:var(--gesso);padding:12px 18px;border-radius:14px;font-size:.9rem;width:max-content;max-width:calc(100% - 32px);transition:opacity .3s,transform .3s;pointer-events:none}
+.full{width:100%}.center{text-align:center}
+.ok{text-align:center;padding:24px 0 8px}
+.ok .fm{width:110px;height:68px;margin:0 auto 18px;color:var(--rosso);animation:pop .6s var(--ease) both}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.9)}}
+.ok h2{font-size:2rem}
+.ok p{color:var(--grafite);margin-top:12px}
+#toast{position:fixed;z-index:50;left:50%;bottom:calc(86px + env(safe-area-inset-bottom));transform:translate(-50%,20px);opacity:0;background:var(--notte);color:#fff;padding:12px 18px;border-radius:14px;font-size:.9rem;width:max-content;max-width:calc(100% - 32px);transition:opacity .3s,transform .3s;pointer-events:none}
 #toast.on{opacity:1;transform:translate(-50%,0)}
 
 @media (min-width:760px){
   .cred ul{grid-template-columns:repeat(5,1fr)}
-  .cred li,.cred li:nth-child(even){padding:22px 16px;border-right:1px solid var(--cemento)}
+  .cred li,.cred li:nth-child(odd),.cred li:nth-child(even){padding:30px 18px;border-right:1px solid #22242f;border-bottom:0}
   .cred li:first-child{padding-left:0}
-  .cred li:last-child{grid-column:auto;border-right:0;padding-left:16px}
-  .fab{grid-template-columns:1fr 1.1fr;align-items:center;gap:70px}
-  .eb-grid{grid-template-columns:1fr 1fr;align-items:center}
+  .cred li:last-child{grid-column:auto;border-right:0}
+  .fab{grid-template-columns:.9fr 1.1fr;align-items:start;gap:80px}
+  .crew{grid-template-columns:repeat(3,1fr);gap:40px 28px}
+  .rooms{grid-template-columns:repeat(3,1fr)}
   .revs{grid-template-columns:repeat(2,1fr)}
-  .sposa{grid-template-columns:1fr 1fr}
+  .sp{grid-template-columns:1fr 1fr}
   .forte{grid-template-columns:1.3fr 1fr 1fr;align-items:start}
   .contact{grid-template-columns:repeat(3,1fr)}
   .dock{display:none}
-  dialog{margin:auto;border-radius:24px}
-  .work{width:280px}
-  .room{width:360px}
+  dialog{margin:auto;border-radius:26px}
+  .low{max-width:640px}
+  .card{width:min(34vw,420px)}
 }
-@media (min-width:1100px){
-  .rail{margin-left:0;margin-right:0;padding-left:0;padding-right:0;overflow:visible;flex-wrap:wrap}
-  .team .rail{display:grid;grid-template-columns:repeat(6,1fr)}
-  .mate{width:auto}
-}
+@media (min-width:1100px){.crew{grid-template-columns:repeat(6,1fr)}}
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .js .rv,.js .hero h1 span{opacity:1;transform:none}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
 }
 </style>
 </head>
 <body>
 
 <header class="top">
-  <a class="brand" href="#" aria-label="La Bottega dei Parrucchieri, inizio pagina"><i class="fm" aria-hidden="true"></i><b>la bottega<br>dei parrucchieri</b></a>
-  <button class="btn" type="button" data-book>Prenota</button>
+  <a class="brand" href="#" aria-label="La Bottega dei Parrucchieri, inizio pagina"><i class="fm" aria-hidden="true"></i><b>La Bottega<br>dei parrucchieri</b></a>
+  <button class="btn w" type="button" data-book>Prenota</button>
 </header>
 
 <main>
-<section class="hero" id="hero" aria-labelledby="h1">
-  <img class="ph" id="heroImg" src="img/hero.webp" width="880" height="1168" alt="Capelli lunghi castani con schiariture calde, visti di spalle" fetchpriority="high">
-  <canvas id="gl" aria-hidden="true"></canvas>
-  <span class="gen mono">Immagine generata</span>
-  <div class="in">
-    <p class="mono kick">Pescara · Piazza Garibaldi 13</p>
-    <h1 id="h1"><span style="--d:0">Capelli</span><span style="--d:1">baciati</span><span style="--d:2">dal <em>sole.</em></span></h1>
-    <p>Il salone di Fabio D'Attanasio, Parrucchiere dell'anno 2023. Donna e uomo, dal 2017 nel cuore di Portanuova.</p>
-    <div class="cta"><button class="btn p" type="button" data-book>Prenota online</button><a class="btn" href="tel:+3908568782">Chiama</a></div>
+<section class="stage" id="stage" aria-label="La Bottega: il taglio e il colore">
+  <div class="pin">
+    <canvas id="gl" aria-hidden="true"></canvas>
+    <div class="grid" aria-hidden="true"></div>
+    <div class="cutline" id="cutline" aria-hidden="true"></div>
+
+    <div class="step s0" data-a="-1" data-b=".13">
+      <p class="lab">Pescara · Piazza Garibaldi 13 · dal 2017</p>
+      <h1 class="x">La<br>Bottega</h1>
+      <div class="sub lab"><span>dei parrucchieri</span><span>Fabio D'Attanasio, Parrucchiere dell'anno 2023</span></div>
+      <div class="cta"><button class="btn w" type="button" data-book>Prenota online</button><span class="hintsc lab"><i></i>Scorri, si taglia</span></div>
+    </div>
+    <div class="step low" data-a=".19" data-b=".41">
+      <p class="lab">01 · Il taglio</p>
+      <h2 class="x">Un gesto.<br>Netto.</h2>
+      <p>Taglio donna, uomo e sposa. La forma prima di tutto, poi la piega che dura.</p>
+    </div>
+    <div class="step low" data-a=".44" data-b=".57">
+      <h2 class="x">Tagliato.</h2>
+      <p>Dalla lunghezza al caschetto in un colpo di forbice. Il resto è colore.</p>
+    </div>
+    <div class="step low" data-a=".6" data-b=".88">
+      <p class="lab">02 · Il colore</p>
+      <p class="chipc lab" style="margin:12px 0 14px"><i id="sw"></i><span id="pal">Castano naturale</span></p>
+      <h2 class="x">Luce,<br>rame, prugna.</h2>
+      <p>Wella Professionals Official Salon. Dal naturale al Colorful, sempre su misura.</p>
+    </div>
+    <div class="step low" data-a=".91" data-b="2">
+      <h2 class="x">Tocca<br>a te.</h2>
+      <p>Scegli il servizio e la persona. Ti confermiamo l'orario.</p>
+      <button class="btn w" type="button" data-book>Prenota il tuo taglio</button>
+    </div>
+    <div class="bar" aria-hidden="true"><i id="bar"></i></div>
   </div>
 </section>
 
-<div class="wrap cred" aria-label="Riconoscimenti">
+<div class="cred" aria-label="Riconoscimenti">
   <ul>
     <li class="rv"><b>2023</b><span>Parrucchiere dell'anno, Giornale del Parrucchiere</span></li>
     <li class="rv" style="--d:1"><b>Wella</b><span>Professionals Official Salon</span></li>
@@ -311,83 +342,72 @@ dialog[open]{animation:sheet .45s var(--ease)}
 </div>
 
 <section id="fabio" aria-labelledby="h-fabio">
-  <div class="wrap fab">
-    <figure class="pic rv">
-      <i class="fm" aria-hidden="true"></i>
-      <img src="img/fabio.webp" width="700" height="700" alt="Fabio D'Attanasio, fondatore della Bottega dei Parrucchieri" loading="lazy" decoding="async">
-      <figcaption class="mono">Fabio D'Attanasio · foto dal sito del salone</figcaption>
-    </figure>
-    <div class="txt">
-      <p class="mono kick rv">Il fondatore</p>
-      <h2 id="h-fabio" class="rv">Trent'anni di forbici. <em>Una firma.</em></h2>
-      <p class="rv first">Fabio D'Attanasio è nato e cresciuto a Villa Raspa di Spoltore. Lì ha guidato per tanti anni il suo primo salone, poi nel 2017 ha portato tutto in Piazza Garibaldi e ha fondato La Bottega dei Parrucchieri.</p>
-      <p class="rv">Da allora il progetto ha attraversato il mare, con un secondo salone a Las Palmas, nelle Canarie. Nel 2023 il Giornale del Parrucchiere lo ha nominato Parrucchiere dell'anno per il lavoro femminile di taglio, colore e piega. Porta la sua squadra nei backstage della Milano Fashion Week e ha creato una linea di prodotti fitobiologici con il nome del salone.</p>
-      <p class="rv">In salone è il punto di riferimento: quello a cui chiedi il taglio giusto o il colore che ti somiglia. Ed è una scuola: ha formato una squadra di specialisti, e anche suo figlio Thomas, che oggi ha il suo barber studio a Pescara.</p>
-      <ol class="time mono rv" aria-label="Tappe">
-        <li><b>Spoltore</b><span>Il primo salone, a Villa Raspa</span></li>
-        <li><b>2017</b><span>Nasce La Bottega, Piazza Garibaldi</span></li>
-        <li><b>Las Palmas</b><span>Il salone alle Canarie</span></li>
-        <li><b>2023</b><span>Parrucchiere dell'anno</span></li>
-        <li><b>2024 · 25</b><span>Milano Fashion Week</span></li>
-      </ol>
-      <blockquote class="quote rv">"Un vero e proprio mentore a cui affidarsi per trovare il perfetto hair look."<cite class="mono">Dal sito del salone</cite></blockquote>
+  <div class="wrap">
+    <p class="lab muted rv">Il fondatore</p>
+    <h2 class="x fab-h rv" id="h-fabio"><span>Fabio</span><span class="b">D'Attanasio</span></h2>
+    <div class="fab">
+      <div class="por rv"><img src="img/fabio.webp" width="700" height="700" alt="Fabio D'Attanasio, fondatore della Bottega dei Parrucchieri" loading="lazy" decoding="async"><i class="fm" aria-hidden="true"></i></div>
+      <div class="bio">
+        <p class="first rv">Trent'anni di forbici e una firma sola. Fabio è nato e cresciuto a Villa Raspa di Spoltore, dove per tanti anni ha guidato il suo primo salone. Nel 2017 ha portato tutto in Piazza Garibaldi e ha fondato La Bottega dei Parrucchieri.</p>
+        <p class="rv">Da lì il progetto ha attraversato il mare, con un secondo salone a Las Palmas, nelle Canarie. Nel 2023 il Giornale del Parrucchiere lo ha nominato Parrucchiere dell'anno per il lavoro femminile di taglio, colore e piega. Porta la sua squadra nei backstage della Milano Fashion Week e ha creato una linea di prodotti fitobiologici con il nome del salone.</p>
+        <p class="rv">In salone è il punto di riferimento: quello a cui chiedi il taglio giusto o il colore che ti somiglia. Ed è una scuola: ha formato una squadra di specialisti, e anche suo figlio Thomas, che oggi ha il suo barber studio a Pescara.</p>
+        <ol class="tl rv" aria-label="Tappe">
+          <li><b>Spoltore</b><span>Il primo salone, a Villa Raspa</span></li>
+          <li><b>2017</b><span>Nasce La Bottega, Piazza Garibaldi</span></li>
+          <li><b>Canarie</b><span>Il salone di Las Palmas</span></li>
+          <li><b>2023</b><span>Parrucchiere dell'anno</span></li>
+          <li><b>MFW</b><span>Backstage Milano Fashion Week, 2024 e 2025</span></li>
+        </ol>
+        <blockquote class="quote rv">"Un vero e proprio mentore a cui affidarsi per trovare il perfetto hair look."<cite class="lab">Dal sito del salone</cite></blockquote>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="eff" id="effetto" aria-labelledby="h-eff">
-  <div class="wrap">
-    <p class="mono kick rv">Il servizio firma</p>
-    <h2 id="h-eff" class="rv">Effetto Bottega.<br>Dipingi la luce.</h2>
-    <p class="lead rv">Schiariture baciate dal sole, sfumate a mano. È il servizio più richiesto del salone. Prova tu: passa il dito sui capelli.</p>
-    <div class="eb-grid">
-      <div class="eb rv" id="eb">
-        <img src="img/prima.webp" width="760" height="1009" alt="Capelli castani uniformi, prima del trattamento" loading="lazy" decoding="async">
-        <canvas id="ebc" aria-hidden="true"></canvas>
-        <span class="lab mono">Prima</span><span class="lab r mono">Dopo</span>
-        <span class="hint">Scorri il dito da un lato all'altro sui capelli</span>
-      </div>
-      <div class="eb-side rv">
-        <div class="meter"><span class="mono">Luce</span><i id="meter"></i><span class="mono" id="pct">0%</span></div>
-        <div class="row"><button class="btn p" type="button" id="ebAll">Mostra il risultato</button><button class="btn" type="button" id="ebReset">Ricomincia</button></div>
-        <div class="eb-done" id="ebDone" aria-live="polite">
-          <p><b>Ecco l'Effetto Bottega.</b> Luce calda sulle lunghezze, radice naturale, nessuno stacco.</p>
-          <button class="btn p" type="button" data-book data-svc="Effetto Bottega" data-who="Liviana">Prenota con Liviana</button>
-        </div>
-        <p class="note">Immagini generate per la demo. Nel sito vero qui vanno i prima e dopo del salone, quelli di #primaedopocapelli.</p>
-      </div>
+<section class="wipe" id="effetto" aria-labelledby="h-eff">
+  <div class="pin">
+    <div>
+      <p class="lab kk">Il servizio firma · il più richiesto</p>
+      <h2 class="x" id="h-eff">Effetto<br>Bottega</h2>
     </div>
+    <div class="ba" id="ba">
+      <img src="img/prima.webp" width="760" height="1009" alt="Capelli castani uniformi, prima del trattamento" loading="lazy" decoding="async">
+      <img class="dopo" src="img/dopo.webp" width="760" height="1009" alt="Gli stessi capelli con schiariture calde baciate dal sole, dopo" loading="lazy" decoding="async">
+      <i class="blade" aria-hidden="true"></i>
+      <span class="t l lab">Prima</span><span class="t r lab">Dopo</span>
+    </div>
+    <div class="foot"><p>Schiariture baciate dal sole, sfumate a mano. Scorri e arriva la luce. Immagini generate per la demo.</p><button class="btn" type="button" data-book data-svc="Effetto Bottega" data-who="Liviana">Prenota</button></div>
   </div>
 </section>
 
 <section id="servizi" aria-labelledby="h-svc">
   <div class="wrap">
-    <p class="mono kick rv">Servizi</p>
-    <h2 id="h-svc" class="rv">Cosa facciamo.</h2>
+    <p class="lab muted rv">Servizi</p>
+    <h2 class="x rv" id="h-svc">Cosa<br>facciamo</h2>
     <ul class="svc">
-      <li class="rv star"><button type="button" data-book data-svc="Effetto Bottega"><h3>Effetto Bottega</h3><span class="pr mono">da €··</span><p>Schiariture e sfumature a mano, luce naturale. Con Liviana e Mario.</p></button></li>
-      <li class="rv"><button type="button" data-book data-svc="Colore e radice"><h3>Colore e radice</h3><span class="pr mono">da €··</span><p>Colore pieno, ritocco radice, tonalizzanti e gloss.</p></button></li>
-      <li class="rv"><button type="button" data-book data-svc="Colorful"><h3>Colorful</h3><span class="pr mono">da €··</span><p>Colori creativi e fantasia, dal rame al viola.</p></button></li>
-      <li class="rv"><button type="button" data-book data-svc="Taglio e piega"><h3>Taglio donna e piega</h3><span class="pr mono">da €··</span><p>Tagli di tendenza e pieghe che durano.</p></button></li>
-      <li class="rv"><button type="button" data-book data-svc="Extensions"><h3>Extensions</h3><span class="pr mono">da €··</span><p>Microring, biadesive e cheratina. Con Daniela e Liviana.</p></button></li>
-      <li class="rv"><button type="button" data-book data-svc="Ondulazione"><h3>Ondulazione semipermanente</h3><span class="pr mono">da €··</span><p>Onde morbide che restano.</p></button></li>
-      <li class="rv"><button type="button" data-book data-svc="Trattamenti"><h3>Cheratina e Olaplex</h3><span class="pr mono">da €··</span><p>Anticrespo alla cheratina, ricostruzione Olaplex, trattamenti per cute e capello.</p></button></li>
-      <li class="rv"><button type="button" data-book data-svc="Sposa"><h3>Sposa</h3><span class="pr mono">da €··</span><p>Acconciature per il giorno del sì.</p></button></li>
-      <li class="rv"><button type="button" data-book data-svc="Uomo"><h3>Uomo</h3><span class="pr mono">da €··</span><p>Taglio uomo e barba.</p></button></li>
+      <li class="rv"><button type="button" data-book data-svc="Effetto Bottega"><span class="n lab">01</span><h3>Effetto Bottega</h3><span class="pr lab">da €··</span><p>Schiariture e sfumature a mano, luce naturale. Con Liviana e Mario.</p></button></li>
+      <li class="rv"><button type="button" data-book data-svc="Colore e radice"><span class="n lab">02</span><h3>Colore e radice</h3><span class="pr lab">da €··</span><p>Colore pieno, ritocco radice, tonalizzanti e gloss.</p></button></li>
+      <li class="rv"><button type="button" data-book data-svc="Colorful"><span class="n lab">03</span><h3>Colorful</h3><span class="pr lab">da €··</span><p>Colori creativi e fantasia, dal rame al viola.</p></button></li>
+      <li class="rv"><button type="button" data-book data-svc="Taglio e piega"><span class="n lab">04</span><h3>Taglio e piega</h3><span class="pr lab">da €··</span><p>Tagli di tendenza e pieghe che durano.</p></button></li>
+      <li class="rv"><button type="button" data-book data-svc="Extensions"><span class="n lab">05</span><h3>Extensions</h3><span class="pr lab">da €··</span><p>Microring, biadesive e cheratina. Con Daniela e Liviana.</p></button></li>
+      <li class="rv"><button type="button" data-book data-svc="Ondulazione"><span class="n lab">06</span><h3>Ondulazione</h3><span class="pr lab">da €··</span><p>Ondulazione semipermanente: onde morbide che restano.</p></button></li>
+      <li class="rv"><button type="button" data-book data-svc="Trattamenti"><span class="n lab">07</span><h3>Cheratina e Olaplex</h3><span class="pr lab">da €··</span><p>Anticrespo alla cheratina, ricostruzione Olaplex, trattamenti per cute e capello.</p></button></li>
+      <li class="rv"><button type="button" data-book data-svc="Sposa"><span class="n lab">08</span><h3>Sposa</h3><span class="pr lab">da €··</span><p>Acconciature per il giorno del sì.</p></button></li>
+      <li class="rv"><button type="button" data-book data-svc="Uomo"><span class="n lab">09</span><h3>Uomo</h3><span class="pr lab">da €··</span><p>Taglio uomo e barba.</p></button></li>
     </ul>
-    <p class="note mono">Prezzi segnaposto: li inserisce il salone. Tocca un servizio per prenotarlo.</p>
+    <p class="note lab">Prezzi segnaposto: li inserisce il salone. Tocca un servizio per prenotarlo.</p>
   </div>
 </section>
 
-<section class="nt" id="lavori" aria-labelledby="h-work">
-  <div class="wrap">
-    <p class="mono kick rv">Colore e forma</p>
-    <h2 id="h-work" class="rv">Ogni testa, una storia.</h2>
-    <div class="rail" tabindex="0" aria-label="Galleria lavori, scorri">
-      <figure class="work rv"><img src="img/rame.webp" width="560" height="743" alt="Capelli lunghi rame mossi" loading="lazy" decoding="async"><figcaption><b>Rame</b><span class="mono">Colore</span></figcaption></figure>
-      <figure class="work rv" style="--d:1"><img src="img/ricci.webp" width="560" height="743" alt="Ricci definiti castano scuro" loading="lazy" decoding="async"><figcaption><b>Ricci</b><span class="mono">Styling</span></figcaption></figure>
-      <figure class="work rv" style="--d:2"><img src="img/viola.webp" width="560" height="743" alt="Caschetto netto viola prugna" loading="lazy" decoding="async"><figcaption><b>Caschetto prugna</b><span class="mono">Colorful</span></figcaption></figure>
-      <figure class="work rv" style="--d:3"><img src="img/sposa.webp" width="560" height="743" alt="Raccolto morbido da sposa con perle" loading="lazy" decoding="async"><figcaption><b>Raccolto</b><span class="mono">Sposa</span></figcaption></figure>
+<section class="track" id="lavori" aria-labelledby="h-work">
+  <div class="pin">
+    <div class="head"><p class="lab muted">Colore e forma</p><h2 class="x" id="h-work">Ogni testa,<br>una storia</h2></div>
+    <div class="row" id="row">
+      <figure class="card"><img src="img/rame.webp" width="560" height="743" alt="Capelli lunghi rame mossi" loading="lazy" decoding="async"><figcaption><b>Rame</b><span class="lab">Colore</span></figcaption></figure>
+      <figure class="card"><img src="img/ricci.webp" width="560" height="743" alt="Ricci definiti castano scuro" loading="lazy" decoding="async"><figcaption><b>Ricci</b><span class="lab">Styling</span></figcaption></figure>
+      <figure class="card"><img src="img/viola.webp" width="560" height="743" alt="Caschetto netto viola prugna" loading="lazy" decoding="async"><figcaption><b>Prugna</b><span class="lab">Colorful</span></figcaption></figure>
+      <figure class="card"><img src="img/hero.webp" width="880" height="1168" alt="Capelli lunghi lisci castani con riflessi caldi" loading="lazy" decoding="async"><figcaption><b>Luce</b><span class="lab">Effetto Bottega</span></figcaption></figure>
+      <figure class="card"><img src="img/sposa.webp" width="560" height="743" alt="Raccolto morbido da sposa con perle" loading="lazy" decoding="async"><figcaption><b>Raccolto</b><span class="lab">Sposa</span></figcaption></figure>
     </div>
     <p class="note">Immagini generate per la demo: qui andranno i lavori veri dal profilo Instagram.</p>
   </div>
@@ -395,28 +415,28 @@ dialog[open]{animation:sheet .45s var(--ease)}
 
 <section class="team" id="team" aria-labelledby="h-team">
   <div class="wrap">
-    <p class="mono kick rv">La squadra</p>
-    <h2 id="h-team" class="rv">Scegli le tue mani.</h2>
-    <p class="lead rv">Le clienti ci chiamano per nome. Prenota direttamente con chi preferisci.</p>
-    <div class="rail" tabindex="0" aria-label="Team, scorri">
-      <article class="mate rv"><img src="img/fabio.webp" width="700" height="700" alt="" loading="lazy" decoding="async"><h3>Fabio</h3><p>Fondatore. Taglio e colore.</p><button class="btn" type="button" data-book data-who="Fabio">Prenota con Fabio</button></article>
-      <article class="mate rv" style="--d:1"><img src="img/liviana.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h3>Liviana</h3><p>Extensions ed Effetto Bottega.</p><button class="btn" type="button" data-book data-who="Liviana">Prenota con Liviana</button></article>
-      <article class="mate rv" style="--d:2"><img src="img/francesca.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h3>Francesca</h3><p>Styling. La sua passione sono i ricci.</p><button class="btn" type="button" data-book data-who="Francesca">Prenota con Francesca</button></article>
-      <article class="mate rv" style="--d:3"><img src="img/mario.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h3>Mario</h3><p>Schiariture e colore, un arcobaleno.</p><button class="btn" type="button" data-book data-who="Mario">Prenota con Mario</button></article>
-      <article class="mate rv" style="--d:4"><img src="img/daniela.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h3>Daniela</h3><p>Extensions microring, onde, tagli di tendenza.</p><button class="btn" type="button" data-book data-who="Daniela">Prenota con Daniela</button></article>
-      <article class="mate rv" style="--d:5"><img src="img/sara.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h3>Sara</h3><p>Accoglienza. Ti risponde lei al telefono.</p><a class="btn" href="tel:+3908568782">Chiama Sara</a></article>
+    <p class="lab muted rv">La squadra</p>
+    <h2 class="x rv" id="h-team">Scegli<br>le tue mani</h2>
+    <p class="muted rv" style="margin-top:18px;max-width:30em">Le clienti ci chiamano per nome. Tocca una persona e prenoti direttamente con lei.</p>
+    <div class="crew">
+      <button class="mate rv" type="button" data-book data-who="Fabio"><img src="img/fabio.webp" width="700" height="700" alt="" loading="lazy" decoding="async"><h3>Fabio</h3><span>Fondatore. Taglio e colore.</span><em>Prenota</em></button>
+      <button class="mate rv" style="--d:1" type="button" data-book data-who="Liviana"><img src="img/liviana.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h3>Liviana</h3><span>Extensions ed Effetto Bottega.</span><em>Prenota</em></button>
+      <button class="mate rv" style="--d:2" type="button" data-book data-who="Francesca"><img src="img/francesca.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h3>Francesca</h3><span>Styling. La sua passione sono i ricci.</span><em>Prenota</em></button>
+      <button class="mate rv" style="--d:3" type="button" data-book data-who="Mario"><img src="img/mario.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h3>Mario</h3><span>Schiariture e colore, un arcobaleno.</span><em>Prenota</em></button>
+      <button class="mate rv" style="--d:4" type="button" data-book data-who="Daniela"><img src="img/daniela.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h3>Daniela</h3><span>Extensions microring, onde, tagli di tendenza.</span><em>Prenota</em></button>
+      <a class="mate rv" style="--d:5" href="tel:+3908568782"><img src="img/sara.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h3>Sara</h3><span>Accoglienza. Ti risponde lei.</span><em>Chiama</em></a>
     </div>
   </div>
 </section>
 
 <section id="salone" aria-labelledby="h-room">
   <div class="wrap">
-    <p class="mono kick rv">Il salone</p>
-    <h2 id="h-room" class="rv">Bianco, luce,<br>la <span class="red">F</span> alla parete.</h2>
-    <div class="rail" tabindex="0" aria-label="Foto del salone, scorri">
-      <figure class="room rv"><img src="img/salone.webp" width="880" height="1168" alt="La sala con le postazioni e le luci a soffitto" loading="lazy" decoding="async"><figcaption class="mono">La sala</figcaption></figure>
-      <figure class="room rv" style="--d:1"><img src="img/reception.webp" width="880" height="1168" alt="L'accoglienza con la F rossa sul bancone" loading="lazy" decoding="async"><figcaption class="mono">L'accoglienza</figcaption></figure>
-      <figure class="room rv" style="--d:2"><img src="img/lavaggio.webp" width="880" height="1168" alt="La zona lavaggio con tre poltrone nere" loading="lazy" decoding="async"><figcaption class="mono">Il lavaggio</figcaption></figure>
+    <p class="lab muted rv">Il salone</p>
+    <h2 class="x rv" id="h-room">Bianco,<br>luce, la F</h2>
+    <div class="rooms">
+      <figure class="rv"><img src="img/salone.webp" width="880" height="1168" alt="La sala con le postazioni e le luci a soffitto" loading="lazy" decoding="async"><figcaption class="lab">La sala</figcaption></figure>
+      <figure class="rv" style="--d:1"><img src="img/reception.webp" width="880" height="1168" alt="L'accoglienza con la F rossa sul bancone" loading="lazy" decoding="async"><figcaption class="lab">L'accoglienza</figcaption></figure>
+      <figure class="rv" style="--d:2"><img src="img/lavaggio.webp" width="880" height="1168" alt="La zona lavaggio con tre poltrone nere" loading="lazy" decoding="async"><figcaption class="lab">Il lavaggio</figcaption></figure>
     </div>
     <p class="note">Foto reali del salone, ritoccate solo nella luce e nell'ordine.</p>
   </div>
@@ -424,30 +444,30 @@ dialog[open]{animation:sheet .45s var(--ease)}
 
 <section class="nt" id="recensioni" aria-labelledby="h-rev">
   <div class="wrap">
-    <p class="mono kick rv">Dicono di noi</p>
-    <h2 id="h-rev" class="rv">"Ormai è una garanzia."</h2>
-    <div class="rate rv"><div><b>4,9</b><span class="mono">Treatwell · 397</span></div><div><b>4,8</b><span class="mono">Google · 222</span></div></div>
+    <p class="lab muted rv">Dicono di noi</p>
+    <h2 class="x rv" id="h-rev">"Ormai è una<br>garanzia."</h2>
+    <div class="rev-n rv"><div><b>4,9</b><span class="lab muted">Treatwell · 397 recensioni</span></div><div><b>4,8</b><span class="lab muted">Google · 222 recensioni</span></div></div>
     <div class="revs">
-      <figure class="rev rv"><blockquote>Colore perfetto. La piega è durata una settimana.</blockquote><figcaption class="mono"><span>Ritocco colore</span><span>Treatwell, verificata</span></figcaption></figure>
-      <figure class="rev rv" style="--d:1"><blockquote>Ormai è una garanzia. Qualunque sia il trattamento, la professionalità è assoluta.</blockquote><figcaption class="mono"><span>Con Daniela · Piega</span><span>Treatwell, verificata</span></figcaption></figure>
-      <figure class="rev rv" style="--d:2"><blockquote>Mi trovo davvero benissimo. Puntuali, bravissimi e capaci sempre di darmi il consiglio giusto.</blockquote><figcaption class="mono"><span>Con Francesca · Taglio</span><span>Treatwell, verificata</span></figcaption></figure>
-      <figure class="rev rv" style="--d:3"><blockquote>Mi sono trovata, come sempre, perfettamente a mio agio.</blockquote><figcaption class="mono"><span>Con Liviana · Taglio</span><span>Treatwell, verificata</span></figcaption></figure>
+      <figure class="rev rv"><blockquote>Colore perfetto. La piega è durata una settimana.</blockquote><figcaption class="lab"><span>Ritocco colore</span><span>Treatwell, verificata</span></figcaption></figure>
+      <figure class="rev rv" style="--d:1"><blockquote>Ormai è una garanzia. Qualunque sia il trattamento, la professionalità è assoluta.</blockquote><figcaption class="lab"><span>Con Daniela · Piega</span><span>Treatwell, verificata</span></figcaption></figure>
+      <figure class="rev rv" style="--d:2"><blockquote>Mi trovo davvero benissimo. Puntuali, bravissimi e capaci sempre di darmi il consiglio giusto.</blockquote><figcaption class="lab"><span>Con Francesca · Taglio</span><span>Treatwell, verificata</span></figcaption></figure>
+      <figure class="rev rv" style="--d:3"><blockquote>Mi sono trovata, come sempre, perfettamente a mio agio.</blockquote><figcaption class="lab"><span>Con Liviana · Taglio</span><span>Treatwell, verificata</span></figcaption></figure>
     </div>
   </div>
 </section>
 
-<section class="sp" id="sposa" aria-labelledby="h-sposa">
-  <div class="wrap sposa">
+<section class="sposa" id="sposa" aria-labelledby="h-sposa">
+  <div class="wrap sp">
     <img class="rv" src="img/sposa.webp" width="560" height="743" alt="Raccolto da sposa morbido con perle" loading="lazy" decoding="async">
     <div>
-      <p class="mono kick rv">Sposa</p>
-      <h2 id="h-sposa" class="rv">Il tuo sì,<br>provato prima.</h2>
+      <p class="lab kk rv">Sposa</p>
+      <h2 class="x rv" id="h-sposa">Il tuo sì,<br>provato<br>prima</h2>
       <ol class="steps rv">
         <li>Consulenza: foto dell'abito, idee, tempi.</li>
         <li>Prova in salone con la tua acconciatrice.</li>
         <li>Il giorno del sì, in salone o dove serve.</li>
       </ol>
-      <button class="btn p rv" type="button" data-book data-svc="Sposa">Prenota la consulenza</button>
+      <button class="btn w rv" type="button" data-book data-svc="Sposa">Prenota la consulenza</button>
       <p class="note">Percorso proposto: da confermare con il salone. Immagine generata.</p>
     </div>
   </div>
@@ -455,11 +475,11 @@ dialog[open]{animation:sheet .45s var(--ease)}
 
 <section id="perte" aria-labelledby="h-perte">
   <div class="wrap">
-    <p class="mono kick rv">Per te</p>
-    <h2 id="h-perte" class="rv">Il salone,<br>anche da casa.</h2>
+    <p class="lab muted rv">Per te</p>
+    <h2 class="x rv" id="h-perte">Il salone,<br>anche da casa</h2>
     <div class="forte">
-      <form class="card rv" id="consult">
-        <span class="tag mono">Gratis</span>
+      <form class="box rv" id="consult">
+        <span class="lab">Gratis</span>
         <h3>Consulenza colore online</h3>
         <p class="intro">Dicci da dove parti e dove vuoi arrivare. Ti rispondiamo con una proposta.</p>
         <fieldset class="chips"><legend>Oggi i miei capelli sono</legend>
@@ -474,30 +494,29 @@ dialog[open]{animation:sheet .45s var(--ease)}
           <label class="chip"><input type="radio" name="a" value="cambio"><span>Un cambio netto</span></label>
           <label class="chip"><input type="radio" name="a" value="colorful"><span>Colorful</span></label>
         </fieldset>
-        <button class="btn i" type="submit">Chiedi la consulenza</button>
+        <button class="btn" type="submit">Chiedi la consulenza</button>
       </form>
-      <article class="card rv" style="--d:1"><span class="tag mono">Promemoria</span><h3>La radice, al momento giusto</h3><p>Dopo il colore ti scriviamo su WhatsApp tra 5 e 6 settimane, quando è ora del ritocco. Lo attivi quando prenoti.</p></article>
-      <article class="card rv" style="--d:2"><span class="tag mono">Porta un'amica</span><h3>In due è più bello</h3><p>Porta un'amica che non è mai stata da noi: un regalo per entrambe. Il regalo lo sceglie il salone.</p></article>
+      <article class="box rv" style="--d:1"><span class="lab">Promemoria</span><h3>La radice, al momento giusto</h3><p>Dopo il colore ti scriviamo su WhatsApp tra 5 e 6 settimane, quando è ora del ritocco. Lo attivi quando prenoti.</p></article>
+      <article class="box rv" style="--d:2"><span class="lab">Porta un'amica</span><h3>In due è più bello</h3><p>Porta un'amica che non è mai stata da noi: un regalo per entrambe. Il regalo lo sceglie il salone.</p></article>
     </div>
     <p class="note">Proposte per il salone: consulenza online, promemoria e "porta un'amica" si attivano solo se il salone lo decide.</p>
   </div>
 </section>
 
-<section class="nt" id="prodotti" aria-labelledby="h-prod">
+<section class="nt" id="prodotti" aria-label="Marchi">
   <div class="wrap">
-    <p class="mono kick rv">Marchi</p>
-    <h2 id="h-prod" class="rv">Lavoriamo con</h2>
-    <ul class="brands rv"><li>Wella</li><li>Olaplex</li><li>ghd</li><li>Farmaca International</li></ul>
-    <div class="line rv"><span class="mono red">Linea propria</span><p><b>La Bottega dei Parrucchieri</b>, prodotti fitobiologici: anticaduta, argan, anticrespo, Gold Touch e uomo. In vendita in salone.</p></div>
+    <p class="lab muted rv">Lavoriamo con</p>
+    <ul class="brands rv"><li>Wella</li><li>Olaplex</li><li>ghd</li><li>Farmaca</li></ul>
+    <div class="line rv"><span class="lab">Linea propria</span><p><b>La Bottega dei Parrucchieri</b>, prodotti fitobiologici: anticaduta, argan, anticrespo, Gold Touch e uomo. In vendita in salone.</p></div>
   </div>
 </section>
 
 <section class="ore" id="orari" aria-labelledby="h-ore">
   <div class="wrap">
-    <p class="mono kick rv">Vieni a trovarci</p>
-    <h2 id="h-ore" class="rv">Piazza Garibaldi 13,<br>Pescara.</h2>
-    <p class="live mono" id="live">Orari</p>
-    <ul class="hours mono" id="hours">
+    <p class="lab muted rv">Vieni a trovarci</p>
+    <h2 class="x rv" id="h-ore">Piazza<br>Garibaldi 13</h2>
+    <p class="live lab" id="live">Orari</p>
+    <ul class="hours" id="hours">
       <li data-d="1"><span>Lunedì</span><span>9:00 · 19:00</span></li>
       <li data-d="2"><span>Martedì</span><span>9:00 · 19:00</span></li>
       <li data-d="3"><span>Mercoledì</span><span>9:00 · 19:00</span></li>
@@ -518,7 +537,8 @@ dialog[open]{animation:sheet .45s var(--ease)}
 <footer>
   <div class="wrap">
     <i class="fm" aria-hidden="true"></i>
-    <p class="addr">La Bottega dei Parrucchieri · Piazza Giuseppe Garibaldi 13, 65127 Pescara · <a href="mailto:pescara@labottegadeiparrucchieri.it">pescara@labottegadeiparrucchieri.it</a> · <a href="tel:+393291097048">329 109 7048</a></p>
+    <p class="x big">La Bottega</p>
+    <p>La Bottega dei Parrucchieri · Piazza Giuseppe Garibaldi 13, 65127 Pescara · <a href="mailto:pescara@labottegadeiparrucchieri.it">pescara@labottegadeiparrucchieri.it</a> · <a href="tel:+393291097048">329 109 7048</a></p>
     <p>Demo non ufficiale, preparata come proposta per il salone. Le immagini dei lavori sono generate; le foto del salone sono reali e ritoccate; i prezzi sono segnaposto. I moduli non inviano dati.</p>
     <details><summary>Fonti dei dati</summary>
       <ul>
@@ -540,7 +560,7 @@ dialog[open]{animation:sheet .45s var(--ease)}
 
 <dialog id="sheet" aria-labelledby="h-sheet">
   <div class="sh">
-    <header><h2 id="h-sheet">Prenota</h2><button class="x" type="button" id="close" aria-label="Chiudi">×</button></header>
+    <header><h2 class="x" id="h-sheet">Prenota</h2><button class="xbtn" type="button" id="close" aria-label="Chiudi">×</button></header>
     <form id="book" novalidate>
       <label class="f"><span>Servizio</span>
         <select name="svc" id="svc" required>
@@ -562,15 +582,15 @@ dialog[open]{animation:sheet .45s var(--ease)}
       <label class="f"><span>Telefono</span><input name="tel" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" pattern="[0-9 +]{6,20}" required></label>
       <p class="dep" id="dep">Per sposa ed extensions il salone può chiedere una piccola caparra online per bloccare la data. Si scala dal conto.</p>
       <label class="chk"><input type="checkbox" name="remind" checked><span>Ricordami su WhatsApp il prossimo ritocco radice, tra 5 e 6 settimane</span></label>
-      <button class="btn p full" type="submit">Invia la richiesta</button>
+      <button class="btn full" type="submit">Invia la richiesta</button>
       <p class="note center">Questa è una demo: nessun dato viene inviato.</p>
     </form>
     <div class="ok" id="ok" hidden>
       <i class="fm" aria-hidden="true"></i>
-      <h2 id="okT" tabindex="-1">Richiesta pronta.</h2>
+      <h2 class="x" id="okT" tabindex="-1">Richiesta pronta</h2>
       <p id="okP"></p>
       <p>Questa è una demo: nessun dato è stato inviato. Nel sito vero la richiesta arriva al salone, che ti conferma l'orario.</p>
-      <button class="btn i" type="button" id="okClose">Chiudi</button>
+      <button class="btn" type="button" id="okClose">Chiudi</button>
     </div>
   </div>
 </dialog>
@@ -580,8 +600,11 @@ dialog[open]{animation:sheet .45s var(--ease)}
 <script>
 (()=>{
 const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const root=document.documentElement;
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const phone=matchMedia('(max-width: 759px)').matches;
+const clamp=(v,a,b)=>v<a?a:v>b?b:v,sm=t=>t*t*(3-2*t),lerp=(a,b,t)=>a+(b-a)*t;
+const buzz=ms=>{try{if(navigator.vibrate&&(!navigator.userActivation||navigator.userActivation.isActive))navigator.vibrate(ms)}catch(e){}};
 
 /* reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
@@ -590,113 +613,194 @@ $$('.rv').forEach(el=>io.observe(el));
 /* toast */
 let tt;const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),3200)};
 
-/* dock: visibile dopo la hero */
+/* dock: compare dopo la scena 3D */
 const dock=$('#dock');
-new IntersectionObserver(([e])=>dock.classList.toggle('on',!e.isIntersecting),{threshold:.35}).observe($('#hero'));
+new IntersectionObserver(([e])=>dock.classList.toggle('on',!e.isIntersecting&&e.boundingClientRect.top<0),{threshold:0}).observe($('.cred'));
 
-/* hero WebGL: una lama di sole che scorre sui capelli */
-(function(){
-  const cv=$('#gl'),img=$('#heroImg');
-  const gl=cv.getContext('webgl',{alpha:false,antialias:false,powerPreference:'low-power'});
-  if(!gl)return;
-  const sh=(t,src)=>{const s=gl.createShader(t);gl.shaderSource(s,src);gl.compileShader(s);return s};
-  const pr=gl.createProgram();
-  gl.attachShader(pr,sh(gl.VERTEX_SHADER,'attribute vec2 p;varying vec2 v;void main(){v=p*.5+.5;gl_Position=vec4(p,0.,1.);}'));
-  gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,`precision mediump float;
-uniform sampler2D uT;uniform vec2 uR,uI;uniform float uB,uS,uX;varying vec2 v;
-void main(){
-  float ra=uR.x/uR.y,ri=uI.x/uI.y;
-  vec2 s=ra>ri?vec2(1.,ri/ra):vec2(ra/ri,1.);
-  vec2 uv=(v-.5)*s/(1.+uS*.06)+.5;uv.y+=uS*.025;uv.x+=uX*.012;
-  vec3 c=texture2D(uT,uv).rgb;
-  float l=dot(c,vec3(.299,.587,.114));
-  float d=uv.x*.85+uv.y*.5-uB;
-  float band=exp(-d*d*30.);
-  float hair=smoothstep(.06,.32,l)*(1.-smoothstep(.5,.68,l));
-  c+=vec3(1.,.72,.4)*band*hair*l*1.1;
-  c+=vec3(1.,.9,.75)*band*.05;
-  gl_FragColor=vec4(c,1.);
-}`));
-  gl.linkProgram(pr);
-  if(!gl.getProgramParameter(pr,gl.LINK_STATUS))return;
-  gl.useProgram(pr);
-  gl.bindBuffer(gl.ARRAY_BUFFER,gl.createBuffer());
-  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
-  const pl=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(pl);gl.vertexAttribPointer(pl,2,gl.FLOAT,false,0,0);
-  const U=n=>gl.getUniformLocation(pr,n),uR=U('uR'),uI=U('uI'),uB=U('uB'),uS=U('uS'),uX=U('uX');
-  let raf=0,vis=true,ready=false,px=0,tx=0;
-  const size=()=>{const d=Math.min(devicePixelRatio||1,phone?1.5:1.75),w=Math.round(cv.clientWidth*d),h=Math.round(cv.clientHeight*d);if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;gl.viewport(0,0,w,h)}};
-  const draw=t=>{
-    size();
-    const sc=Math.min(Math.max(scrollY/(cv.clientHeight||1),0),1);
-    px+=(tx-px)*.06;
-    gl.uniform2f(uR,cv.width,cv.height);gl.uniform2f(uI,img.naturalWidth,img.naturalHeight);
-    gl.uniform1f(uB,RM?.75:.62+.55*Math.sin(t*.00032)+px*.25);gl.uniform1f(uS,sc);gl.uniform1f(uX,px);
-    gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
+/* progresso di una sezione sticky: 0 in cima, 1 alla fine */
+const prog=el=>{const r=el.getBoundingClientRect(),d=r.height-innerHeight;return d>0?clamp(-r.top/d,0,1):0};
+
+/* ====== SCENA 3D: forbici cromate e ciocca di capelli ====== */
+const stage=$('#stage'),cv=$('#gl');
+const gl=RM?null:cv.getContext('webgl',{alpha:true,antialias:true,powerPreference:'high-performance'});
+let stageDraw=null;
+if(gl)stageDraw=(function(){
+  const mul=(a,b)=>{const o=new Array(16);for(let c=0;c<4;c++)for(let r=0;r<4;r++){let s=0;for(let k=0;k<4;k++)s+=a[k*4+r]*b[c*4+k];o[c*4+r]=s}return o};
+  const T=(x,y,z)=>[1,0,0,0,0,1,0,0,0,0,1,0,x,y,z,1];
+  const RX=a=>{const c=Math.cos(a),s=Math.sin(a);return[1,0,0,0,0,c,s,0,0,-s,c,0,0,0,0,1]};
+  const RY=a=>{const c=Math.cos(a),s=Math.sin(a);return[c,0,-s,0,0,1,0,0,s,0,c,0,0,0,0,1]};
+  const RZ=a=>{const c=Math.cos(a),s=Math.sin(a);return[c,s,0,0,-s,c,0,0,0,0,1,0,0,0,0,1]};
+  const SC=k=>[k,0,0,0,0,k,0,0,0,0,k,0,0,0,0,1];
+  const TF=1/Math.tan(35*Math.PI/360),CAMZ=6;
+  const persp=a=>{const n=.1,f=40;return[TF/a,0,0,0,0,TF,0,0,0,0,(f+n)/(n-f),-1,0,0,2*f*n/(n-f),0]};
+
+  /* geometria: lama e gambo estrusi, anello a toro, vite a cilindro */
+  const P=[],N=[];
+  const put=(p,n)=>{P.push(p[0],p[1],p[2]);N.push(n[0],n[1],n[2])};
+  const extrude=(pts,z0,z1)=>{
+    const L=pts.length;
+    for(let i=1;i<L-1;i++){
+      put([...pts[0],z1],[0,0,1]);put([...pts[i],z1],[0,0,1]);put([...pts[i+1],z1],[0,0,1]);
+      put([...pts[0],z0],[0,0,-1]);put([...pts[i+1],z0],[0,0,-1]);put([...pts[i],z0],[0,0,-1]);
+    }
+    for(let i=0;i<L;i++){
+      const a=pts[i],b=pts[(i+1)%L],l=Math.hypot(b[0]-a[0],b[1]-a[1]),n=[(b[1]-a[1])/l,-(b[0]-a[0])/l,0];
+      put([a[0],a[1],z0],n);put([b[0],b[1],z0],n);put([b[0],b[1],z1],n);
+      put([a[0],a[1],z0],n);put([b[0],b[1],z1],n);put([a[0],a[1],z1],n);
+    }
   };
-  const loop=t=>{raf=0;if(!vis||!ready)return;draw(t);if(!RM)raf=requestAnimationFrame(loop)};
-  const kick=()=>{if(!raf&&vis&&ready)raf=requestAnimationFrame(loop)};
-  const start=()=>{
-    gl.bindTexture(gl.TEXTURE_2D,gl.createTexture());gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);
-    gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,img);
-    [gl.TEXTURE_WRAP_S,gl.TEXTURE_WRAP_T].forEach(k=>gl.texParameteri(gl.TEXTURE_2D,k,gl.CLAMP_TO_EDGE));
-    [gl.TEXTURE_MIN_FILTER,gl.TEXTURE_MAG_FILTER].forEach(k=>gl.texParameteri(gl.TEXTURE_2D,k,gl.LINEAR));
-    ready=true;draw(performance.now());cv.classList.add('on');kick();
+  const torus=(cx,cy,cz,R,r,U,V)=>{
+    const pt=(i,j)=>{const u=i/U*6.2832,v=j/V*6.2832,cu=Math.cos(u),su=Math.sin(u),c=Math.cos(v),s=Math.sin(v);
+      return[[cx+(R+r*c)*cu,cy+(R+r*c)*su,cz+r*s],[c*cu,c*su,s]]};
+    for(let i=0;i<U;i++)for(let j=0;j<V;j++){const a=pt(i,j),b=pt(i+1,j),c=pt(i+1,j+1),d=pt(i,j+1);put(...a);put(...b);put(...c);put(...a);put(...c);put(...d)}
   };
-  const obs=new IntersectionObserver(([e])=>{vis=e.isIntersecting;kick()});obs.observe(cv);
-  addEventListener('scroll',kick,{passive:true});
-  addEventListener('resize',kick,{passive:true});
-  if(matchMedia('(hover:hover)').matches&&!RM)addEventListener('pointermove',e=>{tx=e.clientX/innerWidth*2-1},{passive:true});
-  cv.addEventListener('webglcontextlost',e=>{e.preventDefault();obs.disconnect();cancelAnimationFrame(raf);raf=0;ready=false;vis=false;cv.classList.remove('on')});
-  img.complete&&img.naturalWidth?start():img.addEventListener('load',start,{once:true});
-})();
+  extrude([[-.3,-.03],[.4,-.03],[1.6,-.01],[2.3,.02],[1.6,.12],[.4,.17],[-.3,.16]],0,.06);
+  extrude([[-.25,-.01],[-.25,.15],[-1.02,.42],[-1.1,.26]],0,.06);
+  torus(-1.33,.5,.03,.28,.062,phone?30:44,phone?10:14);
+  const up=new Float32Array(P),upN=new Float32Array(N),nUp=P.length/3;
+  const lo=up.slice(),loN=upN.slice();
+  for(let i=0;i<lo.length;i+=3){lo[i+1]=-lo[i+1];lo[i+2]=-lo[i+2];loN[i+1]=-loN[i+1];loN[i+2]=-loN[i+2]}
+  P.length=0;N.length=0;
+  for(let i=0,S=20,r=.085;i<S;i++){const a=i/S*6.2832,b=(i+1)/S*6.2832,ca=Math.cos(a),sa=Math.sin(a),cb=Math.cos(b),sb=Math.sin(b);
+    put([ca*r,sa*r,-.1],[ca,sa,0]);put([cb*r,sb*r,-.1],[cb,sb,0]);put([cb*r,sb*r,.1],[cb,sb,0]);
+    put([ca*r,sa*r,-.1],[ca,sa,0]);put([cb*r,sb*r,.1],[cb,sb,0]);put([ca*r,sa*r,.1],[ca,sa,0]);
+    put([0,0,.1],[0,0,1]);put([ca*r,sa*r,.1],[0,0,1]);put([cb*r,sb*r,.1],[0,0,1]);
+    put([0,0,-.1],[0,0,-1]);put([cb*r,sb*r,-.1],[0,0,-1]);put([ca*r,sa*r,-.1],[0,0,-1])}
+  const pv=new Float32Array(P),pvN=new Float32Array(N),nPv=P.length/3;
 
-/* Effetto Bottega: dipingi le schiariture */
-(function(){
-  const box=$('#eb'),cv=$('#ebc'),ctx=cv.getContext('2d'),meter=$('#meter'),pct=$('#pct'),done=$('#ebDone');
-  const M=document.createElement('canvas');M.width=120;M.height=160;const m=M.getContext('2d',{willReadFrequently:true});
-  const after=new Image(),TARGET=.42;
-  let loaded=false,last=null,down=false,dirty=false,hinted=false,finished=false,raf=0,ct=0;
-  const fit=()=>{const d=Math.min(devicePixelRatio||1,2);cv.width=Math.round(box.clientWidth*d);cv.height=Math.round(box.clientHeight*d)};
-  const load=()=>{if(after.src)return;after.decoding='async';after.onload=()=>{loaded=true;fit();dirty=true;tick()};after.src='img/dopo.webp'};
-  new IntersectionObserver(([e],o)=>{if(!e.isIntersecting)return;load();if(!hinted&&!RM){hinted=true;setTimeout(hint,700)}o.disconnect()},{rootMargin:'300px 0px'}).observe(box);
-  addEventListener('resize',()=>{if(loaded){fit();dirty=true;tick()}},{passive:true});
-  const dab=(x,y,r=15)=>{const g=m.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,'rgba(0,0,0,.55)');g.addColorStop(1,'rgba(0,0,0,0)');m.fillStyle=g;m.fillRect(x-r,y-r,r*2,r*2)};
-  const stroke=(a,b)=>{const dx=b.x-a.x,dy=b.y-a.y,n=Math.max(1,Math.ceil(Math.hypot(dx,dy)/4));for(let i=1;i<=n;i++)dab(a.x+dx*i/n,a.y+dy*i/n);dirty=true;tick()};
-  const pos=e=>{const r=box.getBoundingClientRect();return{x:(e.clientX-r.left)/r.width*M.width,y:(e.clientY-r.top)/r.height*M.height}};
-  function tick(){if(!raf)raf=requestAnimationFrame(render)}
-  function render(){
-    raf=0;if(!loaded||!dirty)return;dirty=false;
-    const W=cv.width,H=cv.height,iw=after.naturalWidth,ih=after.naturalHeight,s=Math.max(W/iw,H/ih),dw=iw*s,dh=ih*s;
-    ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,W,H);
-    ctx.drawImage(after,(W-dw)/2,(H-dh)/2,dw,dh);
-    ctx.globalCompositeOperation='destination-in';ctx.drawImage(M,0,0,W,H);
-    ctx.globalCompositeOperation='source-over';
-  }
-  const show=p=>{meter.style.setProperty('--p',p);pct.textContent=p+'%'};
-  const cover=force=>{const now=performance.now();if(!force&&now-ct<220)return;ct=now;
-    const d=m.getImageData(0,0,M.width,M.height).data;let c=0,n=0;for(let i=3;i<d.length;i+=16){n++;if(d[i]>110)c++}
-    const p=Math.min(100,Math.round(c/n/TARGET*100));show(p);if(p>=100&&!finished)finish()};
-  function finish(){
-    if(finished)return;finished=true;box.classList.add('done','touched');show(100);done.classList.add('on');
-    const t0=performance.now(),D=RM?0:900;
-    const f=t=>{const k=D?Math.min(1,(t-t0)/D):1;if(!finished)return;
-      m.fillStyle='rgba(0,0,0,'+(k<1?k*.25:1)+')';m.fillRect(0,0,M.width,M.height);dirty=true;render();if(k<1)requestAnimationFrame(f)};
-    requestAnimationFrame(f);
-  }
-  const reset=()=>{m.clearRect(0,0,M.width,M.height);finished=false;box.classList.remove('done');done.classList.remove('on');show(0);dirty=true;tick()};
-  function hint(){const t0=performance.now();let prev={x:30,y:70};
-    const f=t=>{if(box.classList.contains('touched'))return;const k=Math.min(1,(t-t0)/1100),p={x:30+k*62,y:70-Math.sin(k*Math.PI)*14+k*20};stroke(prev,p);prev=p;if(k<1)requestAnimationFrame(f);else cover(true)};
-    requestAnimationFrame(f)}
-  box.addEventListener('pointerdown',e=>{load();down=true;last=pos(e);box.classList.add('touched')});
-  box.addEventListener('pointermove',e=>{if(finished||(!down&&e.pointerType!=='mouse'))return;const p=pos(e);if(last)stroke(last,p);last=p;box.classList.add('touched');cover()},{passive:true});
-  const up=()=>{down=false;last=null;if(!finished)cover(true)};
-  box.addEventListener('pointerup',up);box.addEventListener('pointercancel',up);box.addEventListener('pointerleave',()=>{last=null});
-  $('#ebAll').addEventListener('click',()=>{load();if(loaded)finish();else after.addEventListener('load',finish,{once:true})});
-  $('#ebReset').addEventListener('click',reset);
-})();
+  const sh=(t,s)=>{const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return o};
+  const program=(vs,fs)=>{const p=gl.createProgram();gl.attachShader(p,sh(gl.VERTEX_SHADER,vs));gl.attachShader(p,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(p);return gl.getProgramParameter(p,gl.LINK_STATUS)?p:null};
+  /* cromo: studio scuro, due softbox e una luce rossa */
+  const chrome=program(
+`attribute vec3 p,n;uniform mat4 uPV,uM;varying vec3 vN,vW;
+void main(){vec4 w=uM*vec4(p,1.);vW=w.xyz;vN=(uM*vec4(n,0.)).xyz;gl_Position=uPV*w;}`,
+`precision mediump float;varying vec3 vN,vW;uniform float uF;
+vec3 env(vec3 r){float y=r.y;
+ vec3 c=mix(vec3(.03,.03,.035),vec3(.42,.42,.45),smoothstep(-.8,.5,y));
+ c+=smoothstep(.45,.52,y)*(1.-smoothstep(.72,.82,y))*1.2;
+ c+=pow(max(0.,1.-abs(r.x+.45)*4.),3.)*smoothstep(-.3,.2,y);c+=pow(max(0.,1.-abs(r.x-.6)*6.),4.)*.6;
+ c+=smoothstep(-.4,-.3,y)*(1.-smoothstep(-.22,-.12,y))*vec3(.95,.12,.16);
+ return c;}
+void main(){vec3 N=normalize(vN),V=normalize(vec3(0.,0.,6.)-vW);if(dot(N,V)<0.)N=-N;vec3 R=reflect(-V,N);
+ vec3 c=env(R)*.95+pow(1.-max(dot(N,V),0.),4.)*vec3(1.,.25,.28)*.55+pow(max(dot(R,normalize(vec3(.4,.6,.7))),0.),60.)*1.3;
+ gl_FragColor=vec4(c*uF,uF);}`);
+  /* capelli: ogni capello è una linea di SG segmenti, animata nel vertex shader */
+  const hairP=program(
+`attribute vec4 a;uniform mat4 uPV;uniform float uT,uHy,uCut,uFall,uK,uPush,uPy,uA;uniform vec3 uR0,uT0;varying vec3 vC;varying float vA,vB;
+void main(){float sx=a.x,t=a.y,rz=a.z,rn=a.w;
+ float y=2.05-t*3.6+uHy;
+ float x=sx*(.24+.2*t)*uK+sin(t*2.6+uT*.9+rn*6.283)*.05*t*uK+sin(t*7.+rn*20.)*.012*t;
+ x+=uPush*exp(-(y-uPy)*(y-uPy)*2.5)*t;
+ float f=uFall*step(y,uCut);vB=step(y,uCut)*step(.001,uFall);
+ y-=f*f*(2.2+rn*1.6);x+=(rn-.5)*f*.9;
+ vA=uA*(.4+.45*rn)*(1.-f)*smoothstep(0.,.05,t);
+ vec3 c=mix(uR0,uT0,smoothstep(.05,.95,t));
+ vC=c*(.72+.4*(rz*.5+.5))+pow(max(0.,sin(t*9.-uT*.7+sx*2.)),8.)*.3;
+ gl_Position=uPV*vec4(x,y,rz*.14,1.);}`,
+`precision mediump float;varying vec3 vC;varying float vA,vB;void main(){if(vB>.02&&vB<.98)discard;gl_FragColor=vec4(vC*vA,vA);}`);
+  if(!chrome||!hairP)return null;
 
-/* prenotazione */
+  const buf=d=>{const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,d,gl.STATIC_DRAW);return b};
+  const mUp=[buf(up),buf(upN),nUp],mLo=[buf(lo),buf(loN),nUp],mPv=[buf(pv),buf(pvN),nPv];
+  const NS=phone?520:900,SG=26,HV=new Float32Array(NS*(SG+1)*4),HI=new Uint16Array(NS*SG*2);
+  let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+  for(let s=0,v=0,q=0;s<NS;s++){const sx=(rnd()*2-1)*Math.sqrt(rnd()),rz=rnd()*2-1,rn=rnd();
+    for(let j=0;j<=SG;j++){HV.set([sx,j/SG,rz,rn],v*4);if(j<SG){HI[q++]=v;HI[q++]=v+1}v++}}
+  const hb=buf(HV),ib=gl.createBuffer();gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ib);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,HI,gl.STATIC_DRAW);
+  const U=(p,n)=>gl.getUniformLocation(p,n);
+  const cu={PV:U(chrome,'uPV'),M:U(chrome,'uM'),F:U(chrome,'uF')},cp=gl.getAttribLocation(chrome,'p'),cn=gl.getAttribLocation(chrome,'n');
+  const hu={};['uPV','uT','uHy','uCut','uFall','uK','uPush','uPy','uA','uR0','uT0'].forEach(n=>hu[n]=U(hairP,n));const ha=gl.getAttribLocation(hairP,'a');
+
+  /* palette: nome, radice, punte, colore del pallino */
+  const PAL=[['Castano naturale',[.16,.09,.05],[.33,.2,.12],'#553623'],['Effetto Bottega',[.2,.12,.07],[.93,.7,.4],'#d8a867'],['Rame',[.36,.12,.04],[.95,.45,.18],'#d8672c'],['Prugna · Colorful',[.13,.04,.14],[.55,.25,.7],'#7a3d8c']];
+  const sw=$('#sw'),pal=$('#pal');let palI=0;
+
+  let A=1,k=1,PV=null,keys=null,cutY=-.2;
+  const resize=()=>{const d=Math.min(devicePixelRatio||1,phone?1.5:1.75),w=cv.clientWidth,h=Math.max(cv.clientHeight,1);cv.width=Math.round(w*d);cv.height=Math.round(h*d);gl.viewport(0,0,cv.width,cv.height);
+    A=w/h;k=clamp(A*1.3,.56,1);PV=mul(persp(A),T(0,0,-CAMZ));cutY=A<1?-.05:-.2;
+    const cx=-1.1*k,cy=cutY-.07*k,m=A<1;
+    /* p, x, y, z, rotX, rotY, rotZ, apertura, scala */
+    keys=[
+      [0,   m?.2:.9, m?-.55:-.35, 0, .5,-.4,.55,.5,m?1.3:1],
+      [.15, m?.1:.6,  m?-.4:-.2,  .4, .9,.6,.9,.7,m?1.15:.95],
+      [.30, cx,cy,.18, .55,0,0,.95,1],
+      [.385,cx,cy,.18, .55,0,0,1.05,1],
+      [.42, cx,cy,.18, .55,0,0,0,1],
+      [.56, m?.5:.9,m?-.25:-1.15,.3, .8,1.3,-.4,.18,.9],
+      [.87, m?.45:1.1,m?.1:-1.05,.6, .6,3.5,-.2,.35,.9],
+      [1,   0,.1,4.3, 1.4,3.9,1.3,.95,1]];
+  };
+  const pose=p=>{let i=0;while(i<keys.length-2&&p>keys[i+1][0])i++;const a=keys[i],b=keys[i+1],u=sm(clamp((p-a[0])/(b[0]-a[0]),0,1));return a.map((v,j)=>lerp(v,b[j],u))};
+  const drawMesh=(m,M,f)=>{gl.uniformMatrix4fv(cu.M,false,M);gl.uniform1f(cu.F,f);gl.bindBuffer(gl.ARRAY_BUFFER,m[0]);gl.vertexAttribPointer(cp,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ARRAY_BUFFER,m[1]);gl.vertexAttribPointer(cn,3,gl.FLOAT,false,0,0);gl.drawArrays(gl.TRIANGLES,0,m[2])};
+  /* pettina la ciocca col dito o col mouse */
+  let comb=0,combT=0,cy2=0,lastX=null;
+  cv.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect(),x=(e.clientX-r.left)/r.width;cy2=(1-(e.clientY-r.top)/r.height*2)*CAMZ/TF;if(lastX!==null)combT=clamp(combT+(x-lastX)*2.2,-.5,.5);lastX=x},{passive:true});
+  cv.addEventListener('pointerleave',()=>{lastX=null},{passive:true});
+  cv.addEventListener('pointerup',()=>{lastX=null},{passive:true});
+  resize();addEventListener('resize',resize,{passive:true});
+  const cutEl=$('#cutline');let wasCut=false;
+
+  return (p,time)=>{
+    const t=time*.001;
+    combT*=.94;comb+=(combT-comb)*.12;
+    gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+    gl.enable(gl.DEPTH_TEST);gl.disable(gl.BLEND);gl.depthMask(true);
+    const q=pose(p),idle=1-sm(clamp((p-.24)/.05,0,1))*(1-sm(clamp((p-.46)/.06,0,1)));
+    const ry=q[5]+Math.sin(t*.5)*.25*idle,rx=q[4]+Math.sin(t*.37)*.08*idle,open=Math.max(0,q[7]+Math.sin(t*1.4)*.12*idle);
+    const base=mul(T(q[1],q[2],q[3]),mul(RZ(q[6]),mul(RY(ry),mul(RX(rx),SC(q[8]*k*.9)))));
+    const fade=1-sm(clamp((p-.95)/.05,0,1));
+    if(fade>0){
+      gl.useProgram(chrome);gl.uniformMatrix4fv(cu.PV,false,PV);gl.enableVertexAttribArray(cp);gl.enableVertexAttribArray(cn);
+      drawMesh(mUp,mul(base,RZ(open/2)),fade);drawMesh(mLo,mul(base,RZ(-open/2)),fade);drawMesh(mPv,base,fade);
+      gl.disableVertexAttribArray(cn);gl.disableVertexAttribArray(cp);
+    }
+    const lift=sm(clamp((p-.56)/.2,0,1))*.5;
+    const hy=lerp(3.8,0,sm(clamp((p-.1)/.17,0,1)))+lift;
+    const cq=clamp((p-.6)/.26,0,1)*3,ci=Math.min(2,Math.floor(cq)),cf=sm(cq-ci);
+    const mix3=(x,y)=>x.map((v,j)=>lerp(v,y[j],cf));
+    const pi=Math.round(cq);if(pi!==palI){palI=pi;pal.textContent=PAL[pi][0];sw.style.setProperty('--sw',PAL[pi][3])}
+    const hA=1-sm(clamp((p-.9)/.08,0,1));
+    if(hA>0&&p>.08){
+      gl.useProgram(hairP);gl.enable(gl.BLEND);gl.blendFunc(gl.ONE,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);
+      gl.uniformMatrix4fv(hu.uPV,false,PV);gl.uniform1f(hu.uT,t);gl.uniform1f(hu.uHy,hy);gl.uniform1f(hu.uCut,cutY+lift);gl.uniform1f(hu.uFall,sm(clamp((p-.418)/.13,0,1)));
+      gl.uniform1f(hu.uK,k);gl.uniform1f(hu.uPush,comb);gl.uniform1f(hu.uPy,cy2);gl.uniform1f(hu.uA,hA);
+      gl.uniform3fv(hu.uR0,mix3(PAL[ci][1],PAL[ci+1][1]));gl.uniform3fv(hu.uT0,mix3(PAL[ci][2],PAL[ci+1][2]));
+      gl.bindBuffer(gl.ARRAY_BUFFER,hb);gl.enableVertexAttribArray(ha);gl.vertexAttribPointer(ha,4,gl.FLOAT,false,0,0);
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ib);gl.drawElements(gl.LINES,HI.length,gl.UNSIGNED_SHORT,0);
+      gl.disableVertexAttribArray(ha);
+    }
+    /* il taglio: lampo sulla linea e una vibrazione breve */
+    const isCut=p>.415;
+    if(isCut&&!wasCut){cutEl.style.top=((1-TF*cutY/CAMZ)/2*100)+'%';cutEl.classList.remove('go');void cutEl.offsetWidth;cutEl.classList.add('go');buzz(18)}
+    wasCut=isCut;
+  };
+})();
+if(!stageDraw)root.classList.add('nogl');
+
+/* testi della scena */
+const steps=$$('.step').map(el=>({el,a:+el.dataset.a,b:+el.dataset.b})),bar=$('#bar');
+const paintSteps=p=>{steps.forEach(s=>{const o=clamp(Math.min((p-s.a)/.035,(s.b-p)/.035),0,1);s.el.style.opacity=o;s.el.style.transform='translateY('+((1-o)*18).toFixed(1)+'px)';s.el.classList.toggle('on',o>.5)});bar.style.setProperty('--p',p)};
+
+/* ====== un solo loop: scena, effetto bottega, galleria, parallasse ====== */
+const ba=$('#ba'),wipe=$('#effetto'),row=$('#row'),track=$('#lavori'),rooms=$$('.rooms img');
+let stageVis=true,ps=0,raf=0;
+new IntersectionObserver(([e])=>{stageVis=e.isIntersecting;kick()}).observe(stage);
+const frame=time=>{
+  raf=0;
+  if(stageDraw&&stageVis){const p=prog(stage);ps=Math.abs(p-ps)>.2?p:ps+(p-ps)*.14;paintSteps(ps);stageDraw(ps,time)}
+  if(!root.classList.contains('nogl')){
+    ba.style.setProperty('--w',(100-sm(clamp((prog(wipe)-.1)/.7,0,1))*100).toFixed(2));
+    const over=Math.max(0,row.scrollWidth-innerWidth);row.style.transform='translate3d('+(-prog(track)*over).toFixed(1)+'px,0,0)';
+  }
+  for(const img of rooms){const r=img.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)img.style.setProperty('--py',(((r.top+r.height/2)/innerHeight-.5)*-6).toFixed(2)+'%')}
+  if(stageDraw&&stageVis)raf=requestAnimationFrame(frame);
+};
+function kick(){if(!raf)raf=requestAnimationFrame(frame)}
+addEventListener('scroll',kick,{passive:true});addEventListener('resize',kick,{passive:true});
+cv.addEventListener('webglcontextlost',e=>{e.preventDefault();stageDraw=null;root.classList.add('nogl');steps.forEach(s=>{s.el.style.opacity='';s.el.style.transform=''})});
+kick();
+
+/* ====== prenotazione ====== */
 (function(){
   const dlg=$('#sheet'),form=$('#book'),svc=$('#svc'),day=$('#day'),time=$('#time'),dep=$('#dep'),ok=$('#ok');
   for(let h=9;h<19;h++)for(const mm of ['00','30']){const o=document.createElement('option');o.textContent=h+':'+mm;time.append(o)}
@@ -723,12 +827,11 @@ void main(){
     const f=new FormData(form),d=new Date(f.get('day')+'T12:00'),w=f.get('who');
     const when=d.toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long'});
     $('#okP').textContent=f.get('svc')+(w==='Nessuna preferenza'?'':' con '+w)+', '+when+' alle '+f.get('time')+'.';
-    form.hidden=true;ok.hidden=false;$('#okT').focus();
+    form.hidden=true;ok.hidden=false;$('#okT').focus();buzz(12);
     form.reset();day.value='';
   });
 })();
 
-/* consulenza */
 $('#consult').addEventListener('submit',e=>{e.preventDefault();toast('Questa è una demo: nessun dato è stato inviato.')});
 
 /* orari: oggi e aperto ora, ora di Pescara */
