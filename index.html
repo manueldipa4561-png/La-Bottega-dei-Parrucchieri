@@ -308,17 +308,7 @@
     <p class="x big">La Bottega</p>
     <div class="cta-row"><button class="btn w" type="button" data-book>Prenota online</button><a class="btn ghost" href="https://wa.me/393291097048?text=Ciao%21%20Vorrei%20prenotare%20un%20appuntamento%20alla%20Bottega." target="_blank" rel="noopener">WhatsApp</a></div>
     <p>La Bottega dei Parrucchieri · Piazza Giuseppe Garibaldi 13, 65127 Pescara · <a href="mailto:pescara@labottegadeiparrucchieri.it">pescara@labottegadeiparrucchieri.it</a> · <a href="tel:+3908568782">085 68782</a> · WhatsApp <a href="https://wa.me/393291097048" target="_blank" rel="noopener">329 109 7048</a></p>
-    <p>Demo non ufficiale, preparata come proposta per il salone. Le foto di Bob e colore sono reali, ricci e raccolto sono generate; le foto del salone e dei prodotti sono reali e ritoccate; i prezzi dei servizi arriveranno dal salone e quelli dei prodotti sono indicativi. I moduli non inviano dati: l'ordine dello shop si invia solo da WhatsApp.</p>
-    <details><summary>Fonti dei dati</summary>
-      <ul>
-        <li>Storia, team, servizi, marchi, contatti: labottegadeiparrucchieri.it</li>
-        <li>Parrucchiere dell'anno 2023 e Villa Raspa di Spoltore: SpoltoreNotizie</li>
-        <li>Wella Official Salon, Milano Fashion Week: profilo Instagram, IlPescara (17/02/2025)</li>
-        <li>4,8 su 222: Google</li>
-        <li>Orari: sito del salone, Fresha, Instagram</li>
-        <li>Testo del fondatore, servizi, team, prodotti e foto dei prodotti: materiale inviato dal salone, ottobre 2026</li>
-      </ul>
-    </details>
+    <p>© 2026 La Bottega dei Parrucchieri. Il prezzo dei servizi ti viene comunicato quando confermiamo l'appuntamento; i prezzi dei prodotti sono indicativi.</p>
   </div>
 </footer>
 
@@ -406,27 +396,32 @@ const paintSteps=p=>{steps.forEach(s=>{const o=clamp(Math.min((p-s.a)/.035,(s.b-
 
 /* ====== un solo loop: logo, effetto bottega, galleria, parallasse ====== */
 const ba=$('#ba'),wipe=$('#effetto'),row=$('#row'),track=$('#lavori'),rooms=$$('.rooms img');
-const mob=matchMedia('(max-width: 759px)');
+/* telefono e tablet (touch): niente movimento guidato dallo scroll sulla galleria, si scorre con il dito */
+const mob=matchMedia('(max-width: 759px), (hover: none) and (pointer: coarse)');
 const dots=$('#dots'),cards=$$('#row .card');
 cards.forEach((_,i)=>{const d=document.createElement('i');d.addEventListener('click',()=>row.scrollTo({left:cards[i].offsetLeft-(row.clientWidth-cards[i].offsetWidth)/2,behavior:'smooth'}));dots.append(d)});
-const paintDots=()=>{const w=cards[0].offsetWidth+12,i=Math.min(cards.length-1,Math.round(row.scrollLeft/w));[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i))};
-row.addEventListener('scroll',paintDots,{passive:true});paintDots();
-let stageVis=true,ps=0,raf=0;
-new IntersectionObserver(([e])=>{stageVis=e.isIntersecting;kick()}).observe(stage);
+/* puntini: legge solo scrollLeft, scrive nel DOM solo quando cambia la foto */
+let dotI=-1,cw=0;
+const paintDots=()=>{cw=cw||cards[0].offsetWidth+12;const i=Math.min(cards.length-1,Math.max(0,Math.round(row.scrollLeft/cw)));if(i===dotI)return;dotI=i;[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i))};
+row.addEventListener('scroll',paintDots,{passive:true});addEventListener('resize',()=>{cw=0;paintDots()},{passive:true});paintDots();
+/* ogni sezione animata lavora solo mentre e visibile */
+const vis={stage:true,wipe:false,track:false};
+const watch=(el,k)=>new IntersectionObserver(([e])=>{vis[k]=e.isIntersecting;kick()},{rootMargin:'20% 0px'}).observe(el);
+watch(stage,'stage');watch(wipe,'wipe');watch(track,'track');
+let ps=0,raf=0;
 const frame=()=>{
   raf=0;
-  if(!RM&&stageVis){
-    const p=prog(stage);ps=Math.abs(p-ps)>.2?p:ps+(p-ps)*.14;paintSteps(ps);
-  }
+  if(!RM&&vis.stage){const p=prog(stage);ps=Math.abs(p-ps)>.2?p:ps+(p-ps)*.14;paintSteps(ps)}
   if(!root.classList.contains('nogl')){
-    ba.style.setProperty('--w',(100-sm(clamp((prog(wipe)-.1)/.7,0,1))*100).toFixed(2));
-    const over=Math.max(0,row.scrollWidth-innerWidth);row.style.transform=mob.matches?'':'translate3d('+(-prog(track)*over).toFixed(1)+'px,0,0)';
+    if(vis.wipe)ba.style.setProperty('--w',(100-sm(clamp((prog(wipe)-.1)/.7,0,1))*100).toFixed(2));
+    if(vis.track&&!mob.matches){const over=Math.max(0,row.scrollWidth-innerWidth);row.style.transform='translate3d('+(-prog(track)*over).toFixed(1)+'px,0,0)'}
   }
-  for(const img of rooms){const r=img.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)img.style.setProperty('--py',(((r.top+r.height/2)/innerHeight-.5)*-6).toFixed(2)+'%')}
-  if(!RM&&stageVis)raf=requestAnimationFrame(frame);
+  if(!mob.matches)for(const img of rooms){const r=img.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)img.style.setProperty('--py',(((r.top+r.height/2)/innerHeight-.5)*-6).toFixed(2)+'%')}
+  if(!RM&&vis.stage)raf=requestAnimationFrame(frame);
 };
 function kick(){if(!raf)raf=requestAnimationFrame(frame)}
 addEventListener('scroll',kick,{passive:true});addEventListener('resize',kick,{passive:true});
+mob.addEventListener('change',()=>{row.style.transform='';kick()});
 kick();
 
 /* ====== prenotazione ====== */
