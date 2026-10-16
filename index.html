@@ -23,7 +23,7 @@
 <main>
 <section class="stage" id="stage" aria-label="La Bottega dei Parrucchieri">
   <div class="pin">
-    <div class="logo3d" aria-hidden="true"><video id="lv" src="video/logo-loop.mp4" poster="img/logo-poster.jpg" width="1280" height="720" autoplay muted loop playsinline preload="auto"></video></div>
+    <div class="logo3d" aria-hidden="true"><div class="ls" id="ls"></div></div>
     <div class="grid" aria-hidden="true"></div>
 
     <div class="step s0" data-a="-1" data-b=".3">
@@ -342,17 +342,17 @@
       </div>
       <label class="f"><span>Nome</span><input name="name" autocomplete="given-name" maxlength="60" required></label>
       <label class="f"><span>Telefono</span><input name="tel" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" pattern="[0-9 +]{6,20}" required></label>
-      <p class="dep" id="dep">Per sposa ed estensioni il salone può chiedere una piccola caparra online per bloccare la data. Si scala dal conto.</p>
+      <p class="dep" id="dep">Per sposa ed estensioni il salone può chiedere una piccola caparra per bloccare la data. Si scala dal conto.</p>
       <label class="chk"><input type="checkbox" name="remind" checked><span>Ricordami su WhatsApp il prossimo ritocco radice, tra 5 e 6 settimane</span></label>
       <button class="btn full" type="submit">Invia la richiesta</button>
-      <p class="note center">Questa è una demo: nessun dato viene inviato.</p>
+      <p class="note center">La richiesta parte da WhatsApp: ti confermiamo l'orario prima che tu venga.</p>
     </form>
     <div class="ok" id="ok" hidden>
       <i class="fm" aria-hidden="true"></i>
-      <h2 class="x" id="okT" tabindex="-1">Richiesta pronta</h2>
+      <h2 class="x" id="okT" tabindex="-1">Manca un tocco</h2>
       <p id="okP"></p>
-      <p>Questa è una demo: nessun dato è stato inviato. Nel sito vero la richiesta arriva al salone, che ti conferma l'orario.</p>
-      <button class="btn" type="button" id="okClose">Chiudi</button>
+      <p>Si è aperto WhatsApp con la tua richiesta: premi Invia e il salone ti conferma l'orario. Se non si è aperto, usa il pulsante.</p>
+      <div class="cta-row" style="justify-content:center"><a class="btn" id="okWa" href="#" target="_blank" rel="noopener">Apri WhatsApp</a><button class="btn sec" type="button" id="okClose">Chiudi</button></div>
     </div>
   </div>
 </dialog>
@@ -387,8 +387,14 @@ new IntersectionObserver(([e])=>dock.classList.toggle('on',!e.isIntersecting&&e.
 const prog=el=>{const r=el.getBoundingClientRect(),d=r.height-innerHeight;return d>0?clamp(-r.top/d,0,1):0};
 
 /* ====== HERO: la F del logo in oro, a strati, guidata dallo scroll ====== */
-const stage=$('#stage'),lv=$('#lv');
-if(RM){root.classList.add('nogl');lv.removeAttribute('autoplay');lv.pause()}
+const stage=$('#stage'),ls=$('#ls');
+/* la F in oro: strati sovrapposti in 3D, gira senza mai fermarsi (velocita costante) */
+const LAY=phone?20:28,GAP=phone?2.4:3,SPIN=40;
+for(let i=0;i<LAY;i++){const l=document.createElement('i'),f=i/(LAY-1);
+  l.style.transform='translateZ('+((i-(LAY-1)/2)*GAP).toFixed(2)+'px)';
+  if(i===LAY-1)l.className='front';else l.style.background='hsl(43 '+(48+f*18).toFixed(0)+'% '+(12+f*24).toFixed(0)+'%)';
+  ls.append(l)}
+if(RM){root.classList.add('nogl');ls.style.transform='rotateX(-8deg) rotateY(-18deg)'}
 
 /* testi della scena */
 const steps=$$('.step').map(el=>({el,a:+el.dataset.a,b:+el.dataset.b})),bar=$('#bar');
@@ -409,9 +415,11 @@ const vis={stage:true,wipe:false,track:false};
 const watch=(el,k)=>new IntersectionObserver(([e])=>{vis[k]=e.isIntersecting;kick()},{rootMargin:'20% 0px'}).observe(el);
 watch(stage,'stage');watch(wipe,'wipe');watch(track,'track');
 let ps=0,raf=0;
-const frame=()=>{
+const frame=time=>{
   raf=0;
-  if(!RM&&vis.stage){const p=prog(stage);ps=Math.abs(p-ps)>.2?p:ps+(p-ps)*.14;paintSteps(ps)}
+  if(!RM&&vis.stage){const p=prog(stage),t=time*.001;ps=Math.abs(p-ps)>.2?p:ps+(p-ps)*.14;paintSteps(ps);
+    ls.style.transform='rotateX(-8deg) rotateY('+((t*SPIN)%360).toFixed(2)+'deg)';
+    ls.style.setProperty('--sh',((t*.12)%1*100).toFixed(1)+'%')}
   if(!root.classList.contains('nogl')){
     if(vis.wipe)ba.style.setProperty('--w',(100-sm(clamp((prog(wipe)-.1)/.7,0,1))*100).toFixed(2));
     if(vis.track&&!mob.matches){const over=Math.max(0,row.scrollWidth-innerWidth);row.style.transform='translate3d('+(-prog(track)*over).toFixed(1)+'px,0,0)'}
@@ -451,13 +459,18 @@ kick();
     if(!form.checkValidity()){form.reportValidity();return}
     const f=new FormData(form),d=new Date(f.get('day')+'T12:00'),w=f.get('who');
     const when=d.toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long'});
-    $('#okP').textContent=f.get('svc')+(w==='Nessuna preferenza'?'':' con '+w)+', '+when+' alle '+f.get('time')+'.';
-    form.hidden=true;ok.hidden=false;$('#okT').focus();buzz(12);
+    const what=f.get('svc')+(w==='Nessuna preferenza'?'':' con '+w)+', '+when+' alle '+f.get('time');
+    const msg='Ciao! Vorrei prenotare: '+what+'.\nNome: '+f.get('name')+'\nTelefono: '+f.get('tel')+(f.get('remind')?'\nRicordatemi il ritocco radice tra 5-6 settimane.':'');
+    const url='https://wa.me/393291097048?text='+encodeURIComponent(msg);
+    $('#okP').textContent=what+'.';$('#okWa').href=url;
+    form.hidden=true;ok.hidden=false;$('#okT').focus();buzz(12);window.open(url,'_blank','noopener');
     form.reset();day.value='';
   });
 })();
 
-$('#consult').addEventListener('submit',e=>{e.preventDefault();toast('Questa è una demo: nessun dato è stato inviato.')});
+$('#consult').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target),L={luce:'più luce',bianchi:'coprire i bianchi',cambio:'un cambio netto',colorful:'Colorful'};
+  const msg='Ciao! Vorrei una consulenza colore. Oggi i miei capelli sono '+f.get('da')+', vorrei '+(L[f.get('a')]||f.get('a'))+'.';
+  window.open('https://wa.me/393291097048?text='+encodeURIComponent(msg),'_blank','noopener');toast('Si apre WhatsApp: premi Invia per mandarci la richiesta.')});
 
 /* orari: oggi e aperto ora, ora di Pescara */
 (function(){
