@@ -416,13 +416,14 @@ footer .cta-row{margin:6px 0 18px}
 
 /* galleria "Ogni testa": su telefono si scorre di lato con il dito, una foto alla volta */
 .dots,.hint-sw{display:none}
-@media (max-width:759px){
+@media (max-width:759px),(hover:none) and (pointer:coarse){
   .track{height:auto;padding:clamp(72px,14vw,120px) 0}
   .track .pin{position:relative;height:auto;padding:0}
-  .row{width:auto;overflow-x:auto;gap:12px;padding:0 11vw;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;scrollbar-width:none;will-change:auto}
+  .row{width:auto;overflow-x:auto;gap:12px;padding:0 max(11vw,calc(50vw - 210px));scroll-snap-type:x mandatory;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;will-change:auto}
   .row::-webkit-scrollbar{display:none}
-  .card{width:78vw;scroll-snap-align:center;scroll-snap-stop:always;transition:transform .5s cubic-bezier(.2,.75,.1,1),opacity .4s}
-  .card img{transform:translateZ(0)}
+  .card{width:min(78vw,420px);scroll-snap-align:center;scroll-snap-stop:always}
+  .rooms img{transform:none;will-change:auto}
+  .logo3d video{mix-blend-mode:normal}
   .card img{max-height:none}
   .dots{display:flex;justify-content:center;gap:7px;margin:18px 0 6px}
   .dots i{width:7px;height:7px;border-radius:99px;background:var(--linea);transition:width .35s cubic-bezier(.34,1.4,.5,1),background .2s}
