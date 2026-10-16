@@ -16,7 +16,7 @@
 <body>
 
 <header class="top">
-  <a class="brand" href="#" aria-label="La Bottega dei Parrucchieri, inizio pagina"><i class="fm" aria-hidden="true"></i><b>La Bottega<br>dei parrucchieri</b></a>
+  <div class="top-l"><button class="menu-btn" type="button" id="menuBtn" aria-label="Apri il menu" aria-haspopup="dialog"><i></i><i></i><i></i></button><a class="brand" href="#" aria-label="La Bottega dei Parrucchieri, inizio pagina"><i class="fm" aria-hidden="true"></i><b>La Bottega<br>dei parrucchieri</b></a></div>
   <nav aria-label="Principale"><a class="btn ghost" href="shop.html">Shop</a><button class="btn w" type="button" data-book>Prenota</button></nav>
 </header>
 
@@ -143,13 +143,12 @@
     <div class="row" id="row">
       <figure class="card"><img src="img/bob-1.webp" width="560" height="743" alt="Bob netto con la linea, visto di tre quarti" loading="eager" decoding="async"><figcaption><b>Bob</b><span class="lab">Taglio con la linea</span></figcaption></figure>
       <figure class="card"><img src="img/bob-2.webp" width="560" height="743" alt="Bob netto con la linea, visto da dietro" loading="eager" decoding="async"><figcaption><b>Bob</b><span class="lab">Il dettaglio</span></figcaption></figure>
-      <figure class="card"><img src="img/colore-prima-dopo.webp" width="560" height="816" alt="Prima e dopo: da castano scuro a schiariture calde" loading="eager" decoding="async"><figcaption><b>Luce</b><span class="lab">Prima e dopo</span></figcaption></figure>
       <figure class="card"><img src="img/ricci.webp" width="560" height="743" alt="Ricci definiti castano scuro" loading="eager" decoding="async"><figcaption><b>Ricci</b><span class="lab">Styling</span></figcaption></figure>
       <figure class="card"><img src="img/sposa.webp" width="560" height="743" alt="Raccolto morbido da sposa con perle" loading="eager" decoding="async"><figcaption><b>Raccolto</b><span class="lab">Sposa</span></figcaption></figure>
     </div>
     <div class="dots" id="dots" aria-hidden="true"></div>
     <p class="hint-sw lab">Scorri di lato →</p>
-    <p class="note">Bob e colore sono foto reali del salone. Ricci e raccolto sono ancora immagini generate: da sostituire con i lavori veri.</p>
+    <p class="note">Il Bob è un lavoro vero del salone. Ricci e raccolto sono ancora immagini generate: qui arriveranno i lavori veri.</p>
   </div>
 </section>
 
@@ -319,6 +318,14 @@
   <button class="p" type="button" data-book>Prenota</button>
 </nav>
 
+<dialog class="menu" id="menu" aria-label="Menu">
+  <div class="mn">
+    <header><span class="lab">Menu</span><button class="xbtn" type="button" id="menuClose" aria-label="Chiudi il menu">×</button></header>
+    <nav aria-label="Sezioni del sito"><a href="#fabio" style="--d:0">Il fondatore</a><a href="#mfw" style="--d:1">Backstage</a><a href="#servizi" style="--d:2">Servizi</a><a href="#lavori" style="--d:3">I lavori</a><a href="#team" style="--d:4">La squadra</a><a href="#salone" style="--d:5">Il salone</a><a href="#sposa" style="--d:6">Sposa</a><a href="#recensioni" style="--d:7">Recensioni</a><a href="shop.html" style="--d:8">Shop</a><a href="#orari" style="--d:9">Dove siamo</a></nav>
+    <div class="cta-row"><button class="btn w" type="button" data-book>Prenota online</button><a class="btn ghost" href="https://wa.me/393291097048?text=Ciao%21%20Vorrei%20prenotare%20un%20appuntamento%20alla%20Bottega." target="_blank" rel="noopener">WhatsApp</a><a class="btn ghost" href="tel:+3908568782">Chiama 085 68782</a></div>
+  </div>
+</dialog>
+
 <dialog id="sheet" aria-labelledby="h-sheet">
   <div class="sh">
     <header><h2 class="x" id="h-sheet">Prenota</h2><button class="xbtn" type="button" id="close" aria-label="Chiudi">×</button></header>
@@ -361,6 +368,7 @@
 
 <script src="js/shop.js" defer></script>
 <script src="js/logo3d.js" defer></script>
+<script src="js/menu.js" defer></script>
 <script>
 (()=>{
 const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
