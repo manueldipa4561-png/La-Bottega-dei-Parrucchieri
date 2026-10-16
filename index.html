@@ -133,6 +133,7 @@
       <li class="rv"><button type="button" data-book data-svc="Taglio e piega"><span class="n lab">11</span><h3>Taglio e piega</h3><p>Un taglio per ogni personalità e la piega perfetta, che duri e ti faccia risplendere.</p></button></li>
     </ul>
     <p class="note lab">Il prezzo dipende dalla lunghezza e dal servizio: te lo diciamo quando confermiamo l'appuntamento, prima che tu venga. Tocca un servizio per prenotarlo.</p>
+    <div class="cta-row rv"><button class="btn" type="button" data-book>Prenota online</button><a class="btn sec" href="https://wa.me/393291097048?text=Ciao%21%20Vorrei%20prenotare%20un%20appuntamento%20alla%20Bottega." target="_blank" rel="noopener">Scrivici su WhatsApp</a></div>
   </div>
 </section>
 
@@ -149,6 +150,8 @@
     <p class="note">Bob e colore sono foto reali del salone. Ricci e raccolto sono ancora immagini generate: da sostituire con i lavori veri.</p>
   </div>
 </section>
+
+<div class="band"><div class="wrap"><p class="band-t rv">Ti piace il risultato? Prenota il tuo.</p><div class="cta-row rv"><button class="btn" type="button" data-book>Prenota online</button><a class="btn sec" href="https://wa.me/393291097048?text=Ciao%21%20Vorrei%20prenotare%20un%20appuntamento%20alla%20Bottega." target="_blank" rel="noopener">Scrivici su WhatsApp</a></div></div></div>
 
 <section class="team" id="team" aria-labelledby="h-team">
   <div class="wrap">
@@ -286,6 +289,7 @@
       <li data-d="6"><span>Sabato</span><span>9:00 · 19:00</span></li>
       <li data-d="0"><span>Domenica</span><span>Chiuso</span></li>
     </ul>
+    <div class="cta-row rv"><button class="btn" type="button" data-book>Prenota online</button><a class="btn sec" href="tel:+393291097048">Chiama 329 109 7048</a><a class="btn sec" href="https://wa.me/393291097048?text=Ciao%21%20Vorrei%20prenotare%20un%20appuntamento%20alla%20Bottega." target="_blank" rel="noopener">WhatsApp</a></div>
     <div class="contact">
       <a href="tel:+3908568782"><span>Telefono fisso</span><span>085 68782</span></a>
       <a href="tel:+393291097048"><span>Cellulare del salone</span><span>329 109 7048</span></a>
@@ -300,6 +304,7 @@
   <div class="wrap">
     <i class="fm" aria-hidden="true"></i>
     <p class="x big">La Bottega</p>
+    <div class="cta-row"><button class="btn w" type="button" data-book>Prenota online</button><a class="btn ghost" href="https://wa.me/393291097048?text=Ciao%21%20Vorrei%20prenotare%20un%20appuntamento%20alla%20Bottega." target="_blank" rel="noopener">WhatsApp</a></div>
     <p>La Bottega dei Parrucchieri · Piazza Giuseppe Garibaldi 13, 65127 Pescara · <a href="mailto:pescara@labottegadeiparrucchieri.it">pescara@labottegadeiparrucchieri.it</a> · <a href="tel:+393291097048">329 109 7048</a></p>
     <p>Demo non ufficiale, preparata come proposta per il salone. Le foto di Bob e colore sono reali, ricci e raccolto sono generate; le foto del salone e dei prodotti sono reali e ritoccate; i prezzi dei servizi arriveranno dal salone e quelli dei prodotti sono indicativi. I moduli non inviano dati: l'ordine dello shop si invia solo da WhatsApp.</p>
     <details><summary>Fonti dei dati</summary>
@@ -318,7 +323,7 @@
 <nav class="dock" id="dock" aria-label="Azioni rapide">
   <a href="tel:+3908568782">Chiama</a>
   <a href="shop.html">Shop</a>
-  <a href="https://www.google.com/maps/search/?api=1&amp;query=La+Bottega+dei+Parrucchieri+Piazza+Garibaldi+13+Pescara" target="_blank" rel="noopener">Mappa</a>
+  <a href="https://wa.me/393291097048?text=Ciao%21%20Vorrei%20prenotare%20un%20appuntamento%20alla%20Bottega." target="_blank" rel="noopener">WhatsApp</a>
   <button class="p" type="button" data-book>Prenota</button>
 </nav>
 
@@ -378,6 +383,9 @@ $$('.rv').forEach(el=>io.observe(el));
 
 /* toast */
 let tt;const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),3200)};
+
+/* header: diventa vetro dopo la scena */
+const top_=$('.top');addEventListener('scroll',()=>top_.classList.toggle('glass',scrollY>innerHeight*.9),{passive:true});
 
 /* dock: compare dopo la scena 3D */
 const dock=$('#dock');
