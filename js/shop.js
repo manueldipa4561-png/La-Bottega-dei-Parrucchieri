@@ -56,7 +56,7 @@
   const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(cart))}catch(e){}};
 
   /* schede prodotto: vetrina in home, catalogo per categorie nello shop */
-  const card=p=>'<li class="pc"><button class="pimg" type="button" data-open="'+p.id+'" aria-label="Dettagli: '+p.n+'">'+(p.tag?'<span class="badge lab">'+p.tag+'</span>':'')+'<img src="'+img(p.id)+'" width="800" height="800" alt="'+p.n+'" loading="lazy" decoding="async"></button><div class="pi"><span class="lab">'+p.l+(p.s?' · '+p.s:'')+'</span><h3>'+p.n+'</h3><span class="pt">'+hook(p)+'</span><div class="pb"><span class="pr">'+priceHTML(p)+'</span><button class="add" type="button" data-add="'+p.id+'" aria-label="Aggiungi '+p.n+' al carrello">+</button></div></div></li>';
+  const card=p=>'<li class="pc"><button class="pimg" type="button" data-open="'+p.id+'" aria-label="Dettagli: '+p.n+'">'+(p.tag?'<span class="badge lab">'+p.tag+'</span>':'')+'<img src="img/shop/sm/'+p.id+'.webp" srcset="img/shop/sm/'+p.id+'.webp 480w, '+img(p.id)+' 800w" sizes="(max-width:759px) 46vw, 24vw" width="800" height="800" alt="'+p.n+'" loading="lazy" decoding="async"></button><div class="pi"><span class="lab">'+p.l+(p.s?' · '+p.s:'')+'</span><h3>'+p.n+'</h3><span class="pt">'+hook(p)+'</span><div class="pb"><span class="pr">'+priceHTML(p)+'</span><button class="add" type="button" data-add="'+p.id+'" aria-label="Aggiungi '+p.n+' al carrello">+</button></div></div></li>';
   $$('[data-shop]').forEach(ul=>{ul.innerHTML=ul.dataset.shop.split(',').filter(known).map(id=>card(byId[id])).join('')});
   const catalog=$('#catalog'),catnav=$('#catnav');
   if(catnav)catnav.innerHTML='<div class="wrap">'+C.map(c=>'<a class="cat" href="#'+c.id+'">'+c.n+'</a>').join('')+'</div>';

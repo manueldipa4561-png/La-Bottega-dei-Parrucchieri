@@ -6,7 +6,7 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--carta);color:var(--notte);font:400 16px/1.55 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;font-stretch:100%;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body{margin:0;background:var(--carta);color:var(--notte);font:400 16px/1.55 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;font-stretch:100%;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
 button,input,select{font:inherit;color:inherit}
@@ -469,3 +469,26 @@ dialog.menu[open]{animation:menuin .45s var(--ease)}
   .rooms figure{scroll-snap-align:start}
   .rooms img{aspect-ratio:1;transform:none;will-change:auto}
 }
+
+/* logo: la versione CSS compare solo se il 3D non parte (niente salto piatto -> 3D); il canvas entra in dissolvenza */
+.js .ls{opacity:0}
+.js.gl-fail .ls,.js.nogl .ls{opacity:1}
+.gl3d .logo3d canvas{animation:logoin .9s var(--ease) both}
+@keyframes logoin{from{opacity:0;transform:scale(.96)}}
+/* telefono e tablet: meno GPU, meno batteria, pagina piu corta e piu comoda al dito */
+html{scroll-padding-top:72px}
+a,button,summary,label,select{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+@media (max-width:759px),(hover:none) and (pointer:coarse){
+  .top.glass{background:rgba(10,10,11,.95);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .menu-btn{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(255,255,255,.14)}
+  dialog.menu{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(10,10,11,.985)}
+  .por::before{animation:none}
+  .stage{height:280svh}
+  .wipe{height:210svh}
+  section{padding:clamp(52px,11vw,120px) 0}
+  .lab{font-size:.78rem}
+  .note{font-size:.86rem}
+  .chip span{min-height:44px}
+  .svc button{padding:18px 0}
+}
+@media (min-width:760px) and (hover:hover){html{scroll-behavior:smooth}}
