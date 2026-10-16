@@ -126,7 +126,7 @@ section{padding:clamp(84px,16vw,160px) 0}
 @media (hover:hover){.svc button:hover h3{color:var(--rosso)}}
 
 /* galleria orizzontale guidata dallo scroll */
-.track{position:relative;height:340svh;padding:0}
+.track{position:relative;height:540svh;padding:0}
 .track .pin{display:flex;flex-direction:column;justify-content:center;padding:calc(env(safe-area-inset-top) + 60px) 0 calc(20px + env(safe-area-inset-bottom))}
 .track .head{padding:0 var(--pad);margin-bottom:clamp(10px,2.5svh,22px)}
 .row{display:flex;gap:14px;padding:0 var(--pad);will-change:transform;width:max-content}
