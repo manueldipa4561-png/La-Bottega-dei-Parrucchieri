@@ -405,7 +405,7 @@ dialog[open]{animation:sheet .45s var(--ease)}
 .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
 .ore .cta-row,.band .cta-row,footer .cta-row{margin-top:24px}
 footer .cta-row{margin:6px 0 18px}
-.band{padding:0 0 clamp(56px,9vw,96px);margin-top:calc(-1*clamp(20px,5vw,60px))}
+.band{position:relative;z-index:1;background:var(--carta);padding:clamp(48px,8vw,96px) 0 clamp(56px,9vw,96px)}
 .band-t{font-stretch:125%;font-weight:800;text-transform:uppercase;letter-spacing:-.02em;line-height:1;font-size:clamp(1.6rem,6vw,3rem);margin:0;max-width:16em}
 /* header vetro dopo la scena (materiale traslucido, contenuto che scorre sotto) */
 .top{transition:background .35s var(--ease),-webkit-backdrop-filter .35s,backdrop-filter .35s,padding .35s var(--ease)}
