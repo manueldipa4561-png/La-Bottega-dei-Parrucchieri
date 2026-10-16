@@ -126,13 +126,13 @@ section{padding:clamp(84px,16vw,160px) 0}
 /* galleria orizzontale guidata dallo scroll */
 .track{position:relative;height:340svh;padding:0}
 .track .pin{display:flex;flex-direction:column;justify-content:center;padding:calc(env(safe-area-inset-top) + 60px) 0 calc(20px + env(safe-area-inset-bottom))}
-.track .head{padding:0 var(--pad);margin-bottom:22px}
+.track .head{padding:0 var(--pad);margin-bottom:clamp(10px,2.5svh,22px)}
 .row{display:flex;gap:14px;padding:0 var(--pad);will-change:transform;width:max-content}
 .card{margin:0;width:min(72vw,400px);flex:0 0 auto}
-.card img{width:100%;aspect-ratio:3/4;max-height:56svh;object-fit:cover;border-radius:var(--r);background:var(--linea)}
+.card img{width:100%;aspect-ratio:3/4;max-height:clamp(180px,calc(100svh - 390px),56svh);object-fit:cover;border-radius:var(--r);background:var(--linea)}
 .card figcaption{display:flex;justify-content:space-between;margin-top:10px}
 .card b{font-stretch:120%;font-weight:800;text-transform:uppercase}
-.track .note{padding:0 var(--pad)}
+.track .note{padding:0 var(--pad);margin:clamp(8px,2svh,18px) 0 0}
 .nogl .track{height:auto}.nogl .track .pin{position:relative;height:auto}.nogl .row{overflow-x:auto;width:auto;scroll-snap-type:x mandatory}.nogl .card{scroll-snap-align:start}
 
 /* team */
@@ -429,3 +429,6 @@ footer .cta-row{margin:6px 0 18px}
   .hint-sw{display:block;text-align:center;color:var(--grafite);margin:0 0 10px}
 }
 @media (max-width:759px){.logo3d video{width:175vw;max-width:none;position:absolute;left:50%;top:calc(50% + 3svh);transform:translate(-50%,-50%)}.logo3d{padding-top:6svh}}
+/* galleria su finestre basse: il titolo segue anche l'altezza, cosi la nota sotto le foto non viene tagliata */
+.track h2.x{font-size:clamp(2rem,min(11.5vw,12svh),7.2rem)}
+.track .pin{padding-top:calc(env(safe-area-inset-top) + clamp(56px,9svh,60px))}
