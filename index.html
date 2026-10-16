@@ -23,7 +23,7 @@
 <main>
 <section class="stage" id="stage" aria-label="La Bottega dei Parrucchieri">
   <div class="pin">
-    <div class="logo3d" aria-hidden="true"><div class="ls" id="ls"></div></div>
+    <div class="logo3d" aria-hidden="true"><canvas id="gl" width="700" height="430"></canvas><div class="ls" id="ls"></div></div>
     <div class="grid" aria-hidden="true"></div>
 
     <div class="step s0" data-a="-1" data-b=".3">
@@ -360,6 +360,7 @@
 <div id="toast" role="status" aria-live="polite"></div>
 
 <script src="js/shop.js" defer></script>
+<script src="js/logo3d.js" defer></script>
 <script>
 (()=>{
 const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
@@ -418,8 +419,8 @@ let ps=0,raf=0;
 const frame=time=>{
   raf=0;
   if(!RM&&vis.stage){const p=prog(stage),t=time*.001;ps=Math.abs(p-ps)>.2?p:ps+(p-ps)*.14;paintSteps(ps);
-    ls.style.transform='rotateX(-8deg) rotateY('+((t*SPIN)%360).toFixed(2)+'deg)';
-    ls.style.setProperty('--sh',((t*.12)%1*100).toFixed(1)+'%')}
+    if(!root.classList.contains('gl3d'))ls.style.transform='rotateX(-8deg) rotateY('+((t*SPIN)%360).toFixed(2)+'deg)';
+    if(!root.classList.contains('gl3d'))ls.style.setProperty('--sh',((t*.12)%1*100).toFixed(1)+'%')}
   if(!root.classList.contains('nogl')){
     if(vis.wipe)ba.style.setProperty('--w',(100-sm(clamp((prog(wipe)-.1)/.7,0,1))*100).toFixed(2));
     if(vis.track&&!mob.matches){const over=Math.max(0,row.scrollWidth-innerWidth);row.style.transform='translate3d('+(-prog(track)*over).toFixed(1)+'px,0,0)'}

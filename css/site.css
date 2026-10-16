@@ -435,3 +435,9 @@ footer .cta-row{margin:6px 0 18px}
 /* galleria su finestre basse: il titolo segue anche l'altezza, cosi la nota sotto le foto non viene tagliata */
 .track h2.x{font-size:clamp(2rem,min(11.5vw,12svh),7.2rem)}
 .track .pin{padding-top:calc(env(safe-area-inset-top) + clamp(56px,9svh,60px))}
+
+/* logo 3D vero (WebGL, canvas trasparente); la versione CSS resta come riserva */
+.logo3d canvas{display:none;width:min(100vw,900px);aspect-ratio:700/430;height:auto}
+.gl3d .logo3d canvas{display:block}
+.gl3d .ls{display:none}
+@media (max-width:759px){.logo3d canvas{width:128vw;max-width:none}.logo3d{padding-top:2svh}}
