@@ -1,10 +1,10 @@
 /* La F del logo in oro: mesh 3D estrusa dal logo (js/logo-mesh.bin), gira senza mai fermarsi.
    Canvas trasparente: niente riquadro dietro. Se WebGL non c'e, resta la versione CSS (#ls). */
 (()=>{
-  const cv=document.getElementById('gl');
-  if(!cv||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  const gl=cv.getContext('webgl',{alpha:true,premultipliedAlpha:true,antialias:true,powerPreference:'high-performance'});
-  if(!gl)return;
+  const cv=document.getElementById('gl'),root=document.documentElement,fail=()=>root.classList.add('gl-fail'); /* gl-fail: mostra la versione CSS */
+  if(!cv||matchMedia('(prefers-reduced-motion: reduce)').matches){fail();return}
+  const gl=cv.getContext('webgl',{alpha:true,premultipliedAlpha:true,antialias:true,powerPreference:matchMedia('(pointer: coarse)').matches?'default':'high-performance'});
+  if(!gl){fail();return}
   const SPIN=.7,CAMZ=6.2,TF=1/Math.tan(17.5*Math.PI/180); /* rad/s: un giro ogni ~9 s, costante */
 
   const mul=(a,b)=>{const o=new Array(16);for(let c=0;c<4;c++)for(let r=0;r<4;r++){let s=0;for(let k=0;k<4;k++)s+=a[k*4+r]*b[c*4+k];o[c*4+r]=s}return o};
@@ -44,13 +44,13 @@ void main(){
  gl_FragColor=vec4(pow(c,vec3(.92)),1.);
 }`));
   gl.linkProgram(prog);
-  if(!gl.getProgramParameter(prog,gl.LINK_STATUS)){console.error('logo3d shader',gl.getProgramInfoLog(prog));return}
+  if(!gl.getProgramParameter(prog,gl.LINK_STATUS)){console.error('logo3d shader',gl.getProgramInfoLog(prog));fail();return}
 
   let ready=false,nIdx=0,A=1,PV=null,vis=true,raf=0;
   const U=n=>gl.getUniformLocation(prog,n),uPV=U('uPV'),uM=U('uM'),uR=U('uR'),uH=U('uH');
   const aP=gl.getAttribLocation(prog,'p'),aN=gl.getAttribLocation(prog,'n'),aT=gl.getAttribLocation(prog,'t');
 
-  const resize=()=>{const d=Math.min(devicePixelRatio||1,2),w=cv.clientWidth,h=Math.max(cv.clientHeight,1);
+  const resize=()=>{const d=Math.min(devicePixelRatio||1,matchMedia('(pointer: coarse)').matches?1.5:2),w=cv.clientWidth,h=Math.max(cv.clientHeight,1);
     cv.width=Math.round(w*d);cv.height=Math.round(h*d);gl.viewport(0,0,cv.width,cv.height);
     A=w/h;PV=mul(persp(A),trans(0,0,-CAMZ))};
 
@@ -90,8 +90,8 @@ void main(){
     ready=true;
     new IntersectionObserver(([e])=>{vis=e.isIntersecting;if(vis&&!raf)raf=requestAnimationFrame(draw)}).observe(cv);
     draw(performance.now()); /* primo frame subito: niente buco quando si nasconde la versione CSS */
-  }).catch(e=>console.error('logo3d',e));
+  }).catch(e=>{console.error('logo3d',e);fail()});
 
   document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!raf&&ready&&vis)raf=requestAnimationFrame(draw)});
-  cv.addEventListener('webglcontextlost',e=>{e.preventDefault();ready=false;document.documentElement.classList.remove('gl3d')});
+  cv.addEventListener('webglcontextlost',e=>{e.preventDefault();ready=false;root.classList.remove('gl3d');fail()});
 })();
