@@ -413,3 +413,18 @@ footer .cta-row{margin:6px 0 18px}
 .top.glass .brand{color:var(--oro)}
 @media (prefers-reduced-transparency:reduce){.top.glass{background:var(--notte);-webkit-backdrop-filter:none;backdrop-filter:none}}
 @media (prefers-reduced-motion:reduce){.btn{transition:background .2s,color .2s}}
+
+/* galleria "Ogni testa": su telefono si scorre di lato con il dito, una foto alla volta */
+.dots,.hint-sw{display:none}
+@media (max-width:759px){
+  .track{height:auto;padding:clamp(72px,14vw,120px) 0}
+  .track .pin{position:relative;height:auto;padding:0}
+  .row{width:auto;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;scroll-padding:0 var(--pad);overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;will-change:auto}
+  .row::-webkit-scrollbar{display:none}
+  .card{width:78vw;scroll-snap-align:center;scroll-snap-stop:always}
+  .card img{max-height:none}
+  .dots{display:flex;justify-content:center;gap:7px;margin:18px 0 6px}
+  .dots i{width:7px;height:7px;border-radius:99px;background:var(--linea);transition:width .35s cubic-bezier(.34,1.4,.5,1),background .2s}
+  .dots i.on{width:22px;background:var(--rosso)}
+  .hint-sw{display:block;text-align:center;color:var(--grafite);margin:0 0 10px}
+}
