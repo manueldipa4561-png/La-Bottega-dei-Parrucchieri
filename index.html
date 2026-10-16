@@ -141,11 +141,11 @@
   <div class="pin">
     <div class="head"><p class="lab muted">Colore e forma</p><h2 class="x" id="h-work">Ogni testa,<br>una storia</h2></div>
     <div class="row" id="row">
-      <figure class="card"><img src="img/bob-1.webp" width="560" height="743" alt="Bob netto con la linea, visto di tre quarti" loading="lazy" decoding="async"><figcaption><b>Bob</b><span class="lab">Taglio con la linea</span></figcaption></figure>
-      <figure class="card"><img src="img/bob-2.webp" width="560" height="743" alt="Bob netto con la linea, visto da dietro" loading="lazy" decoding="async"><figcaption><b>Bob</b><span class="lab">Il dettaglio</span></figcaption></figure>
-      <figure class="card"><img src="img/colore-prima-dopo.webp" width="560" height="816" alt="Prima e dopo: da castano scuro a schiariture calde" loading="lazy" decoding="async"><figcaption><b>Luce</b><span class="lab">Prima e dopo</span></figcaption></figure>
-      <figure class="card"><img src="img/ricci.webp" width="560" height="743" alt="Ricci definiti castano scuro" loading="lazy" decoding="async"><figcaption><b>Ricci</b><span class="lab">Styling</span></figcaption></figure>
-      <figure class="card"><img src="img/sposa.webp" width="560" height="743" alt="Raccolto morbido da sposa con perle" loading="lazy" decoding="async"><figcaption><b>Raccolto</b><span class="lab">Sposa</span></figcaption></figure>
+      <figure class="card"><img src="img/bob-1.webp" width="560" height="743" alt="Bob netto con la linea, visto di tre quarti" loading="eager" decoding="async"><figcaption><b>Bob</b><span class="lab">Taglio con la linea</span></figcaption></figure>
+      <figure class="card"><img src="img/bob-2.webp" width="560" height="743" alt="Bob netto con la linea, visto da dietro" loading="eager" decoding="async"><figcaption><b>Bob</b><span class="lab">Il dettaglio</span></figcaption></figure>
+      <figure class="card"><img src="img/colore-prima-dopo.webp" width="560" height="816" alt="Prima e dopo: da castano scuro a schiariture calde" loading="eager" decoding="async"><figcaption><b>Luce</b><span class="lab">Prima e dopo</span></figcaption></figure>
+      <figure class="card"><img src="img/ricci.webp" width="560" height="743" alt="Ricci definiti castano scuro" loading="eager" decoding="async"><figcaption><b>Ricci</b><span class="lab">Styling</span></figcaption></figure>
+      <figure class="card"><img src="img/sposa.webp" width="560" height="743" alt="Raccolto morbido da sposa con perle" loading="eager" decoding="async"><figcaption><b>Raccolto</b><span class="lab">Sposa</span></figcaption></figure>
     </div>
     <div class="dots" id="dots" aria-hidden="true"></div>
     <p class="hint-sw lab">Scorri di lato →</p>
@@ -408,8 +408,8 @@ const paintSteps=p=>{steps.forEach(s=>{const o=clamp(Math.min((p-s.a)/.035,(s.b-
 const ba=$('#ba'),wipe=$('#effetto'),row=$('#row'),track=$('#lavori'),rooms=$$('.rooms img');
 const mob=matchMedia('(max-width: 759px)');
 const dots=$('#dots'),cards=$$('#row .card');
-cards.forEach((_,i)=>dots.append(document.createElement('i')));
-const paintDots=()=>{const w=cards[0].offsetWidth+12,i=Math.round(row.scrollLeft/w);[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i))};
+cards.forEach((_,i)=>{const d=document.createElement('i');d.addEventListener('click',()=>row.scrollTo({left:cards[i].offsetLeft-(row.clientWidth-cards[i].offsetWidth)/2,behavior:'smooth'}));dots.append(d)});
+const paintDots=()=>{const w=cards[0].offsetWidth+12,i=Math.min(cards.length-1,Math.round(row.scrollLeft/w));[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i))};
 row.addEventListener('scroll',paintDots,{passive:true});paintDots();
 let stageVis=true,ps=0,raf=0;
 new IntersectionObserver(([e])=>{stageVis=e.isIntersecting;kick()}).observe(stage);
