@@ -3,12 +3,28 @@
 const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
 const WA='393291097048';
 
-/* 01 / La firma: filtra le foto per colore */
+/* comparsa delle sezioni: solo nelle sezioni sotto lo schermo all'avvio (niente lampi), una volta sola,
+   in sequenza dentro lo stesso contenitore (45ms l'una, massimo 6 passi) */
+const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!still&&'IntersectionObserver' in window){
+  document.documentElement.classList.add('js');
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+  const SEL='h2,.intro,.split-img,.filters,.gallery li,.svc li,.cred li,.founder,.mfw,.mate,.contact li,.visit>div,.phil,.row-b,.all,.plist.best';
+  $$('.sec').filter(s=>s.getBoundingClientRect().top>innerHeight*.9).forEach(s=>{
+    const seen=new Map();
+    $$(SEL,s).forEach(el=>{const k=seen.get(el.parentNode)||0;seen.set(el.parentNode,k+1);el.style.setProperty('--i',Math.min(k,6));el.classList.add('rv');io.observe(el)});
+  });
+}
+$$('.mn nav a').forEach((a,i)=>a.style.setProperty('--i',i));
+
+/* 01 / La firma: filtra le foto per colore; le foto che restano arrivano in sequenza */
 const tags=$$('[data-filter]'),cards=$$('#gallery li');
 tags.forEach(t=>t.addEventListener('click',()=>{
-  const f=t.dataset.filter;
+  const f=t.dataset.filter;let k=0;
   tags.forEach(x=>x.setAttribute('aria-pressed',x===t));
-  cards.forEach(c=>{c.hidden=f!=='all'&&c.dataset.cat!==f});
+  cards.forEach(c=>{c.hidden=f!=='all'&&c.dataset.cat!==f;c.classList.remove('pop');c.classList.add('in')});
+  void document.body.offsetWidth;
+  cards.forEach(c=>{if(!c.hidden){c.style.setProperty('--i',Math.min(k++,6));c.classList.add('pop')}});
 }));
 
 /* barra "Prenota" in basso (telefono): compare dopo l'hero */
