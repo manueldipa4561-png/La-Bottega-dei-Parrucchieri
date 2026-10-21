@@ -45,7 +45,7 @@
   const img=id=>'img/shop/'+id+'.webp';
   const hook=p=>p.k?p.k.length+' prodotti'+(p.was?' · risparmi '+Math.round((1-p.p/p.was)*100)+'%':''):(p.b?p.b[0]:'');
   const ONE={lavaggi:'lavaggio',applicazioni:'applicazione'};
-  const useText=p=>!p.u?'':'Dura circa '+p.u[0]+'–'+p.u[1]+' '+p.u[2]+' (stima)'+(p.p==null?'':' · ≈ '+eur.format(p.p/((p.u[0]+p.u[1])/2))+' a '+ONE[p.u[2]]);
+  const useText=p=>!p.u?'':'Dura circa '+p.u[0]+'-'+p.u[1]+' '+p.u[2]+' (stima)'+(p.p==null?'':' · ≈ '+eur.format(p.p/((p.u[0]+p.u[1])/2))+' a '+ONE[p.u[2]]);
   const priceHTML=p=>p.p==null?'<span class="tbd">Prezzo in salone</span>':'<b>'+eur.format(p.p)+'</b>'+(p.was?'<s>'+eur.format(p.was)+'</s>':'');
   let tt;const toast=m=>{const t=$('#toast');if(!t)return;t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),3200)};
   const buzz=ms=>{try{if(navigator.vibrate&&(!navigator.userActivation||navigator.userActivation.isActive))navigator.vibrate(ms)}catch(e){}};
