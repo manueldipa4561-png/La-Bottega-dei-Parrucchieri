@@ -9,19 +9,19 @@
 <link rel="icon" href="img/favicon.png" type="image/png">
 <link rel="preload" href="fonts/Cormorant.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/Geist.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.css?v=4">
+<link rel="stylesheet" href="css/site.css?v=5">
 </head>
-<body class="shop-page">
+<body class="shop-page" data-page="shop.html">
 
 <header class="top">
-  <a class="brand" href="index.html" aria-label="La Bottega dei Parrucchieri, torna alla home"><span class="serif">La Bottega</span><small>dei parrucchieri</small></a>
-  <nav class="nav" aria-label="Principale"><a href="index.html#colore">Colore</a><a href="index.html#servizi">Servizi</a><a href="index.html#maison">La Maison</a><a href="index.html#contatti">Contatti</a></nav>
-  <a class="btn sm" href="index.html#prenota">Prenota<i class="ar" aria-hidden="true">↗︎</i></a>
+  <a class="brand" href="index.html" aria-label="La Bottega dei Parrucchieri, home"><span class="serif">La Bottega</span><small>dei parrucchieri</small></a>
+  <button class="btn sm" type="button" data-book>Prenota<i class="ar" aria-hidden="true">↗︎</i></button>
+  <button class="menu-btn" type="button" id="menuBtn" aria-label="Apri il menu" aria-haspopup="dialog" aria-controls="menu"><i></i><i></i><i></i></button>
 </header>
 
-<main>
-  <section class="shop-hero" aria-labelledby="h-shop">
-    <p class="eyebrow bz">05 / Haircare La Bottega</p>
+<main id="home">
+<section class="shop-hero" aria-labelledby="h-shop">
+    <p class="eyebrow bz">04 / Haircare La Bottega</p>
     <h1 class="serif" id="h-shop">La bellezza<br>continua <i>a casa.</i></h1>
     <p class="intro">La nostra linea Haircare, Made in Italy e fitobiologica: la stessa che usiamo in salone, scelta per prolungare a casa la cura del lavoro fatto da noi. Ordini qui, ritiri in Piazza Garibaldi 13 o la ricevi a casa.</p>
   </section>
@@ -37,13 +37,14 @@
 <footer class="foot">
   <p class="serif fb">La Bottega</p>
   <p class="eyebrow bz2">Dei parrucchieri</p>
-  <p>Piazza Giuseppe Garibaldi 13, 65127 Pescara · <a href="tel:+3908568782">085 68782</a> · <a href="https://wa.me/393291097048" target="_blank" rel="noopener">WhatsApp 329 109 7048</a></p>
-  <p>Come funziona lo shop: l'ordine ci arriva su WhatsApp e ti confermiamo disponibilità e totale, e per la consegna a casa costo e tempi, prima che tu paghi. Paghi al ritiro in salone o con un link di pagamento. Il tuo numero lo usiamo solo per l'ordine.</p>
-  <p class="links eyebrow"><a href="index.html">Torna al salone<i class="ar" aria-hidden="true">↗︎</i></a><a href="index.html#prenota">Prenota un appuntamento<i class="ar" aria-hidden="true">↗︎</i></a></p>
-  <p>© 2026 La Bottega dei Parrucchieri. L'ordine si invia solo da WhatsApp: nessun dato passa da questo sito.</p>
+  <p>Bellezza, tecnica e personalità.<br>Piazza Giuseppe Garibaldi 13, 65127 Pescara · <a href="tel:+3908568782">085 68782</a> · <a href="mailto:pescara@labottegadeiparrucchieri.it">pescara@labottegadeiparrucchieri.it</a></p>
+  <nav class="links eyebrow" aria-label="Pagine del sito"><a href="index.html">Home</a><a href="colore.html">Colore</a><a href="servizi.html">Servizi</a><a href="maison.html">La Maison</a><a href="shop.html">Haircare</a><a href="contatti.html">Contatti</a><a href="https://www.instagram.com/la.bottega.dei.parrucchieri/" target="_blank" rel="noopener">Instagram<i class="ar" aria-hidden="true">↗︎</i></a></nav>
+  <p>© 2026 La Bottega dei Parrucchieri. Il prezzo dei servizi ti viene comunicato quando confermiamo l'appuntamento; i prezzi dei prodotti sono indicativi.</p>
 </footer>
 
+<div class="sticky-book" id="stickyBook"><small>Il tuo prossimo look<br><strong>Comincia da una consulenza.</strong></small><button class="btn sm" type="button" data-book data-svc="Consulenza colore">Prenota<i class="ar" aria-hidden="true">↗︎</i></button></div>
 <div id="toast" role="status" aria-live="polite"></div>
-<script src="js/shop.js?v=4" defer></script>
+<script src="js/shop.js?v=5" defer></script>
+<script src="js/site.js?v=5" defer></script>
 </body>
 </html>

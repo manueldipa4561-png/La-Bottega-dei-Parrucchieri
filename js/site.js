@@ -1,23 +1,55 @@
-/* Home: filtri colore, prenotazione su WhatsApp, orari di oggi. */
+/* Tutte le pagine: menu in alto a destra, prenotazione su WhatsApp, comparse, filtri colore, orari di oggi.
+   Menu e prenotazione sono scritti qui una volta sola, così restano uguali in ogni pagina. */
 (()=>{
 const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
-const WA='393291097048';
+const WA='393291097048',AR='<i class="ar" aria-hidden="true">↗︎</i>';
+const PAGES=[['index.html','Home'],['colore.html','Colore'],['servizi.html','Servizi'],['maison.html','La Maison'],['shop.html','Haircare'],['contatti.html','Contatti']];
+const here=document.body.dataset.page||'index.html';
+const WHO=['Fabio','Liviana','Francesca','Mario','Daniela','Nausica'];
+const SVC=['Consulenza colore','Colore e schiariture','Effetto Bottega','Taglio e styling','Sposa e occasioni','Trattamenti e haircare','Estensioni','Altro servizio'];
 
-/* comparsa delle sezioni: solo nelle sezioni sotto lo schermo all'avvio (niente lampi), una volta sola,
-   in sequenza dentro lo stesso contenitore (45ms l'una, massimo 6 passi) */
-const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(!still&&'IntersectionObserver' in window){
+document.body.insertAdjacentHTML('beforeend',
+  '<dialog class="menu" id="menu" aria-label="Menu"><div class="mn">'+
+    '<header><span class="eyebrow">Menu</span><button class="xbtn" type="button" id="menuClose" aria-label="Chiudi il menu">×</button></header>'+
+    '<nav aria-label="Pagine del sito">'+PAGES.map(([f,n],i)=>'<a href="'+f+'" style="--i:'+i+'"'+(f===here?' aria-current="page"':'')+'><span class="eyebrow bz">0'+i+'</span>'+n+AR+'</a>').join('')+'</nav>'+
+    '<div class="mn-foot"><button class="btn full" type="button" data-book>Prenota un appuntamento</button><p class="eyebrow">Piazza Garibaldi 13, Pescara · <a href="tel:+3908568782">085 68782</a></p></div>'+
+  '</div></dialog>'+
+  '<dialog id="sheet" aria-labelledby="h-sheet"><div class="sh">'+
+    '<header><div><p class="eyebrow bz">La Bottega dei Parrucchieri</p><h2 class="serif" id="h-sheet">Parliamo dei tuoi capelli.</h2></div><button class="xbtn" type="button" id="close" aria-label="Chiudi">×</button></header>'+
+    '<form id="book" novalidate>'+
+      '<label class="f"><span>Servizio d\'interesse</span><select name="svc" id="svc" required>'+SVC.map(s=>'<option>'+s+'</option>').join('')+'</select></label>'+
+      '<fieldset class="chips"><legend>Con chi</legend><label class="chip"><input type="radio" name="who" value="Nessuna preferenza" checked><span>Chi è libero</span></label>'+WHO.map(w=>'<label class="chip"><input type="radio" name="who" value="'+w+'"><span>'+w+'</span></label>').join('')+'</fieldset>'+
+      '<div class="two"><label class="f"><span>Giorno</span><input type="date" name="day" id="day" required></label><label class="f"><span>Ora</span><select name="time" id="time" required></select></label></div>'+
+      '<label class="f"><span>Il tuo nome</span><input name="name" autocomplete="given-name" maxlength="60" placeholder="Come ti chiami?" required></label>'+
+      '<label class="f"><span>Telefono</span><input name="tel" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" pattern="[0-9 +]{6,20}" required></label>'+
+      '<label class="f"><span>Cosa desideri realizzare?</span><textarea name="msg" rows="3" maxlength="400" placeholder="Raccontaci il risultato che immagini"></textarea></label>'+
+      '<p class="dep" id="dep">Per sposa ed estensioni il salone può chiedere una piccola caparra per bloccare la data. Si scala dal conto.</p>'+
+      '<button class="btn full" type="submit">Invia la richiesta'+AR+'</button>'+
+      '<p class="fine center">La richiesta parte da WhatsApp: ti confermiamo l\'orario prima che tu venga.</p>'+
+    '</form>'+
+    '<div class="ok" id="ok" hidden><h2 class="serif" id="okT" tabindex="-1">Manca un tocco.</h2><p id="okP"></p><p>Si è aperto WhatsApp con la tua richiesta: premi Invia e il salone ti conferma l\'orario. Se non si è aperto, usa il pulsante.</p>'+
+      '<div class="row-b center"><a class="btn" id="okWa" href="#" target="_blank" rel="noopener">Apri WhatsApp'+AR+'</a><button class="btn ol" type="button" id="okClose">Chiudi</button></div></div>'+
+  '</div></dialog>');
+
+/* menu: si apre dal pulsante in alto a destra, si chiude con X, ESC, tocco fuori o su un link */
+const menu=$('#menu'),mb=$('#menuBtn');
+mb.addEventListener('click',()=>{if(!menu.open){menu.showModal();mb.setAttribute('aria-expanded','true')}});
+menu.addEventListener('close',()=>mb.setAttribute('aria-expanded','false'));
+$('#menuClose').addEventListener('click',()=>menu.close());
+menu.addEventListener('click',e=>{if(e.target===menu||e.target.closest('a,[data-book]'))menu.close()});
+
+/* comparsa delle sezioni: solo sotto lo schermo all'avvio (niente lampi), una volta sola, 45ms l'una */
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){
   document.documentElement.classList.add('js');
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-  const SEL='h2,.intro,.split-img,.filters,.gallery li,.svc li,.cred li,.founder,.mfw,.mate,.contact li,.visit>div,.phil,.row-b,.all,.plist.best';
+  const SEL='h2,.intro,.split-img,.filters,.gallery li,.svc li,.cred li,.founder,.mfw,.mate,.contact li,.visit>div,.phil,.row-b,.all,.plist.best,.tiles li';
   $$('.sec').filter(s=>s.getBoundingClientRect().top>innerHeight*.9).forEach(s=>{
     const seen=new Map();
     $$(SEL,s).forEach(el=>{const k=seen.get(el.parentNode)||0;seen.set(el.parentNode,k+1);el.style.setProperty('--i',Math.min(k,6));el.classList.add('rv');io.observe(el)});
   });
 }
-$$('.mn nav a').forEach((a,i)=>a.style.setProperty('--i',i));
 
-/* 01 / La firma: filtra le foto per colore; le foto che restano arrivano in sequenza */
+/* Colore: filtra le foto per colore; quelle che restano arrivano in sequenza */
 const tags=$$('[data-filter]'),cards=$$('#gallery li');
 tags.forEach(t=>t.addEventListener('click',()=>{
   const f=t.dataset.filter;let k=0;
@@ -27,9 +59,9 @@ tags.forEach(t=>t.addEventListener('click',()=>{
   cards.forEach(c=>{if(!c.hidden){c.style.setProperty('--i',Math.min(k++,6));c.classList.add('pop')}});
 }));
 
-/* barra "Prenota" in basso (telefono): compare dopo l'hero */
-const bar=$('#stickyBook'),hero=$('.hero');
-if(bar&&hero)new IntersectionObserver(([e])=>bar.classList.toggle('on',!e.isIntersecting&&e.boundingClientRect.top<0)).observe(hero);
+/* barra "Prenota" in basso (telefono): compare dopo il primo blocco della pagina */
+const bar=$('#stickyBook'),first=$('main>section');
+if(bar&&first)new IntersectionObserver(([e])=>bar.classList.toggle('on',!e.isIntersecting&&e.boundingClientRect.top<0)).observe(first);
 
 /* prenotazione: la richiesta parte da WhatsApp */
 const dlg=$('#sheet'),form=$('#book'),svc=$('#svc'),day=$('#day'),time=$('#time'),dep=$('#dep'),ok=$('#ok');
@@ -39,10 +71,10 @@ const next=()=>{const d=new Date();d.setDate(d.getDate()+1);if(d.getDay()===0)d.
 day.min=iso(new Date());const mx=new Date();mx.setMonth(mx.getMonth()+3);day.max=iso(mx);
 const sync=()=>dep.classList.toggle('on',svc.value==='Sposa e occasioni'||svc.value==='Estensioni');
 svc.addEventListener('change',sync);
-const radios=$$('input[name=who]',form),SV=[...svc.options].map(o=>o.value),WH=radios.map(i=>i.value);
+const radios=$$('input[name=who]',form),WH=radios.map(i=>i.value);
 const open=(s,w)=>{
   form.hidden=false;ok.hidden=true;
-  if(SV.includes(s))svc.value=s;
+  if(SVC.includes(s))svc.value=s;
   const who=WH.includes(w)?w:'Nessuna preferenza';radios.forEach(i=>i.checked=i.value===who);
   if(!day.value)day.value=iso(next());
   sync();if(!dlg.open)dlg.showModal();
@@ -65,12 +97,15 @@ form.addEventListener('submit',e=>{
   form.reset();day.value='';
 });
 
-/* orari: oggi e aperto ora, ora di Pescara */
-const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Rome',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(x=>[x.type,x.value]));
-const dow=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday),min=+p.hour*60+ +p.minute;
-const li=$('#hours li[data-d="'+dow+'"]');if(li)li.classList.add('today');
-const isOpen=dow>0&&min>=540&&min<1140,live=$('#live');
-const when=min<540&&dow>0?'apre alle 9:00':dow===6?'riapre lunedì alle 9:00':'riapre domani alle 9:00';
-live.textContent=isOpen?'Aperto ora · fino alle 19:00':'Ora chiuso · '+when;
-live.classList.toggle('open',isOpen);
+/* orari: oggi e aperto ora, ora di Pescara (home e contatti) */
+const live=$('#live');
+if(live){
+  const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Rome',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+  const dow=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday),min=+p.hour*60+ +p.minute;
+  const li=$('#hours li[data-d="'+dow+'"]');if(li)li.classList.add('today');
+  const isOpen=dow>0&&min>=540&&min<1140;
+  const when=min<540&&dow>0?'apre alle 9:00':dow===6?'riapre lunedì alle 9:00':'riapre domani alle 9:00';
+  live.textContent=isOpen?'Aperto ora · fino alle 19:00':'Ora chiuso · '+when;
+  live.classList.toggle('open',isOpen);
+}
 })();
