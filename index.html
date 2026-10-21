@@ -13,15 +13,14 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HairSalon","name":"La Bottega dei Parrucchieri","founder":{"@type":"Person","name":"Fabio D'Attanasio"},"foundingDate":"2017","address":{"@type":"PostalAddress","streetAddress":"Piazza Giuseppe Garibaldi 13","postalCode":"65127","addressLocality":"Pescara","addressRegion":"PE","addressCountry":"IT"},"telephone":"+39 085 68782","email":"pescara@labottegadeiparrucchieri.it","openingHours":"Mo-Sa 09:00-19:00","sameAs":["https://www.instagram.com/la.bottega.dei.parrucchieri/","https://www.facebook.com/parrucchieridipescara"]}
 </script>
-<link rel="stylesheet" href="css/site.css?v=4">
+<link rel="stylesheet" href="css/site.css?v=5">
 </head>
-<body>
+<body data-page="index.html">
 
 <header class="top">
-  <button class="menu-btn" type="button" id="menuBtn" aria-label="Apri il menu" aria-haspopup="dialog"><i></i><i></i><i></i></button>
-  <a class="brand" href="#home" aria-label="La Bottega dei Parrucchieri, inizio pagina"><span class="serif">La Bottega</span><small>dei parrucchieri</small></a>
-  <nav class="nav" aria-label="Principale"><a href="#colore">Colore</a><a href="#servizi">Servizi</a><a href="#maison">La Maison</a><a href="#haircare">Haircare</a><a href="#contatti">Contatti</a></nav>
+  <a class="brand" href="index.html" aria-label="La Bottega dei Parrucchieri, home"><span class="serif">La Bottega</span><small>dei parrucchieri</small></a>
   <button class="btn sm" type="button" data-book>Prenota<i class="ar" aria-hidden="true">↗︎</i></button>
+  <button class="menu-btn" type="button" id="menuBtn" aria-label="Apri il menu" aria-haspopup="dialog" aria-controls="menu"><i></i><i></i><i></i></button>
 </header>
 
 <main id="home">
@@ -33,7 +32,7 @@
     <h1 class="serif" id="h-hero">Il colore ha<br>una firma.</h1>
     <p class="serif it">La tua. La nostra.</p>
     <p class="body">Ogni sfumatura nasce da una visione. Tecnica, ricerca e sensibilità per creare un risultato che parla di te.</p>
-    <div class="row-b"><a class="btn" href="#tecnica">Scopri Effetto Bottega<i class="ar" aria-hidden="true">↗︎</i></a><button class="btn ol" type="button" data-book>Prenota</button></div>
+    <div class="row-b"><a class="btn" href="colore.html#tecnica">Scopri Effetto Bottega<i class="ar" aria-hidden="true">↗︎</i></a><button class="btn ol" type="button" data-book>Prenota</button></div>
     <p class="eyebrow pills"><span>Taglio</span><span>Colore</span><span>Styling</span><span>Haircare</span></p>
   </div>
   <figure class="hero-img">
@@ -42,177 +41,32 @@
   </figure>
 </section>
 
-<section id="colore" class="sec sand" aria-labelledby="h-colore">
-  <p class="eyebrow bz">01 / La firma</p>
-  <h2 class="serif" id="h-colore">Non un colore<br>qualsiasi. <i>Il tuo.</i></h2>
-  <p class="intro">Un colore pensato per te, per la tua base, la tua personalità e il movimento dei tuoi capelli.</p>
-  <div class="filters" id="filters" role="group" aria-label="Filtra per colore">
-    <button class="tag" type="button" data-filter="all" aria-pressed="true">Tutti</button><button class="tag" type="button" data-filter="blonde" aria-pressed="false">Blonde</button><button class="tag" type="button" data-filter="caramel" aria-pressed="false">Caramel</button><button class="tag" type="button" data-filter="brunette" aria-pressed="false">Brunette</button><button class="tag" type="button" data-filter="creative" aria-pressed="false">Creative</button>
-  </div>
-  <ul class="gallery" id="gallery">
-    <li data-cat="blonde"><figure><div class="ci"><img src="img/colore-biondo-vaniglia.webp" srcset="img/m/colore-biondo-vaniglia.webp 480w, img/colore-biondo-vaniglia.webp 720w" sizes="(max-width:760px) 38vw, (max-width:1100px) 30vw, 22vw" width="720" height="900" alt="Biondo caldo, sfumato dalla radice" loading="lazy" decoding="async"></div><figcaption><span class="eyebrow bz">Blonde</span><b class="serif">Biondo Vaniglia</b><span>Luce naturale, sfumature luminose.</span></figcaption></figure></li>
-    <li data-cat="caramel"><figure><div class="ci"><img src="img/colore-caramel-mocha.webp" srcset="img/m/colore-caramel-mocha.webp 480w, img/colore-caramel-mocha.webp 720w" sizes="(max-width:760px) 38vw, (max-width:1100px) 30vw, 22vw" width="720" height="904" alt="Castano caldo con riflessi caramello" loading="lazy" decoding="async"></div><figcaption><span class="eyebrow bz">Caramel</span><b class="serif">Caramel Mocha</b><span>Calore prezioso, riflessi armoniosi.</span></figcaption></figure></li>
-    <li data-cat="brunette"><figure><div class="ci"><img src="img/colore-mocha-brunette.webp" srcset="img/m/colore-mocha-brunette.webp 480w, img/colore-mocha-brunette.webp 585w" sizes="(max-width:760px) 38vw, (max-width:1100px) 30vw, 22vw" width="585" height="960" alt="Castano scuro profondo e lucido" loading="lazy" decoding="async"></div><figcaption><span class="eyebrow bz">Brunette</span><b class="serif">Mocha Brunette</b><span>Profondità intensa, eleganza naturale.</span></figcaption></figure></li>
-    <li data-cat="blonde"><figure><div class="ci"><img src="img/colore-biondo-platino.webp" srcset="img/m/colore-biondo-platino.webp 480w, img/colore-biondo-platino.webp 615w" sizes="(max-width:760px) 38vw, (max-width:1100px) 30vw, 22vw" width="615" height="960" alt="Biondo platino con radice sfumata" loading="lazy" decoding="async"></div><figcaption><span class="eyebrow bz">Blonde</span><b class="serif">Biondo Platino</b><span>Freddo, luminoso, sfumato.</span></figcaption></figure></li>
-    <li data-cat="caramel"><figure><div class="ci"><img src="img/colore-cinnamon-caramel.webp" srcset="img/m/colore-cinnamon-caramel.webp 480w, img/colore-cinnamon-caramel.webp 720w" sizes="(max-width:760px) 38vw, (max-width:1100px) 30vw, 22vw" width="720" height="900" alt="Balayage rame e caramello" loading="lazy" decoding="async"></div><figcaption><span class="eyebrow bz">Caramel</span><b class="serif">Balayage Cinnamon Caramel</b><span>Cannella e caramello, baciati dal sole.</span></figcaption></figure></li>
-    <li data-cat="brunette"><figure><div class="ci"><img src="img/dopo.webp" srcset="img/m/dopo.webp 480w, img/dopo.webp 760w" sizes="(max-width:760px) 38vw, (max-width:1100px) 30vw, 22vw" width="760" height="1013" alt="Castano con schiariture calde sfumate fino alle punte" loading="lazy" decoding="async"></div><figcaption><span class="eyebrow bz">Brunette</span><b class="serif">Effetto Bottega</b><span>Schiariture a mano, sfumate fino alle punte.</span></figcaption></figure></li>
-    <li data-cat="creative"><figure><div class="ci"><img src="img/colore-color-art.webp" srcset="img/m/colore-color-art.webp 480w, img/colore-color-art.webp 720w" sizes="(max-width:760px) 38vw, (max-width:1100px) 30vw, 22vw" width="720" height="900" alt="Verde acido sfumato su caschetto" loading="lazy" decoding="async"></div><figcaption><span class="eyebrow bz">Creative</span><b class="serif">Color Art</b><span>Il colore come segno.</span></figcaption></figure></li>
-    <li data-cat="creative"><figure><div class="ci"><img src="img/colore-color-block.webp" srcset="img/m/colore-color-block.webp 480w, img/colore-color-block.webp 690w" sizes="(max-width:760px) 38vw, (max-width:1100px) 30vw, 22vw" width="690" height="960" alt="Capelli scuri con ciocca turchese a blocco" loading="lazy" decoding="async"></div><figcaption><span class="eyebrow bz">Creative</span><b class="serif">Color Block</b><span>Un blocco di colore, netto.</span></figcaption></figure></li>
+<section class="sec explore" aria-label="Esplora La Bottega">
+  <ul class="tiles">
+    <li><a href="colore.html"><span class="ti"><img src="img/m/colore-biondo-vaniglia.webp" width="480" height="600" alt="" loading="lazy" decoding="async"></span><span class="eyebrow bz">01</span><b class="serif">Colore</b><span>La firma e la tecnica: Effetto Bottega e i nostri lavori.</span><i class="ar" aria-hidden="true">↗︎</i></a></li>
+    <li><a href="servizi.html"><span class="ti"><img src="img/m/colore-prima-dopo.webp" width="480" height="702" alt="" loading="lazy" decoding="async"></span><span class="eyebrow bz">02</span><b class="serif">Servizi</b><span>Colore, taglio, sposa e trattamenti.</span><i class="ar" aria-hidden="true">↗︎</i></a></li>
+    <li><a href="maison.html"><span class="ti"><img src="img/m/reception.webp" width="480" height="637" alt="" loading="lazy" decoding="async"></span><span class="eyebrow bz">03</span><b class="serif">La Maison</b><span>Fabio, la squadra, il salone e la Fashion Week.</span><i class="ar" aria-hidden="true">↗︎</i></a></li>
+    <li><a href="shop.html"><span class="ti prod"><img src="img/shop/sm/kit-lamellare.webp" width="480" height="480" alt="" loading="lazy" decoding="async"></span><span class="eyebrow bz">04</span><b class="serif">Haircare</b><span>La nostra linea, da portare a casa.</span><i class="ar" aria-hidden="true">↗︎</i></a></li>
   </ul>
-  <p class="fine">Foto reali dei lavori del salone.</p>
-  <a class="btn" href="#servizi">Trova il tuo servizio<i class="ar" aria-hidden="true">↗︎</i></a>
-</section>
-
-<section id="tecnica" class="sec" aria-labelledby="h-tecnica">
-  <div class="split">
-    <div>
-      <p class="eyebrow bz">02 / La tecnica</p>
-      <h2 class="serif" id="h-tecnica">La bellezza<br>è un risultato.<br><i>La tecnica fa<br>la differenza.</i></h2>
-      <p class="intro">Dietro ogni lavoro ci sono ascolto, consulenza e conoscenza del colore. Non seguiamo soltanto una tendenza: la interpretiamo per te.</p>
-      <p class="intro"><b>Effetto Bottega</b>, il nostro servizio firma: schiariture a mano libera o con stagnole, sfumate in modo graduale fino alle punte, sulla tonalità giusta per te.</p>
-      <div class="row-b"><a class="btn" href="#servizi">Esplora i servizi<i class="ar" aria-hidden="true">↗︎</i></a><button class="btn ol" type="button" data-book data-svc="Effetto Bottega">Prenota Effetto Bottega</button></div>
-    </div>
-    <figure class="split-img">
-      <img src="img/colore-prima-dopo.webp" srcset="img/m/colore-prima-dopo.webp 480w, img/colore-prima-dopo.webp 760w" sizes="(max-width:760px) 100vw, 42vw" width="760" height="1111" alt="Prima e dopo dell'Effetto Bottega: a destra castano scuro uniforme, a sinistra schiariture calde" loading="lazy" decoding="async">
-      <figcaption class="card"><span class="eyebrow">La filosofia Bottega</span><span class="serif">Personalità prima della tendenza.</span></figcaption>
-    </figure>
-  </div>
-</section>
-
-<section id="servizi" class="sec dark" aria-labelledby="h-servizi">
-  <p class="eyebrow bz2">03 / I nostri servizi</p>
-  <h2 class="serif" id="h-servizi">Un progetto<br>per i tuoi capelli.</h2>
-  <p class="intro">Dalla consulenza al risultato, un percorso su misura per valorizzare la tua bellezza.</p>
-  <ul class="svc">
-    <li><button type="button" data-book data-svc="Colore e schiariture"><span><span class="eyebrow bz2">01</span><b class="serif">Colore &amp; schiariture</b><span class="d">Effetto Bottega, Air Touch, Color Gloss, colorazione naturale ed henné.</span></span><i class="ar" aria-hidden="true">↗︎</i></button></li>
-    <li><button type="button" data-book data-svc="Taglio e styling"><span><span class="eyebrow bz2">02</span><b class="serif">Taglio &amp; styling</b><span class="d">Forma, movimento e stile personalizzato, donna e uomo.</span></span><i class="ar" aria-hidden="true">↗︎</i></button></li>
-    <li><button type="button" data-book data-svc="Sposa e occasioni"><span><span class="eyebrow bz2">03</span><b class="serif">Sposa &amp; occasioni</b><span class="d">Consulenza, prova in salone e acconciatura del giorno.</span></span><i class="ar" aria-hidden="true">↗︎</i></button></li>
-    <li><button type="button" data-book data-svc="Trattamenti e haircare"><span><span class="eyebrow bz2">04</span><b class="serif">Trattamenti &amp; haircare</b><span class="d">Cheratina, lamellare, ricostruzione, estensioni e routine per casa.</span></span><i class="ar" aria-hidden="true">↗︎</i></button></li>
-  </ul>
-  <details class="all">
-    <summary class="eyebrow">Tutti i servizi, nel dettaglio</summary>
-    <dl>
-      <dt>Effetto Bottega</dt><dd>Schiariture a mano libera o con stagnole, che permettono di raggiungere la tonalità perfetta per ogni cliente, sfumando in maniera totalmente graduale fino alle punte.</dd>
-      <dt>Air Touch</dt><dd>Una schiaritura dall'effetto super natural, dove la sfumatura si fonde perfettamente con il colore di base, senza stacchi netti.</dd>
-      <dt>Color Gloss</dt><dd>La tinta perfetta per una copertura lucida e uniforme, dalla radice alle punte.</dd>
-      <dt>Colorazione naturale</dt><dd>Il colore specifico per chi ha allergie o è in gravidanza: dura nel tempo e nutre il capello.</dd>
-      <dt>Henné</dt><dd>L'erba tintoria eco-friendly per chi cerca una soluzione naturale per donare riflessi unici alla propria chioma.</dd>
-      <dt>Ondulazione riccia</dt><dd>La scelta perfetta per chi sogna un capello molto mosso o riccio, che sia morbido, definito e disciplinato.</dd>
-      <dt>Anticrespo alla cheratina</dt><dd>Il nostro trattamento vegan che elimina il crespo e i volumi, per un effetto waterproof. Dura dai 3 ai 6 mesi.</dd>
-      <dt>Trattamento lamellare</dt><dd>Crea una guaina protettiva intorno al capello sfibrato, per sigillare le cuticole e renderlo più lucido e disciplinato.</dd>
-      <dt>Ricostruzione capillare</dt><dd>Ricostruzione più o meno intensa della fibra capillare.</dd>
-      <dt>Estensioni Microrings / Trimmer</dt><dd>A fasce con mini microrings leggeri e semi-invisibili, o a ciocche sottilissime con il Trimmer, tramite un liquido vegetale. Effettuata a freddo, non appesantisce ed è completamente trasparente.</dd>
-      <dt>Taglio e piega</dt><dd>Un taglio per ogni personalità e la piega perfetta, che duri e ti faccia risplendere.</dd>
-    </dl>
-    <p class="fine">Il prezzo dipende dalla lunghezza e dal servizio: te lo diciamo quando confermiamo l'appuntamento, prima che tu venga.</p>
-  </details>
-  <button class="btn gold" type="button" data-book data-svc="Consulenza colore">Richiedi una consulenza<i class="ar" aria-hidden="true">↗︎</i></button>
-</section>
-
-<section id="maison" class="sec sand" aria-labelledby="h-maison">
-  <div class="split rev">
-    <figure class="split-img"><img src="img/reception.webp" srcset="img/m/reception.webp 480w, img/reception.webp 880w" sizes="(max-width:760px) 100vw, 42vw" width="880" height="1168" alt="La sala della Bottega con le postazioni e la F" loading="lazy" decoding="async"></figure>
-    <div>
-      <p class="eyebrow bz">04 / La Maison</p>
-      <h2 class="serif" id="h-maison">Esperienza.<br>Ricerca.<br><i>Visione.</i></h2>
-      <p class="intro">La Bottega unisce esperienza professionale, ricerca tecnica e sensibilità per la bellezza. Il confronto con il mondo dell'hairstyling e della moda alimenta una visione in continua evoluzione.</p>
-      <div class="phil"><p class="eyebrow">La nostra filosofia</p><p class="serif">Ogni persona, una storia. Ogni colore, una firma.</p></div>
-    </div>
-  </div>
-
   <ul class="cred">
     <li><b class="serif">2023</b><span>Parrucchiere dell'anno, Giornale del Parrucchiere</span></li>
     <li><b class="serif">Wella</b><span>Professionals Official Salon</span></li>
     <li><b class="serif">MFW</b><span>Backstage Milano Fashion Week 2024 e 2025</span></li>
     <li><b class="serif">4,8</b><span>Google, 222 recensioni</span></li>
   </ul>
-
-  <div class="founder" id="fabio">
-    <img src="img/fabio-portrait.webp" srcset="img/m/fabio-portrait.webp 480w, img/fabio-portrait.webp 800w" sizes="(max-width:760px) 300px, 30vw" width="800" height="800" alt="Fabio D'Attanasio, fondatore della Bottega dei Parrucchieri" loading="lazy" decoding="async">
-    <div>
-      <p class="eyebrow bz">Il fondatore</p>
-      <h3 class="serif">Fabio D'Attanasio</h3>
-      <p class="serif q">«La bellezza ha un'identità: la tua!»</p>
-      <p>Da oltre trent'anni nel mondo dell'hairstyling, vivo il mio lavoro con la stessa passione degli inizi. Nel 2017 nasce La Bottega dei Parrucchieri, un progetto evolutivo, fatto di tecnica, ricerca e continuo aggiornamento, dove ogni collaboratore contribuisce con uno specifico talento, passione e professionalità.</p>
-      <p>Nel tempo, il mio lavoro mi ha portato ad aprire un salone oltre mare, alle Canarie, e a far parte del team della Milano Fashion Week, sviluppando collaborazioni con Wella. Oggi La Bottega è anche una linea Haircare, Made in Italy e fitobiologica, per prolungare a casa il lavoro fatto in salone.</p>
-    </div>
-  </div>
-
-  <div class="mfw" id="mfw">
-    <p class="eyebrow bz">Backstage · Milano Fashion Week</p>
-    <ul class="strip" tabindex="0" aria-label="Foto dal backstage della Milano Fashion Week">
-      <li><figure><img src="img/mfw/backstage-1.webp" srcset="img/m/backstage-1.webp 480w, img/mfw/backstage-1.webp 600w" sizes="(max-width:760px) 34vw, 230px" width="600" height="800" alt="Fabio al lavoro su un'acconciatura nel backstage" loading="lazy" decoding="async"><figcaption class="eyebrow">Al lavoro</figcaption></figure></li>
-      <li><figure><img src="img/mfw/fabio-mfw.webp" srcset="img/m/fabio-mfw.webp 480w, img/mfw/fabio-mfw.webp 600w" sizes="(max-width:760px) 34vw, 230px" width="600" height="800" alt="Fabio D'Attanasio nel backstage Wella della Milano Fashion Week" loading="lazy" decoding="async"><figcaption class="eyebrow">Backstage Wella</figcaption></figure></li>
-      <li><figure><img src="img/mfw/backstage-2.webp" srcset="img/m/backstage-2.webp 480w, img/mfw/backstage-2.webp 600w" sizes="(max-width:760px) 34vw, 230px" width="600" height="800" alt="Fabio prepara una modella prima della sfilata" loading="lazy" decoding="async"><figcaption class="eyebrow">Prima della sfilata</figcaption></figure></li>
-      <li><figure><img src="img/mfw/fico.webp" srcset="img/m/fico.webp 480w, img/mfw/fico.webp 600w" sizes="(max-width:760px) 34vw, 230px" width="600" height="800" alt="Fabio D'Attanasio con Raffaella Fico" loading="lazy" decoding="async"><figcaption class="eyebrow">Con Raffaella Fico</figcaption></figure></li>
-      <li><figure><img src="img/mfw/annalisa.webp" srcset="img/m/annalisa.webp 480w, img/mfw/annalisa.webp 600w" sizes="(max-width:760px) 34vw, 230px" width="600" height="800" alt="Fabio D'Attanasio con Annalisa" loading="lazy" decoding="async"><figcaption class="eyebrow">Con Annalisa</figcaption></figure></li>
-      <li><figure><img src="img/mfw/stefanenko.webp" srcset="img/m/stefanenko.webp 480w, img/mfw/stefanenko.webp 600w" sizes="(max-width:760px) 34vw, 230px" width="600" height="800" alt="Fabio D'Attanasio con Natasha Stefanenko" loading="lazy" decoding="async"><figcaption class="eyebrow">Con Natasha Stefanenko</figcaption></figure></li>
-      <li><figure><img src="img/mfw/cattelan.webp" srcset="img/m/cattelan.webp 480w, img/mfw/cattelan.webp 600w" sizes="(max-width:760px) 34vw, 230px" width="600" height="800" alt="Fabio D'Attanasio con Alessandro Cattelan" loading="lazy" decoding="async"><figcaption class="eyebrow">Con Alessandro Cattelan</figcaption></figure></li>
-      <li><figure><img src="img/mfw/squillo.webp" srcset="img/m/squillo.webp 480w, img/mfw/squillo.webp 600w" sizes="(max-width:760px) 34vw, 230px" width="600" height="800" alt="Fabio D'Attanasio con Jo Squillo" loading="lazy" decoding="async"><figcaption class="eyebrow">Con Jo Squillo</figcaption></figure></li>
-    </ul>
-  </div>
-
-  <div class="team" id="team">
-    <p class="eyebrow bz">La squadra</p>
-    <h3 class="serif">Scegli le tue mani.</h3>
-    <p class="intro">Le clienti ci chiamano per nome. Tocca una persona e prenoti direttamente con lei.</p>
-    <div class="crew">
-      <button class="mate" type="button" data-book data-who="Fabio"><img src="img/fabio-portrait.webp" srcset="img/m/fabio-portrait.webp 480w, img/fabio-portrait.webp 800w" sizes="(max-width:760px) 42vw, 14vw" width="800" height="800" alt="" loading="lazy" decoding="async"><b class="serif">Fabio</b><span>Fondatore. Taglio e colore.</span></button>
-      <button class="mate" type="button" data-book data-who="Liviana"><img src="img/liviana.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><b class="serif">Liviana</b><span>Extensions ed Effetto Bottega.</span></button>
-      <button class="mate" type="button" data-book data-who="Francesca"><img src="img/francesca.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><b class="serif">Francesca</b><span>Styling. La sua passione sono i ricci.</span></button>
-      <button class="mate" type="button" data-book data-who="Mario"><img src="img/mario.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><b class="serif">Mario</b><span>Schiariture ed extension.</span></button>
-      <button class="mate" type="button" data-book data-who="Daniela"><img src="img/daniela.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><b class="serif">Daniela</b><span>Hair stylist.</span></button>
-      <button class="mate" type="button" data-book data-who="Nausica"><span class="ph serif" aria-hidden="true">N</span><b class="serif">Nausica</b><span>Hair stylist. Foto in arrivo.</span></button>
-    </div>
-    <p class="fine">In reception ti accolgono Sara e Siria.</p>
-  </div>
-</section>
-
-<section id="haircare" class="sec" aria-labelledby="h-haircare">
-  <div class="split">
-    <div>
-      <p class="eyebrow bz">05 / Haircare La Bottega</p>
-      <h2 class="serif" id="h-haircare">La bellezza<br>continua <i>a casa.</i></h2>
-      <p class="intro">Il risultato del salone incontra la cura di ogni giorno. Scopri i tuoi essenziali per accompagnare la bellezza dei capelli anche a casa: la nostra linea, Made in Italy e fitobiologica.</p>
-      <a class="btn" href="shop.html">Scopri la linea<i class="ar" aria-hidden="true">↗︎</i></a>
-    </div>
-    <figure class="split-img prod"><img src="img/shop/kit-lamellare.webp" width="800" height="800" alt="Kit Trattamento Lamellare della linea La Bottega" loading="lazy" decoding="async"></figure>
-  </div>
-  <ul class="plist best" data-shop="curl-shampoo,fluido-anticrespo,gold-touch,kit-ricci" aria-label="I più amati"></ul>
 </section>
 
 <section id="contatti" class="sec sand" aria-labelledby="h-contatti">
   <div class="split end">
     <div>
-      <p class="eyebrow bz">Il tuo prossimo capitolo</p>
       <h2 class="serif big" id="h-contatti">I tuoi capelli.<br><i>Il tuo progetto.</i></h2>
+      <p class="serif addr">Piazza Garibaldi 13, Pescara</p>
+      <p class="live eyebrow" id="live">Lunedì - sabato, 9:00 - 19:00</p>
     </div>
     <div>
       <p class="intro">Cominciamo da ciò che desideri. Raccontaci il risultato che immagini e troviamo insieme il percorso più adatto.</p>
-      <button class="btn" type="button" data-book>Prenota il tuo appuntamento<i class="ar" aria-hidden="true">↗︎</i></button>
+      <div class="row-b"><button class="btn" type="button" data-book>Prenota il tuo appuntamento<i class="ar" aria-hidden="true">↗︎</i></button><a class="btn ol" href="contatti.html">Orari e contatti</a></div>
     </div>
-  </div>
-  <div class="visit">
-    <div>
-      <p class="eyebrow bz">Vieni a trovarci</p>
-      <p class="serif addr">Piazza Garibaldi 13<br>Pescara</p>
-      <p class="live eyebrow" id="live">Orari</p>
-      <ul class="hours" id="hours">
-        <li data-d="1"><span>Lunedì</span><span>9:00 - 19:00</span></li>
-        <li data-d="2"><span>Martedì</span><span>9:00 - 19:00</span></li>
-        <li data-d="3"><span>Mercoledì</span><span>9:00 - 19:00</span></li>
-        <li data-d="4"><span>Giovedì</span><span>9:00 - 19:00</span></li>
-        <li data-d="5"><span>Venerdì</span><span>9:00 - 19:00</span></li>
-        <li data-d="6"><span>Sabato</span><span>9:00 - 19:00</span></li>
-        <li data-d="0"><span>Domenica</span><span>Chiuso</span></li>
-      </ul>
-    </div>
-    <ul class="contact">
-      <li><a href="tel:+3908568782"><span class="eyebrow">Chiamaci</span><span class="serif">085 68782</span></a></li>
-      <li><a href="https://wa.me/393291097048?text=Ciao%21%20Vorrei%20prenotare%20un%20appuntamento%20alla%20Bottega." target="_blank" rel="noopener"><span class="eyebrow">WhatsApp, solo messaggi</span><span class="serif">329 109 7048<i class="ar" aria-hidden="true">↗︎</i></span></a></li>
-      <li><a href="https://www.google.com/maps/search/?api=1&amp;query=La+Bottega+dei+Parrucchieri+Piazza+Garibaldi+13+Pescara" target="_blank" rel="noopener"><span class="eyebrow">Indicazioni e recensioni</span><span class="serif">Google Maps<i class="ar" aria-hidden="true">↗︎</i></span></a></li>
-      <li><a href="https://www.instagram.com/la.bottega.dei.parrucchieri/" target="_blank" rel="noopener"><span class="eyebrow">I nostri lavori, ogni giorno</span><span class="serif">Instagram<i class="ar" aria-hidden="true">↗︎</i></span></a></li>
-    </ul>
   </div>
 </section>
 </main>
@@ -221,61 +75,12 @@
   <p class="serif fb">La Bottega</p>
   <p class="eyebrow bz2">Dei parrucchieri</p>
   <p>Bellezza, tecnica e personalità.<br>Piazza Giuseppe Garibaldi 13, 65127 Pescara · <a href="tel:+3908568782">085 68782</a> · <a href="mailto:pescara@labottegadeiparrucchieri.it">pescara@labottegadeiparrucchieri.it</a></p>
-  <p class="links eyebrow"><a href="#home">Torna su ↑</a><button type="button" data-book>Prenotazioni<i class="ar" aria-hidden="true">↗︎</i></button><a href="shop.html">Shop<i class="ar" aria-hidden="true">↗︎</i></a><a href="https://www.instagram.com/la.bottega.dei.parrucchieri/" target="_blank" rel="noopener">Instagram<i class="ar" aria-hidden="true">↗︎</i></a><span>Wella · ghd · Farmaca</span></p>
+  <nav class="links eyebrow" aria-label="Pagine del sito"><a href="index.html">Home</a><a href="colore.html">Colore</a><a href="servizi.html">Servizi</a><a href="maison.html">La Maison</a><a href="shop.html">Haircare</a><a href="contatti.html">Contatti</a><a href="https://www.instagram.com/la.bottega.dei.parrucchieri/" target="_blank" rel="noopener">Instagram<i class="ar" aria-hidden="true">↗︎</i></a></nav>
   <p>© 2026 La Bottega dei Parrucchieri. Il prezzo dei servizi ti viene comunicato quando confermiamo l'appuntamento; i prezzi dei prodotti sono indicativi.</p>
 </footer>
 
 <div class="sticky-book" id="stickyBook"><small>Il tuo prossimo look<br><strong>Comincia da una consulenza.</strong></small><button class="btn sm" type="button" data-book data-svc="Consulenza colore">Prenota<i class="ar" aria-hidden="true">↗︎</i></button></div>
-
-<dialog class="menu" id="menu" aria-label="Menu">
-  <div class="mn">
-    <header><span class="eyebrow">Menu</span><button class="xbtn" type="button" id="menuClose" aria-label="Chiudi il menu">×</button></header>
-    <nav aria-label="Sezioni del sito"><a href="#colore">Colore<i class="ar" aria-hidden="true">↗︎</i></a><a href="#servizi">Servizi<i class="ar" aria-hidden="true">↗︎</i></a><a href="#maison">La Maison<i class="ar" aria-hidden="true">↗︎</i></a><a href="#team">La squadra<i class="ar" aria-hidden="true">↗︎</i></a><a href="#haircare">Haircare<i class="ar" aria-hidden="true">↗︎</i></a><a href="shop.html">Shop<i class="ar" aria-hidden="true">↗︎</i></a><a href="#contatti">Contatti<i class="ar" aria-hidden="true">↗︎</i></a></nav>
-    <button class="btn full" type="button" data-book>Prenota un appuntamento</button>
-  </div>
-</dialog>
-
-<dialog id="sheet" aria-labelledby="h-sheet">
-  <div class="sh">
-    <header><div><p class="eyebrow bz">La Bottega dei Parrucchieri</p><h2 class="serif" id="h-sheet">Parliamo dei tuoi capelli.</h2></div><button class="xbtn" type="button" id="close" aria-label="Chiudi">×</button></header>
-    <form id="book" novalidate>
-      <label class="f"><span>Servizio d'interesse</span>
-        <select name="svc" id="svc" required>
-          <option>Consulenza colore</option><option>Colore e schiariture</option><option>Effetto Bottega</option><option>Taglio e styling</option><option>Sposa e occasioni</option><option>Trattamenti e haircare</option><option>Estensioni</option><option>Altro servizio</option>
-        </select></label>
-      <fieldset class="chips"><legend>Con chi</legend>
-        <label class="chip"><input type="radio" name="who" value="Nessuna preferenza" checked><span>Chi è libero</span></label>
-        <label class="chip"><input type="radio" name="who" value="Fabio"><span>Fabio</span></label>
-        <label class="chip"><input type="radio" name="who" value="Liviana"><span>Liviana</span></label>
-        <label class="chip"><input type="radio" name="who" value="Francesca"><span>Francesca</span></label>
-        <label class="chip"><input type="radio" name="who" value="Mario"><span>Mario</span></label>
-        <label class="chip"><input type="radio" name="who" value="Daniela"><span>Daniela</span></label>
-        <label class="chip"><input type="radio" name="who" value="Nausica"><span>Nausica</span></label>
-      </fieldset>
-      <div class="two">
-        <label class="f"><span>Giorno</span><input type="date" name="day" id="day" required></label>
-        <label class="f"><span>Ora</span><select name="time" id="time" required></select></label>
-      </div>
-      <label class="f"><span>Il tuo nome</span><input name="name" autocomplete="given-name" maxlength="60" placeholder="Come ti chiami?" required></label>
-      <label class="f"><span>Telefono</span><input name="tel" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" pattern="[0-9 +]{6,20}" required></label>
-      <label class="f"><span>Cosa desideri realizzare?</span><textarea name="msg" rows="3" maxlength="400" placeholder="Raccontaci il risultato che immagini"></textarea></label>
-      <p class="dep" id="dep">Per sposa ed estensioni il salone può chiedere una piccola caparra per bloccare la data. Si scala dal conto.</p>
-      <button class="btn full" type="submit">Invia la richiesta<i class="ar" aria-hidden="true">↗︎</i></button>
-      <p class="fine center">La richiesta parte da WhatsApp: ti confermiamo l'orario prima che tu venga.</p>
-    </form>
-    <div class="ok" id="ok" hidden>
-      <h2 class="serif" id="okT" tabindex="-1">Manca un tocco.</h2>
-      <p id="okP"></p>
-      <p>Si è aperto WhatsApp con la tua richiesta: premi Invia e il salone ti conferma l'orario. Se non si è aperto, usa il pulsante.</p>
-      <div class="row-b center"><a class="btn" id="okWa" href="#" target="_blank" rel="noopener">Apri WhatsApp<i class="ar" aria-hidden="true">↗︎</i></a><button class="btn ol" type="button" id="okClose">Chiudi</button></div>
-    </div>
-  </div>
-</dialog>
-
 <div id="toast" role="status" aria-live="polite"></div>
-
-<script src="js/shop.js?v=4" defer></script>
-<script src="js/menu.js?v=4" defer></script>
-<script src="js/site.js?v=4" defer></script>
+<script src="js/site.js?v=5" defer></script>
 </body>
 </html>

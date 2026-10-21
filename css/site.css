@@ -33,7 +33,7 @@ figure{margin:0}
 h1,h2,h3{margin:0;text-wrap:balance}
 p{text-wrap:pretty}
 /* corsivi con discendenti (p, g, f): interlinea 1.04 e un filo di spazio sotto, niente lettere tagliate */
-h2.serif{font-size:clamp(42px,5.4vw,72px);line-height:1.04;letter-spacing:-.022em;margin:16px 0 22px;padding-bottom:.06em}
+h2.serif,.sec h1.serif,.shop-hero h1.serif{font-size:clamp(42px,5.4vw,72px);line-height:1.04;letter-spacing:-.022em;margin:16px 0 22px;padding-bottom:.06em}
 h2 i,h1 i,.it{font-style:italic;color:#8c6f50;letter-spacing:-.01em}
 .intro{max-width:34em;color:var(--muted);font-size:15.5px;line-height:1.75;margin:0 0 18px}
 .intro b{color:var(--ink);font-weight:500}
@@ -66,11 +66,12 @@ h2 i,h1 i,.it{font-style:italic;color:#8c6f50;letter-spacing:-.01em}
 .brand{display:flex;flex-direction:column;align-items:center;line-height:1;margin-right:auto}
 .brand .serif{font-size:23px;letter-spacing:.05em;text-transform:uppercase;font-weight:500}
 .brand small{font-size:7.5px;letter-spacing:.3em;text-transform:uppercase;margin-top:4px}
-.nav{display:flex;gap:26px}
-.nav a{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:8px 0;border-bottom:1px solid transparent;transition:border-color .2s}
-@media (hover:hover){.nav a:hover{border-color:var(--bronze)}}
-.menu-btn{display:none;width:44px;height:44px;margin-left:-10px;border:0;background:none;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer}
-.menu-btn i{display:block;width:20px;height:1.5px;background:var(--ink)}
+/* menu in alto a destra: tre linee, risponde al tocco come i CTA */
+.menu-btn{display:flex;flex:0 0 auto;width:48px;height:48px;margin-right:-10px;border:0;background:none;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;transition:transform var(--t-ui) var(--ease)}
+.menu-btn i{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform var(--t-ui) var(--ease)}
+.menu-btn i:nth-child(2){width:16px;align-self:center;transform:translateX(3px)}
+.menu-btn:active{transform:scale(.92);transition-duration:var(--t-press)}
+@media (hover:hover){.menu-btn:hover i:nth-child(2){transform:none;width:22px}}
 .strap{padding:11px 22px;text-align:center;background:var(--sand);color:#675747}
 
 /* hero */
@@ -182,6 +183,19 @@ h2 i,h1 i,.it{font-style:italic;color:#8c6f50;letter-spacing:-.01em}
 .add{flex:0 0 auto;width:44px;height:44px;border:1px solid var(--ink);background:var(--ink);color:#fff;font-size:1.3rem;line-height:1;cursor:pointer;transition:background .2s}
 @media (hover:hover){.add:hover{background:var(--ink2)}}
 
+/* home: quattro porte verso le pagine. Tutta la tessera è il link, la foto si avvicina appena */
+.tiles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px 18px}
+.tiles a{display:flex;flex-direction:column;gap:4px;height:100%;transition:transform var(--t-ui) var(--ease)}
+.tiles a:active{transform:scale(.98);transition-duration:var(--t-press)}
+.ti{display:block;aspect-ratio:4/5;overflow:hidden;background:#ded1c0;margin-bottom:12px}
+.ti img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.ti.prod{background:#fff}.ti.prod img{object-fit:contain;padding:8%}
+.tiles b{font-size:30px;font-weight:400;line-height:1.05}
+.tiles span:not(.ti):not(.eyebrow){font-size:13.5px;color:var(--muted);line-height:1.5;max-width:24em}
+.tiles .ar{align-self:flex-start;margin:8px 0 0;color:var(--bronze)}
+@media (hover:hover){.tiles a:hover .ti img{transform:scale(1.04)}.tiles a:hover .ar{transform:translate(3px,-3px)}}
+.explore .cred{margin-top:clamp(48px,6vw,80px)!important}
+
 /* contatti */
 .big{font-size:clamp(44px,5.8vw,78px)!important}
 .visit{display:grid;grid-template-columns:1fr 1fr;gap:8%;margin-top:clamp(56px,7vw,90px)!important;padding-top:clamp(40px,5vw,56px);border-top:1px solid #c9b9a5}
@@ -255,18 +269,25 @@ dialog[open]::backdrop{background:rgba(27,23,19,.62)}
 #toast{position:fixed;z-index:50;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translate(-50%,20px);opacity:0;background:var(--ink);color:#fff;padding:12px 18px;font-size:13px;width:max-content;max-width:calc(100% - 32px);transition:opacity .3s,transform .3s;pointer-events:none}
 #toast.on{opacity:1;transform:translate(-50%,0)}
 
-/* il menu nasce dall'alto, dove sta il pulsante, e torna in alto */
-dialog.menu{inset:0;margin:0;width:100%;max-width:none;height:100%;max-height:none;background:var(--paper);transform:translateY(-16px)}
+/* il menu è un pannello che entra da destra, dove sta il pulsante, e se ne va a destra.
+   Telefono: tutto schermo. Desktop: colonna di 440px, il resto della pagina si scurisce. */
+dialog.menu{inset:0 0 0 auto;margin:0;width:min(100%,440px);max-width:none;height:100%;max-height:none;background:var(--paper);transform:translateX(40px)}
 dialog.menu[open]{transform:none}
-@starting-style{dialog.menu[open]{transform:translateY(-16px);opacity:0}}
-dialog.menu::backdrop{background:transparent}
+@starting-style{dialog.menu[open]{transform:translateX(40px);opacity:0}}
+@media (max-width:760px){dialog.menu::backdrop{background:transparent}}
 dialog.menu[open] .mn nav a{animation:mnIn .5s var(--ease) both;animation-delay:calc(var(--i,0)*40ms + 60ms)}
-@keyframes mnIn{from{opacity:0;transform:translateY(10px)}}
-.mn{min-height:100%;display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top) + 14px) 22px calc(24px + env(safe-area-inset-bottom))}
-.mn header{display:flex;justify-content:space-between;align-items:center;min-height:44px}
-.mn nav{display:flex;flex-direction:column;margin:16px 0 24px}
-.mn nav a{font-family:Cormorant,Georgia,serif;font-size:clamp(28px,8vw,40px);line-height:1.1;padding:12px 0;border-bottom:1px solid var(--line)}
-.mn .btn{margin-top:auto}
+@keyframes mnIn{from{opacity:0;transform:translateX(14px)}}
+.mn{min-height:100%;display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top) + 12px) clamp(22px,4vw,40px) calc(24px + env(safe-area-inset-bottom))}
+.mn header{display:flex;justify-content:space-between;align-items:center;min-height:48px}
+.mn nav{display:flex;flex-direction:column;margin:20px 0 28px}
+.mn nav a{display:flex;align-items:baseline;gap:14px;font-family:Cormorant,Georgia,serif;font-size:clamp(30px,8vw,40px);line-height:1.1;padding:13px 0;border-bottom:1px solid var(--line);transition:color .2s,padding .35s var(--ease)}
+.mn nav a .eyebrow{font-family:Geist,system-ui,sans-serif;min-width:2.2em}
+.mn nav a .ar{margin-left:auto;font-size:.6em;color:var(--bronze)}
+.mn nav a[aria-current="page"]{color:var(--bronze)}
+.mn nav a:active{padding-left:6px;transition-duration:var(--t-press)}
+@media (hover:hover){.mn nav a:hover{color:var(--bronze);padding-left:6px}}
+.mn-foot{margin-top:auto;display:flex;flex-direction:column;gap:14px}
+.mn-foot .eyebrow{color:var(--muted)}
 
 /* scheda prodotto e carrello (shop.js) */
 #pdlg{max-width:940px}
@@ -330,16 +351,10 @@ dialog.menu[open] .mn nav a{animation:mnIn .5s var(--ease) both;animation-delay:
   .cfab{right:24px;bottom:24px}
 }
 @media (max-width:1100px){
-  .nav{gap:18px}
   .crew{grid-template-columns:repeat(3,1fr)}
   .gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
-@media (max-width:900px){
-  .nav{display:none}
-  .menu-btn{display:flex}
-  .brand{margin:0 auto}
-  .top{gap:8px}
-}
+@media (max-width:900px){.top{gap:8px}}
 @media (max-width:760px){
   .top{padding:0 15px;height:66px}
   .brand .serif{font-size:19px}
@@ -408,6 +423,9 @@ dialog.menu[open] .mn nav a{animation:mnIn .5s var(--ease) both;animation-delay:
   .sec,.foot{content-visibility:auto;contain-intrinsic-size:auto 1200px}
   #colore{contain-intrinsic-size:auto 2180px}#maison{contain-intrinsic-size:auto 3680px}
   #contatti{contain-intrinsic-size:auto 1450px}.foot{contain-intrinsic-size:auto 450px}
+  [data-page="index.html"] #contatti{contain-intrinsic-size:auto 700px}.explore{contain-intrinsic-size:auto 1500px}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 12px}
+  .tiles b{font-size:25px}
 }
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
