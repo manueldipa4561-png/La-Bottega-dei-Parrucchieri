@@ -484,7 +484,7 @@ canvas.hair{position:absolute;inset:0;width:100%;height:100%;display:block;backg
 .reveal{position:relative;background:var(--ivory)}
 .reveal .pin{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden;padding:80px var(--pad)}
 .rv-img{width:min(100%,560px);aspect-ratio:4/5;overflow:hidden;border-radius:4px}
-.rv-img img{width:100%;height:100%;object-fit:cover}
+.rv-img img{width:100%;height:100%;object-fit:cover;object-position:62% 62%}
 .rv-t{position:relative;z-index:1;text-align:center;font-size:clamp(40px,6vw,92px);line-height:1.02;letter-spacing:-.025em;margin:40px 0 0;padding-bottom:.06em}
 .js3d .reveal{height:240svh}
 .js3d .reveal .pin{position:sticky;top:0;height:100svh;padding:0}
