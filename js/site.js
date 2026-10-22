@@ -49,6 +49,38 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserve
   });
 }
 
+/* Home: palco 3D. Lo scroll scorre i capitoli (dissolvenza incrociata), le etichette e il contatore;
+   poi la foto si apre a tutto schermo. Un solo ciclo, solo mentre il palco o la foto sono visibili. */
+const stage=$('#stage'),reveal=$('#reveal');
+if(stage){
+  const motion=!matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(motion)document.documentElement.classList.add('js3d');
+  const top=$('.top');
+  new IntersectionObserver(([e])=>top.classList.toggle('over',e.isIntersecting),{rootMargin:'0px 0px -100% 0px'}).observe(stage);
+  if(motion){
+    const P=el=>{const r=el.getBoundingClientRect(),d=r.height-innerHeight;return d>0?Math.min(1,Math.max(0,-r.top/d)):0};
+    const chs=$$('.ch',stage).map(el=>({el,a:+el.dataset.a,b:+el.dataset.b})),spec=$$('.spec li',stage).map(el=>({el,a:+el.dataset.a}));
+    const n=$('#chN'),bar=$('#chBar'),img=reveal&&$('.rv-img',reveal),txt=reveal&&$('.rv-t',reveal);
+    const vis={s:true,r:false};let raf=0,lastN=-1;
+    const paint=()=>{
+      raf=0;
+      if(vis.s){const p=P(stage);
+        chs.forEach(c=>{const o=Math.min(1,Math.max(0,Math.min((p-c.a)/.04,(c.b-p)/.04)));c.el.style.opacity=o;c.el.style.transform='translateY('+((1-o)*24).toFixed(1)+'px)';c.el.classList.toggle('on',o>.5)});
+        spec.forEach(s=>s.el.classList.toggle('on',p>=s.a));
+        const k=Math.min(4,Math.floor((p+.02)/.2));if(k!==lastN){lastN=k;n.textContent='0'+k}
+        bar.style.transform='scaleX('+p.toFixed(3)+')'}
+      if(vis.r&&img){const p=P(reveal),q=Math.min(1,p/.7),e=1-Math.pow(1-q,3),o=Math.min(1,Math.max(0,(p-.55)/.25));
+        img.style.transform='scale('+(.42+.58*e).toFixed(4)+') rotate('+(-5*(1-e)).toFixed(2)+'deg)';
+        img.style.borderRadius=(28*(1-e)).toFixed(1)+'px';
+        txt.style.opacity=o;txt.style.transform='translateY('+(20*(1-o)).toFixed(1)+'px)'}
+    };
+    const kick=()=>{if(!raf)raf=requestAnimationFrame(paint)};
+    new IntersectionObserver(([e])=>{vis.s=e.isIntersecting;kick()}).observe(stage);
+    if(reveal)new IntersectionObserver(([e])=>{vis.r=e.isIntersecting;kick()}).observe(reveal);
+    addEventListener('scroll',kick,{passive:true});addEventListener('resize',kick,{passive:true});kick();
+  }
+}
+
 /* Colore: filtra le foto per colore; quelle che restano arrivano in sequenza */
 const tags=$$('[data-filter]'),cards=$$('#gallery li');
 tags.forEach(t=>t.addEventListener('click',()=>{
