@@ -12,7 +12,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HairSalon","name":"La Bottega dei Parrucchieri","founder":{"@type":"Person","name":"Fabio D'Attanasio"},"foundingDate":"2017","address":{"@type":"PostalAddress","streetAddress":"Piazza Giuseppe Garibaldi 13","postalCode":"65127","addressLocality":"Pescara","addressRegion":"PE","addressCountry":"IT"},"telephone":"+39 085 68782","email":"pescara@labottegadeiparrucchieri.it","openingHours":"Mo-Sa 09:00-19:00","sameAs":["https://www.instagram.com/la.bottega.dei.parrucchieri/","https://www.facebook.com/parrucchieridipescara"]}
 </script>
-<link rel="stylesheet" href="css/site.css?v=6">
+<link rel="stylesheet" href="css/site.css?v=7">
 </head>
 <body data-page="contatti.html">
 
@@ -23,11 +23,18 @@
 </header>
 
 <main id="home">
-<section id="contatti" class="sec sand" aria-labelledby="h-contatti">
+<section class="page-hero" aria-labelledby="h-contatti">
+  <canvas class="hair" aria-hidden="true"></canvas>
+  <div class="ph">
+    <p class="eyebrow bz">Il tuo prossimo capitolo</p>
+    <h1 class="serif big" id="h-contatti">I tuoi capelli.<br><i>Il tuo progetto.</i></h1>
+    
+  </div>
+</section>
+
+<section id="contatti" class="sec sand">
   <div class="split end">
     <div>
-      <p class="eyebrow bz">Il tuo prossimo capitolo</p>
-      <h1 class="serif big" id="h-contatti">I tuoi capelli.<br><i>Il tuo progetto.</i></h1>
     </div>
     <div>
       <p class="intro">Cominciamo da ciò che desideri. Raccontaci il risultato che immagini e troviamo insieme il percorso più adatto.</p>
@@ -69,6 +76,7 @@
 
 <div class="sticky-book" id="stickyBook"><small>Il tuo prossimo look<br><strong>Comincia da una consulenza.</strong></small><button class="btn sm" type="button" data-book data-svc="Consulenza colore">Prenota<i class="ar" aria-hidden="true">↗︎</i></button></div>
 <div id="toast" role="status" aria-live="polite"></div>
-<script src="js/site.js?v=6" defer></script>
+<script src="js/hair.js?v=7" defer></script>
+<script src="js/site.js?v=7" defer></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
 <link rel="icon" href="img/favicon.png" type="image/png">
 <link rel="preload" href="fonts/Cormorant.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/Geist.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.css?v=6">
+<link rel="stylesheet" href="css/site.css?v=7">
 </head>
 <body data-page="servizi.html">
 
@@ -20,10 +20,16 @@
 </header>
 
 <main id="home">
-<section id="servizi" class="sec dark" aria-labelledby="h-servizi">
-  <p class="eyebrow bz2">02 / I nostri servizi</p>
-  <h1 class="serif" id="h-servizi">Un progetto<br>per i tuoi capelli.</h1>
-  <p class="intro">Dalla consulenza al risultato, un percorso su misura per valorizzare la tua bellezza.</p>
+<section class="page-hero" aria-labelledby="h-servizi">
+  <canvas class="hair" aria-hidden="true"></canvas>
+  <div class="ph">
+    <p class="eyebrow bz2">02 / I nostri servizi</p>
+    <h1 class="serif" id="h-servizi">Un progetto<br>per i tuoi capelli.</h1>
+    <p class="intro">Dalla consulenza al risultato, un percorso su misura per valorizzare la tua bellezza.</p>
+  </div>
+</section>
+
+<section id="servizi" class="sec dark">
   <ul class="svc">
     <li><button type="button" data-book data-svc="Colore e schiariture"><span><span class="eyebrow bz2">01</span><b class="serif">Colore &amp; schiariture</b><span class="d">Effetto Bottega, Air Touch, Color Gloss, colorazione naturale ed henné.</span></span><i class="ar" aria-hidden="true">↗︎</i></button></li>
     <li><button type="button" data-book data-svc="Taglio e styling"><span><span class="eyebrow bz2">02</span><b class="serif">Taglio &amp; styling</b><span class="d">Forma, movimento e stile personalizzato, donna e uomo.</span></span><i class="ar" aria-hidden="true">↗︎</i></button></li>
@@ -61,6 +67,7 @@
 
 <div class="sticky-book" id="stickyBook"><small>Il tuo prossimo look<br><strong>Comincia da una consulenza.</strong></small><button class="btn sm" type="button" data-book data-svc="Consulenza colore">Prenota<i class="ar" aria-hidden="true">↗︎</i></button></div>
 <div id="toast" role="status" aria-live="polite"></div>
-<script src="js/site.js?v=6" defer></script>
+<script src="js/hair.js?v=7" defer></script>
+<script src="js/site.js?v=7" defer></script>
 </body>
 </html>
