@@ -66,12 +66,12 @@ h2 i,h1 i,.it{font-style:italic;color:#8c6f50;letter-spacing:-.01em}
 .brand{display:flex;flex-direction:column;align-items:center;line-height:1;margin-right:auto}
 .brand .serif{font-size:23px;letter-spacing:.05em;text-transform:uppercase;font-weight:500}
 .brand small{font-size:7.5px;letter-spacing:.3em;text-transform:uppercase;margin-top:4px}
-/* menu in alto a destra: tre linee, risponde al tocco come i CTA */
-.menu-btn{display:flex;flex:0 0 auto;width:48px;height:48px;margin-right:-10px;border:0;background:none;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;transition:transform var(--t-ui) var(--ease)}
-.menu-btn i{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform var(--t-ui) var(--ease)}
-.menu-btn i:nth-child(2){width:16px;align-self:center;transform:translateX(3px)}
+/* menu in alto a sinistra: tre barre oblique (///), risponde al tocco come i CTA */
+.menu-btn{display:flex;flex:0 0 auto;width:48px;height:48px;margin-left:-10px;border:0;background:none;align-items:center;justify-content:center;gap:6px;cursor:pointer;transition:transform var(--t-ui) var(--ease)}
+.menu-btn i{display:block;width:1.5px;height:20px;background:var(--ink);transform:rotate(22deg);transition:transform var(--t-ui) var(--ease)}
 .menu-btn:active{transform:scale(.92);transition-duration:var(--t-press)}
-@media (hover:hover){.menu-btn:hover i:nth-child(2){transform:none;width:22px}}
+@media (hover:hover){.menu-btn:hover i{transform:rotate(32deg)}}
+.top .brand{margin-left:6px}
 .strap{padding:11px 22px;text-align:center;background:var(--sand);color:#675747}
 
 /* hero */
@@ -269,14 +269,14 @@ dialog[open]::backdrop{background:rgba(27,23,19,.62)}
 #toast{position:fixed;z-index:50;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translate(-50%,20px);opacity:0;background:var(--ink);color:#fff;padding:12px 18px;font-size:13px;width:max-content;max-width:calc(100% - 32px);transition:opacity .3s,transform .3s;pointer-events:none}
 #toast.on{opacity:1;transform:translate(-50%,0)}
 
-/* il menu è un pannello che entra da destra, dove sta il pulsante, e se ne va a destra.
+/* il menu è un pannello che entra da sinistra, dove sta il pulsante, e se ne va a sinistra.
    Telefono: tutto schermo. Desktop: colonna di 440px, il resto della pagina si scurisce. */
-dialog.menu{inset:0 0 0 auto;margin:0;width:min(100%,440px);max-width:none;height:100%;max-height:none;background:var(--paper);transform:translateX(40px)}
+dialog.menu{inset:0 auto 0 0;margin:0;width:min(100%,440px);max-width:none;height:100%;max-height:none;background:var(--paper);transform:translateX(-40px)}
 dialog.menu[open]{transform:none}
-@starting-style{dialog.menu[open]{transform:translateX(40px);opacity:0}}
+@starting-style{dialog.menu[open]{transform:translateX(-40px);opacity:0}}
 @media (max-width:760px){dialog.menu::backdrop{background:transparent}}
 dialog.menu[open] .mn nav a{animation:mnIn .5s var(--ease) both;animation-delay:calc(var(--i,0)*40ms + 60ms)}
-@keyframes mnIn{from{opacity:0;transform:translateX(14px)}}
+@keyframes mnIn{from{opacity:0;transform:translateX(-14px)}}
 .mn{min-height:100%;display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top) + 12px) clamp(22px,4vw,40px) calc(24px + env(safe-area-inset-bottom))}
 .mn header{display:flex;justify-content:space-between;align-items:center;min-height:48px}
 .mn nav{display:flex;flex-direction:column;margin:20px 0 28px}
