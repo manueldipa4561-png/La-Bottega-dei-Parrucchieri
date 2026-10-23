@@ -81,6 +81,13 @@ if(stage){
   }
 }
 
+/* Home: i più amati scorrono di lato; le frecce avanzano di una scheda */
+const rail=$('#rail');
+$$('[data-rail]').forEach(b=>b.addEventListener('click',()=>{
+  const card=rail&&rail.querySelector('.pc');if(!card)return;
+  rail.scrollBy({left:(+b.dataset.rail)*(card.offsetWidth+parseFloat(getComputedStyle(rail).columnGap||0)),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+}));
+
 /* Colore: filtra le foto per colore; quelle che restano arrivano in sequenza */
 const tags=$$('[data-filter]'),cards=$$('#gallery li');
 tags.forEach(t=>t.addEventListener('click',()=>{
