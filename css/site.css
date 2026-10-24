@@ -484,7 +484,7 @@ canvas.hair{position:absolute;inset:0;width:100%;height:100%;display:block;backg
 .reveal{position:relative;background:var(--ivory)}
 .reveal .pin{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden;padding:80px var(--pad)}
 .rv-img{width:min(100%,560px);aspect-ratio:4/5;overflow:hidden;border-radius:4px}
-.rv-img img{width:100%;height:100%;object-fit:cover;object-position:62% 62%}
+.rv-img img{width:100%;height:100%;object-fit:cover;object-position:50% 38%}
 .rv-t{position:relative;z-index:1;text-align:center;font-size:clamp(40px,6vw,92px);line-height:1.02;letter-spacing:-.025em;margin:40px 0 0;padding-bottom:.06em}
 .js3d .reveal{height:240svh}
 .js3d .reveal .pin{position:sticky;top:0;height:100svh;padding:0}
@@ -523,6 +523,12 @@ canvas.hair{position:absolute;inset:0;width:100%;height:100%;display:block;backg
   .rail-btn{display:none}
   .plist.rail{grid-auto-columns:68vw;gap:12px;padding:0 22px 6px;scroll-padding:0 22px}
 }
+
+/* La Maison: il salone vero, in una foto larga */
+.salon{margin:0 0 clamp(36px,5vw,56px)}
+.salon img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;background:#d9cbb9}
+.salon figcaption{margin-top:12px;color:var(--muted)}
+.salon+.phil{max-width:40em}
 
 /* pagine interne: il titolo apre su una fascia scura con gli stessi capelli in 3D */
 .page-hero{position:relative;overflow:hidden;background:var(--stage);color:var(--ivory);min-height:min(68svh,640px);display:flex;align-items:flex-end;padding:clamp(110px,14vw,170px) var(--pad) clamp(48px,7vw,90px)}
