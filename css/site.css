@@ -421,7 +421,7 @@ dialog.menu[open] .mn nav a{animation:mnIn .5s var(--ease) both;animation-delay:
 @media (max-width:760px){
   /* altezze misurate a 375px: i link ai paragrafi (#contatti, #team) atterrano nel punto giusto */
   .sec,.foot{content-visibility:auto;contain-intrinsic-size:auto 1200px}
-  #colore{contain-intrinsic-size:auto 2180px}#maison{contain-intrinsic-size:auto 3680px}
+  #colore{contain-intrinsic-size:auto 1920px}#maison{contain-intrinsic-size:auto 3210px}#tecnica{contain-intrinsic-size:auto 1100px}
   #contatti{contain-intrinsic-size:auto 1450px}.foot{contain-intrinsic-size:auto 450px}
   [data-page="index.html"] #contatti{contain-intrinsic-size:auto 700px}.explore{contain-intrinsic-size:auto 1500px}
   .tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 12px}
@@ -432,7 +432,7 @@ dialog.menu[open] .mn nav a{animation:mnIn .5s var(--ease) both;animation-delay:
    Riferimenti: Cartier Roadster (oggetto unico su palco scuro, etichette), Il Colorista (frasi enormi),
    Nymphai (intro col marchio), Fitosauna (foto che si apre a tutto schermo). */
 :root{--stage:#1a120d;--ivory:#f6f2eb}
-.loader{position:fixed;inset:0;z-index:90;display:grid;place-items:center;background:var(--stage);color:var(--ivory);pointer-events:none;animation:introOut .7s var(--ease) .75s both}
+.loader{position:fixed;inset:0;z-index:90;display:grid;place-items:center;background:var(--stage);color:var(--ivory);pointer-events:none;animation:introOut .45s var(--ease) .4s both}
 .loader .serif{font-size:clamp(34px,6vw,64px);letter-spacing:.06em;text-transform:uppercase;animation:rise .8s var(--ease) both}
 .loader i{position:absolute;left:50%;bottom:22%;width:120px;height:1px;margin-left:-60px;background:rgba(246,242,235,.25);overflow:hidden}
 .loader i::after{content:"";position:absolute;inset:0;background:var(--gold);transform-origin:left;animation:load .7s var(--ease) both}
@@ -494,7 +494,7 @@ canvas.hair{position:absolute;inset:0;width:100%;height:100%;display:block;backg
 .js3d .rv-t i{color:var(--gold)}
 
 @media (max-width:760px){
-  .js3d .stage{height:460svh}
+  .js3d .stage{height:380svh}
   .js3d .ch{left:22px;right:22px;bottom:150px;max-width:none}
   .js3d .spec{left:22px;right:22px;top:auto;bottom:86px;transform:none;width:auto;display:block;height:46px}
   .js3d .spec li{position:absolute;left:0;right:0;border:0;padding:0;display:flex;align-items:baseline;gap:10px;transform:translateY(8px);opacity:0}
@@ -543,3 +543,11 @@ canvas.hair{position:absolute;inset:0;width:100%;height:100%;display:block;backg
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 @media (prefers-reduced-motion:reduce){.loader{display:none}}
+/* telefono: niente schermata d'ingresso (è solo attesa), tocchi comodi nel footer e sul logo */
+@media (max-width:760px){
+  .loader{display:none}
+  .links{gap:0 22px}
+  .links a,.links button{display:inline-flex;align-items:center;min-height:44px}
+  .foot p a{display:inline-block;padding:12px 0}
+  .top .brand{min-height:44px;justify-content:center}
+}
