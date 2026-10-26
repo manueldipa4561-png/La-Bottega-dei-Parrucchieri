@@ -81,10 +81,17 @@ if(stage){
   }
 }
 
-/* Home: i più amati scorrono di lato; le frecce avanzano di una scheda */
-const rail=$('#rail');
+/* Home: pulsante laterale "Shop": dal lato esce il pannello con i prodotti in fila, e ci torna */
+const drawer=$('#shopDrawer'),tab=$('#shopTab');
+if(drawer&&tab){
+  tab.addEventListener('click',()=>{if(!drawer.open)drawer.showModal()});
+  $('#drawerClose').addEventListener('click',()=>drawer.close());
+  drawer.addEventListener('click',e=>{if(e.target===drawer||e.target.closest('a[href]'))drawer.close()});
+}
+
+/* i prodotti scorrono di lato; le frecce avanzano di una scheda nella fila più vicina */
 $$('[data-rail]').forEach(b=>b.addEventListener('click',()=>{
-  const card=rail&&rail.querySelector('.pc');if(!card)return;
+  const rail=b.closest('section,dialog').querySelector('.rail'),card=rail&&rail.querySelector('.pc');if(!card)return;
   rail.scrollBy({left:(+b.dataset.rail)*(card.offsetWidth+parseFloat(getComputedStyle(rail).columnGap||0)),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
 }));
 
