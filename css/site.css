@@ -524,6 +524,20 @@ canvas.hair{position:absolute;inset:0;width:100%;height:100%;display:block;backg
   .plist.rail{grid-auto-columns:68vw;gap:12px;padding:0 22px 6px;scroll-padding:0 22px}
 }
 
+/* Home: pulsante laterale "Shop" (idea di Fabio) e pannello che esce dallo stesso lato con i prodotti in fila */
+.shop-tab{position:fixed;z-index:36;right:0;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;min-width:44px;padding:20px 13px;border:0;background:var(--gold);color:var(--ink);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;box-shadow:-6px 0 24px -12px rgba(26,18,13,.6);transition:transform var(--t-ui) var(--ease),background-color .2s}
+.shop-tab:active{transform:translateY(-50%) scale(.95);transition-duration:var(--t-press)}
+@media (hover:hover){.shop-tab:hover{background:#e4c9a4;transform:translateY(-50%) translateX(-3px)}}
+.shop-tab:focus-visible{outline:2px solid var(--ink);outline-offset:-4px}
+dialog.drawer{inset:auto 0 0 0;margin:auto 0 0;width:100%;max-width:none;max-height:88svh;transform:translateX(100%);background:var(--ivory)}
+dialog.drawer[open]{transform:none}
+@starting-style{dialog.drawer[open]{transform:translateX(100%);opacity:0}}
+.dr{padding:22px 0 calc(24px + env(safe-area-inset-bottom));overflow:auto;max-height:88svh}
+.dr header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;padding:0 var(--pad);margin-bottom:20px}
+.dr h2.serif{font-size:clamp(30px,4vw,48px);margin:8px 0 0}
+.dr .btn.ol{margin:22px var(--pad) 0}
+@media (max-width:760px){.dr header{padding:0 22px}.dr .btn.ol{margin:18px 22px 0}.dr .bests-nav .rail-btn{display:none}.shop-tab{padding:16px 12px}}
+
 /* La Maison: il salone vero, in una foto larga */
 .salon{margin:0 0 clamp(36px,5vw,56px)}
 .salon img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;background:#d9cbb9}
